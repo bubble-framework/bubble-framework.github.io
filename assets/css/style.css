@@ -2033,3 +2033,18 @@ code {
   background-color: #eeeeee;
   padding: 0 2px;
 }
+
+/* slider styles */
+
+.glide__arrow {
+  width: 6em;
+  opacity: 0.5;
+  position: static;
+  border: none;
+}
+
+/* &#{$se}arrow {
+  position: static;
+  border: none;
+  /* border-radius: 4px; */
+} */

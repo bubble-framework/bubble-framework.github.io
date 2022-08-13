@@ -5,6 +5,8 @@
     <title>Bubble • Case Study</title>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.core.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.theme.min.css" rel="stylesheet" type="text/css" />
     <script
       src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"
       type="text/javascript"
@@ -40,7 +42,7 @@
             (n.className += t + "touch");
       })(window, document);
     </script>
-    <link
+    <!-- <link
       href="assets/images/logo-mono.png"
       rel="shortcut icon"
       type="image/x-icon"
@@ -49,7 +51,7 @@
     <script
       src="https://kit.fontawesome.com/d019875f94.js"
       crossorigin="anonymous"
-    ></script>
+    ></script> -->
     <meta
       name="image"
       property="og:image"
@@ -146,14 +148,45 @@
               <p>
                 Traditionally, the most common strategy for building web pages and applications was based on client-server communication whereby a client, for example an end user’s browser, would request a page from a website or application, and the server would be responsible for responding with a fully-generated HTML page. With this approach, the server does most of the heavy lifting at request time - upon receiving the request from the client, the server would fetch any data from the database and other resources (i.e. CSS, images, etc.) needed in regards to the specific request, generate the full HTML components with the retrieved data and assets, and send this back to the client to display to the end user. This process, appropriately named server-side-rendering (SSR), would be repeated with every incoming request from the client.
               </p>
-              <figure>
+
+              <div class="glide">
+                <div class="glide__track" data-glide-el="track">
+                  <ul class="glide__slides">
+                    <li class="glide__slide">
+                      <img src="assets/images/case-study/widgets/ssr/_ssr 1.png" />
+                    </li>
+                    <li class="glide__slide">
+                      <img src="assets/images/case-study/widgets/ssr/_ssr 2.png" />
+                    </li>
+                    <li class="glide__slide">
+                      <img src="assets/images/case-study/widgets/ssr/_ssr 3.png" />
+                    </li>
+                    <li class="glide__slide">
+                      <img src="assets/images/case-study/widgets/ssr/_ssr 4.png" />
+                    </li>
+                    <li class="glide__slide">
+                      <img src="assets/images/case-study/widgets/ssr/_ssr 5.png" />
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="glide__arrows" data-glide-el="controls">
+                  <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+                    <img src="assets/images/case-study/widgets/left.png">
+                  </button>
+                  <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+                    <img src="assets/images/case-study/widgets/right.png">
+                  </button>
+                </div>
+              </div>
+
+              <!-- <figure>
                 <img
-                  src="assets/images/case-study/_ssr 5.png"
+                  src="assets/images/case-study/widgets/ssr/_ssr 1.png"
                 />
                 <figcaption>Fig. 1: Server-Side Rendering Process</figcaption>
               </figure>
-            </div>
-          
+           -->
             <div class="case-study-subsection">
               <h3>2.2 Static Site Generation</h3>
               <p>
@@ -583,5 +616,14 @@
       });
     </script>
     <script type="text/javascript" src="assets/scripts/logo-btn.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+    <script>
+      new Glide('.glide', {
+        type: 'carousel',
+        animationDuration: 0,
+      })
+      .mount();
+    </script>
   </body>
 </html>
