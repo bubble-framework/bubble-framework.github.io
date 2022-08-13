@@ -125,83 +125,281 @@
           <br />
           <br />
 
-          <!-- Section 1 -->
           <div class="case-study-section">
             <div class="case-study-subsection">
-              <h2 class="h2">1. Introduction</h2>
-              <p>Bubble is an open-source solution that automates the deployment of preview apps for dynamic frontend applications built with the Next.js framework.</p>
-              <p>Whenever a developer makes a pull request for a new UI/UX feature they are working on, Bubble will automatically build and deploy a fully-functioning draft of their web application—called a preview app—and provide a URL which can be shared with colleagues. This makes it easy for all relevant stakeholders to immediately review the changes and give feedback.</p> 
-              <p>Bubble integrates with an application’s GitHub repository and automates the deployment and teardown of preview apps through a developer’s own AWS account, allowing developers to maintain full control over their source code and self-hosted cloud-based infrastructure. All preview apps can be easily managed through Bubble’s CLI tool and its user-friendly dashboard interface.</p>
+              <h2>1. Introduction</h2>
+              <p>Bubble is an open-source solution that automates the deployment of preview apps for dynamic frontend applications.</p>
+              <p>Whenever a developer makes a pull request for a new UI/UX feature they are working on, Bubble will automatically build and deploy a fully-functioning draft of their web application—called a preview app—and provide a shareable URL. This makes it easy for all relevant stakeholders to immediately review the changes and give feedback. </p>
+              <p>Bubble integrates with GitHub repositories and automates the deployment and teardown of preview apps through a developer’s own AWS account, allowing developers to maintain full control over their source code and self-hosted cloud-based infrastructure. All preview apps can be easily managed through Bubble’s CLI tool as well as its user-friendly dashboard interface.</p>
+              <p>This case study delves into the problems faced by developers that Bubble aims to solve, how Bubble works, and the key design decisions and tradeoffs we made when building it.</p>
             </div>
           </div>
           
           <div class="case-study-section">
             <div class="case-study-subsection">
-              <h2 class="h2">2. Brief History of Web Development</h2>
+              <h2>2. Brief History of Web Development</h2>
+              <p>To understand Bubble’s use case, we’ll need to be familiar with the web development architecture a typical Bubble user’s application would be built with. Let’s take a step back and walk through a brief history of how web development approaches have evolved.</p>
+              
+              <div class="case-study-subsection">
+                <h3>2.1 Server-Side Rendering</h3>
                 <p>
-                To better understand Bubble’s use case, we need to understand the web development pattern a typical Bubble user’s application would be built with. In order to do so, let’s first walk through a brief history of how web development approaches have evolved over time.
-                </p>
-            </div>
+                  <div class="glide">
+                    <div class="glide__track" data-glide-el="track">
+                      <ul class="glide__slides">
+                        <li class="glide__slide">
+                          <img src="assets/images/case-study/widgets/ssr/_ssr1.png" />
+                        </li>
+                        <li class="glide__slide">
+                          <img src="assets/images/case-study/widgets/ssr/_ssr2.png" />
+                        </li>
+                        <li class="glide__slide">
+                          <img src="assets/images/case-study/widgets/ssr/_ssr3.png" />
+                        </li>
+                        <li class="glide__slide">
+                          <img src="assets/images/case-study/widgets/ssr/_ssr4.png" />
+                        </li>
+                        <li class="glide__slide">
+                          <img src="assets/images/case-study/widgets/ssr/_ssr5.png" />
+                        </li>
+                      </ul>
+                    </div>
           
-            <div class="case-study-subsection">
-              <h3>2.1 Server-Side Rendering</h3>
-              <p>
-                Traditionally, the most common strategy for building web pages and applications was based on client-server communication whereby a client, for example an end user’s browser, would request a page from a website or application, and the server would be responsible for responding with a fully-generated HTML page. With this approach, the server does most of the heavy lifting at request time - upon receiving the request from the client, the server would fetch any data from the database and other resources (i.e. CSS, images, etc.) needed in regards to the specific request, generate the full HTML components with the retrieved data and assets, and send this back to the client to display to the end user. This process, appropriately named server-side-rendering (SSR), would be repeated with every incoming request from the client.
-              </p>
-
-              <div class="glide">
-                <div class="glide__track" data-glide-el="track">
-                  <ul class="glide__slides">
-                    <li class="glide__slide">
-                      <img src="assets/images/case-study/widgets/ssr/_ssr1.png" />
-                    </li>
-                    <li class="glide__slide">
-                      <img src="assets/images/case-study/widgets/ssr/_ssr2.png" />
-                    </li>
-                    <li class="glide__slide">
-                      <img src="assets/images/case-study/widgets/ssr/_ssr3.png" />
-                    </li>
-                    <li class="glide__slide">
-                      <img src="assets/images/case-study/widgets/ssr/_ssr4.png" />
-                    </li>
-                    <li class="glide__slide">
-                      <img src="assets/images/case-study/widgets/ssr/_ssr5.png" />
-                    </li>
-                  </ul>
+                    <div class="glide__arrows" data-glide-el="controls">
+                      <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+                        <img src="assets/images/case-study/widgets/left.png">
+                      </button>
+                      <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+                        <img src="assets/images/case-study/widgets/right.png">
+                      </button>
+                    </div>
+                  </div>
+                </p>
+                <p>Traditionally, the most common strategy for building web pages was based on client-server communication: a client – for example, an end user’s browser – would request a page from a website and the server would be responsible for responding with a fully-generated HTML page. With this approach, the server does most of the heavy lifting at request time. When it receives the request, the server fetches any data from the database along with other resources (i.e. CSS, images, etc.) needed, generates the full HTML, and then sends it back to the client to display to the end user. This process, appropriately named <strong>server-side rendering</strong> (SSR), is repeated with every request from the client.</p>
+              </div>
+              
+              <div class="case-study-subsection">
+              <h3>2.2 Static Site Generation</h3>
+                <p>[Redundant server work gif]</p>
+                <p>As websites grew to serve more and more content, it became clear that some of this content didn’t necessarily need to be completely “dynamic,” meaning there would be little to no change required for a given page’s content on every request. For example, consider a company’s landing page or a blog post, where the content of these pages remains the same for long periods of time regardless of who’s requesting it—it quickly becomes wasteful and inefficient for the server to dynamically regenerate these kinds of pages each time a client makes a request. This led to the rise in popularity of **static site generation **(SSG).</p>
+                <p>[SSG architecture widget]</p>
+                <p>With statically generated sites, HTML pages are pre-built before a user ever requests them. At build time, a server is responsible for retrieving data and fully generating the HTML. This process is very similar to SSR; the key difference lies in <strong><em>when</em></strong> the server carries out this responsibility. With SSR, this happens at request time—but with SSG, the HTML is generated before it’s ever requested.</p>
+                <p>The pre-built HTML, along with other assets needed to correctly display the page such as images and videos, is then typically cached in a content delivery network (CDN), a geographically distributed group of servers that can very quickly deliver content from a location near the client at request time.</p>
+              </div>
+              
+              <div class="case-study-subsection">
+                <h3>2.3 Comparison of SSR &amp; SSG</h3>
+                <p>Now that we have an idea of what each approach entails, we can ask: what types of web applications would be better served by each strategy?</p>
+                <p>[SSR vs. SSG table]</p>
+                
+                <div class="case-study-subsection">
+                  <h4>2.3.1 Search Engine Optimization (SEO)</h4>
+                  <p>Both SSR and SSG are beneficial for apps that value Search Engine Optimization (SEO) since the HTML sent back to the client is already fully formed for web crawlers to parse and index.</p>
                 </div>
-
-                <div class="glide__arrows" data-glide-el="controls">
-                  <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
-                    <img src="assets/images/case-study/widgets/left.png">
-                  </button>
-                  <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
-                    <img src="assets/images/case-study/widgets/right.png">
-                  </button>
+                
+                <div class="case-study-subsection">
+                  <h4>2.3.2 Request-Time Access to Sensitive Information</h4>
+                  <p>Only SSR makes it possible to dynamically retrieve data at request time without needing to make a public API call using client-side JavaScript. This is necessary for apps that use secrets that shouldn’t be publicly accessible, for example, authentication information that may be needed to fetch data from a database and should only be known to the server.</p>
+                  <p>However, SSG does offer its own security benefits in that with pre-built static files, there are fewer opportunities for attackers to inject malicious code or take advantage of potential server-side security holes. As a result, SSG is not suitable for displaying user authenticated content or processing user data. Although many features have been developed to overcome these limitations, SSG generally works best when the pages are consistent for all users.</p>
+                </div>
+                
+                <div class="case-study-subsection">
+                  <h4>2.3.3 Frequent Page Updates</h4>
+                  <p>SSR is a good fit for apps whose page content needs to remain up-to-date because the server regenerates the page on every single request. In contrast, SSG isn’t well-suited for such frequent changes since a build and deployment process must be executed each time a page’s content needs to be updated.</p>
+                </div>
+                
+                <div class="case-study-subsection">
+                  <h4>2.3.4 Page Load Speed</h4>
+                  <p>SSG is particularly useful for sites that require fast page loads. Statically generated sites excel in performance since all webpages are pre-built and served by a CDN without needing to run resource-intensive server-side scripts at request time. </p>
+                  <p>With SSR, even though initial page loads are typically fast, there may be slower subsequent loading times. </p>
+                </div>
+                
+                <div class="case-study-subsection">
+                  <h4>2.3.5 Scaling For Users</h4>
+                  <p>Finally, SSG is a better fit for scaling for many users since CDNs by default can handle increased traffic at scale. An SSR architecture by nature does not necessarily have this same benefit.</p>
+                </div>
+                
+                <div class="case-study-subsection">
+                  <h4>2.3.6 Summary of Use Cases for SSR vs. SSG</h4>
+                  <p>Overall, web applications that can tolerate slightly longer page loads and whose pages need to remain up-to-date, access private data, and remain high in search engine rankings are well-suited to use SSR.</p>
+                  <p>SSG, on the other hand, is well-suited for applications where fast load times are a primary concern and the content does not frequently change. </p>
                 </div>
               </div>
-
-              <!-- <figure>
-                <img
-                  src="assets/images/case-study/widgets/ssr/_ssr 1.png"
-                />
-                <figcaption>Fig. 1: Server-Side Rendering Process</figcaption>
-              </figure>
-           -->
+            </div>
+          </div>
+          
+          <div class="case-study-section">
             <div class="case-study-subsection">
-              <h3>2.2 Static Site Generation</h3>
-              <p>
-                As websites grew to serve more and more content, some of this content didn’t necessarily need to be completely “dynamic”, meaning there would be little to no change required for this content on every request. For example, consider a company landing page or a blog post, where the content of these pages can always stay the same regardless of who’s requesting it - it would be wasteful and inefficient to have the server dynamically generate these kinds of pages each time a client makes a request; rather, it’d be more ideal if an application could serve up the same, already generated HTML for every request. Web developers thus looked for a better, more lightweight approach to serve up these types of static pages, leading to the rise in popularity of static site generation (SSG). 
-              </p>
-              <p>
-                With statically generated sites, complete HTML pages ready for serving to users are “pre-built” before the user ever requests them: at build time, a server is responsible for combining content and templates into ready-to-go HTML. This process of combining different files into HTML is very similar to the SSR process described above; the key difference lies in when the server carries out the combination: before the client ever makes a request.
-              </p>
-              <p>
-                The pre-built HTML, along with other assets needed to correctly display the page such as images and videos, is then typically cached in a content delivery network (CDN). A CDN is a geographically distributed group of servers that can quickly deliver content from a location closest to the client at request time.
-              </p>
+              <h2>3. The Changing Landscape</h2>
+              
+              <div class="case-study-subsection">
+                <h3>3.1. Modern Web Development</h3>
+                <p>[Hybrid SSR and SSG image]</p>
+                <p>Historically, applications could be neatly categorized into using either SSR or SSG. However, modern web development frameworks have begun to blur the lines between static and dynamic applications, ushering in greater flexibility by making use of a hybrid approach. </p>
+                <p>For example, Next.js is a popular framework that fits into this new wave of modern frameworks that allow developers to better optimize their applications. It began primarily as an SSR framework, but in recent years, it has introduced support for SSG. Today, Next.js allows developers to build apps with both SSR and SSG on a per-page basis. </p>
+                <p>For applications that are content-rich but only require frequent dynamic data retrieval for select pages, it makes sense to use SSG to pre-build their simpler static pages. Those pages can then be served up quickly, while SSR can handle the other pages requiring frequently changing, up-to-date content on demand.</p>
+                <p>We’ve seen that SSG and SSR are good approaches for apps that value SEO, so if used in conjunction, developers can continue to reap this benefit; this is essential for apps that rely on search and filtering to improve page ranking and bring in new customers. A common real-world use case for this blended approach is with e-commerce applications.</p>
+              </div>
+              
+              <div class="case-study-subsection">
+                <h3>3.2. Giraffe: A Target User</h3>
+                <p>Let’s consider a hypothetical company named Giraffe as an example to better illustrate Bubble’s use case.</p>
+                <p>[Giraffe categories page image (slide 10)]</p>
+                <p>Giraffe is an e-commerce application that sells giraffe-related merchandise. They self-host an online storefront implemented with the Next.js framework. </p>
+                <p>Their application uses a mix of SSG and SSR to generate content: for example, the product categories page is generated through SSG, while product recommendation pages—which require data that’s unique to every user—are generated with SSR.</p>
+                <p>Giraffe chose Next.js for its many features that align with marketing optimization, such as image optimization for product discovery and built-in analytics for the performance of their site. </p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="case-study-section">
+            <div class="case-study-subsection">
+              <h2>4. The Problem</h2>
+              <p>Recently, Giraffe’s been doing very well. They’ve hired additional engineers to develop new features and bring a new look to their website, but they’re starting to experience bottlenecks during the development process.</p>
+              <p>[Giraffe developers bottleneck image]</p>
+              <p>Since multiple developers often work on new features simultaneously and also need to collaborate with various other departments, collecting feedback from different teams is starting to take too long and involves a lot of back-and-forth—even for very simple UI changes.</p>
+              <p>At this point, Giraffe is asking what they can do to streamline this process.</p>
+              
+              <div class="case-study-subsection">
+                <h3>4.1. Getting Feedback In a Manual Way</h3>
+                <p>[Manual feedback image]</p>
+                <p>Before the recent expansions in their organization and additions to their site, sharing progress was easier for developers at Giraffe.</p>
+                <p>They used manual approaches like sending screenshots to each other, or screen-sharing for interactive features. </p>
+                <p>Occasionally, when non-technical stakeholders from other teams wanted to look at the progress more closely, developers would take the time to help them pull down the code and run it on their local machine. However, with larger teams including remote colleagues and more non-technical stakeholders, it’s no longer practical to spend increasing amounts of developer time helping colleagues download and run local versions of the application to review changes.</p>
+              </div>
+              
+              <div class="case-study-subsection">
+                <h3>4.2. Using a Shared Staging Environment</h3>
+                <p>[Shared staging environment image]</p>
+                <p>One tool that Giraffe uses as part of their development workflow is a shared staging environment. This is an environment shared amongst all developers collaborating on a repository. </p>
+                <p>A shared staging environment aims to mimic the production environment as closely as possible to ensure all new changes are working as intended before they are released live.</p>
+                <p>Different types of testing can occur when code is pushed to this kind of environment: for example, load testing to simulate real-life traffic and determine a website’s performance under such conditions.</p>
+                <p>Using a shared staging environment gives non-technical stakeholders a way to examine changes without having to build and run the application themselves. This allows them to easily examine and provide feedback on in-development UI/UX features.</p>
+                <p>However, multiple teams making different changes to a single environment presented another set of challenges to Giraffe’s workflow.</p>
+              </div>
+              
+              <div class="case-study-subsection">
+                <h3>4.2. Downsides to a Shared Staging Environment</h3>
+                
+                <div class="case-study-subsection">
+                  <h4>4.2.1 Batching</h4>
+                  <p>[Just the batching image]</p>
+                  <p>Since there was only one staging environment for Giraffe to use, oftentimes newly-developed features would end up living together, intermingled within a single environment. </p>
+                  
+                  <div class="case-study-subsection">
+                    <h5>4.2.1.1 Bugs</h5>
+                    <p>Batching together multiple distinct changes in this way caused bugs to arise that were difficult to troubleshoot, because they could have stemmed from conflicts between any of the code updates pushed to the staging environment by different developers.</p>
+                  </div>
+                  
+                  <div class="case-study-subsection">
+                    <h5>4.2.1.2 Bloated Releases</h5>
+                    <p>This type of workflow also led to less-frequent and more bloated releases: with only one centralized environment for non-technical stakeholders to use, reviews tended to happen in larger batches. And when something went wrong and a release needed to be rolled back, it was much more challenging since the releases weren’t atomic.</p>
+                  </div>
+                </div>
+                
+                <div class="case-study-subsection">
+                  <h4>4.2.2 Queuing</h4>
+                  <p>[Just the queuing image]</p>
+                  <p>In an attempt to resolve these issues, Giraffe has switched to queuing instead, allowing only one development team at a time to use the staging environment. This has taken care of the bugs, conflicts, and bloated releases that occurred when distinct changes were all batched together, but has introduced a different set of challenges to their development workflow.</p>
+                  
+                  <div class="case-study-subsection">
+                    <h5>4.2.2.1 Wait Time &amp; Premature Deployment</h5>
+                    <p>With only one team allowed to use the shared environment at a time, developers now have to wait for the environment to be freed up before they can use it. One side effect of queuing is a higher risk of deploying unsafe code: when a developer mistakenly rushes to deploy another colleague’s work in an attempt to free up the staging environment for their own use.</p>
+                  </div>
+                  
+                  <div class="case-study-subsection">
+                    <h5>4.2.2.2 Long Feedback Loop</h5>
+                    <p>Another consequence of queuing has been that valuable developer time is wasted: the feedback loops formed by developers and reviewers are now much longer than before since features often need multiple rounds of changes before they can be moved out of the shared staging environment. Only then can next-in-line changes be reviewed.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="case-study-section">
+            <div class="case-study-subsection">
+              <h2>5. Preview Apps</h2>
+              <p>Because of the challenges associated with using their shared staging environment to iterate on UI/UX changes, Giraffe is looking for other options that could allow them to shorten their feedback loop and minimize bugs from conflicting updates.</p>
+              
+              <div class="case-study-subsection">
+                <h3>5.1. What Are Preview Apps?</h3>
+                <p>[Giraffe preview app image (slide 16)]</p>
+                <p>Preview apps are one way to allow non-technical stakeholders to quickly review UI/UX changes. Preview apps are ephemeral, lightweight, and fully functional versions of an application that can be easily built and deployed—and just as easily torn down. They allow multiple versions of a site to be quickly deployed in isolation: this way, non-technical stakeholders can more easily give feedback on UI/UX changes, and developers can more quickly iterate after receiving that feedback.</p>
+                <p>Each time they wanted to show a new change, a Giraffe developer could deploy a new preview app and share its URL with all relevant stakeholders for evaluation.</p>
+                <p>[Preview App workflow widget w/ numbering]</p>
+                <p>The development workflow using preview apps would be carried out as follows: </p>
+                <ol>
+                <li>When a developer is ready to share their new feature, they initiate a pull request for their feature branch.</li>
+                <li>A preview app is automatically built and deployed with the new feature code, and a unique URL is generated to access it. Product managers and non-technical teams interested in the feature use this URL for reviewing the changes.</li>
+                <li>The developer makes any necessary changes based on feedback and commits to the same feature branch.</li>
+                <li>A new preview app is deployed with the changes with a distinct URL. Since each iteration on the feature branch has its own separate preview app and URL, they can easily be compared side-by-side.</li>
+                <li>The feedback/preview app cycle continues until all stakeholders are happy with the new feature, at which point the code can proceed to the next step in the development pipeline.</li>
+                <li>Once the developer merges and closes the pull request, any associated preview apps are automatically torn down.</li>
+                </ol>
+              </div>
+              
+              <div class="case-study-subsection">
+                <h3>5.2. Benefits of Preview Apps</h3>
+                <p>[Preview app benefits icons]</p>
+                <p>Preview apps reduce some of the headaches that occur when stakeholders use a shared staging environment to review and discuss UI/UX changes.</p>
+                <p>Each new feature can be reviewed in isolation from other application changes still under development, eliminating the chances for hard-to-track-down bugs that may crop up from code conflicts with other new features. </p>
+                <p>In addition, since each developer can deploy and share a preview app for each new feature as frequently as they’d like, they can receive feedback from all stakeholders faster, leading to a more efficient development process with a shortened feedback loop.</p>
+              </div>
+              
+              <div class="case-study-subsection">
+                <h3>5.3. Downsides of Preview Apps</h3>
+                <p>While preview apps help to streamline the process of developing frontend features, they may not be the right choice for everyone. </p>
+                <p>Since they’re intended for testing new features in isolation, preview apps are not a good fit for testing how multiple changes integrate with one another. They also incur costs, as additional infrastructure is provisioned for each preview deployment. And since each preview app has its own URL, interested parties need to manage multiple links, which could become unwieldy as more previews are deployed.</p>
+                <p>[Preview app downsides for third-party and DIY image]</p>
+                <p>Preview apps come with additional drawbacks, depending on whether a team chooses a third-party preview app service or decides to DIY their own. The former racks up more costs in the form of usage fees, and requires that code and data are shared externally with the preview app provider, which may be a concern for some organizations.</p>
+                <p>The DIY solution, on the other hand, adds labor and opportunity costs in the form of development time. </p>
+                <p>After weighing the pros and cons, Giraffe has decided to move forward with integrating the use of preview apps into their development process. Now they need to consider the specific type of preview app solution they will need.</p>
+              </div>
+              
+              <div class="case-study-subsection">
+                <h3>5.4. What Are Dynamic Frontend Preview Apps?</h3>
+                <p>As the landscape of web development has changed and the lines between SSR and SSG have become blurred, the requirements for preview apps have grown. </p>
+                <p>[Dynamic app image (slide 20)]</p>
+                <p>For applications using only SSG, all that a preview app would need is a CDN to deliver static assets; for only SSR, that preview app would only require a server. However, to support applications utilizing both SSR and SSG, the preview app architecture must include both an application server and a CDN, and this adds significant complexity to the design.</p>
+                <p>To support their hybrid application, Giraffe will thus need to find a preview app provider that can handle this complexity to allow them to benefit from fully functional preview apps.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="case-study-section">
+            <div class="case-study-subsection">
+              <h2>6. Existing Solutions</h2>
+              <p>There are several existing solutions for preview apps that present different benefits and drawbacks for a company like Giraffe.</p>
+              
+              <div class="case-study-subsection">
+                <h3>6.1 DIY</h3>
+                <p>[Overwhelming DIY image]</p>
+                <p>One option would be a DIY approach. </p>
+                <p>Building their own system would allow Giraffe to customize their solution according to their exact needs while maintaining full control of their code and preview app infrastructure. The downside is that it’s a time-consuming and complex task to make all the necessary decisions and build out all the components necessary to implement fully-functional preview apps.</p>
+                <p>To construct their DIY solution, Giraffe would need to examine multiple sets of tradeoffs to decide where and how to build and deploy their preview apps. With their design decisions made, they would then need to implement their system, which would include configuring, building, and deploying static assets, routing, and business logic—as well as writing code to automate this entire process and integrate it into their development workflow.</p>
+                <p>Given the time and resources it would take to implement their own system, Giraffe may prefer to look at already-made options.</p>
+              </div>
+              
+              <div class="case-study-subsection">
+                <h3>6.2. Feature vs. Service</h3>
+                <p>[Feature vs. Service table]</p>
+                <p>Preview app solutions on the market typically fall into two categories: feature and service. Both can offer a variety of features and provide dynamic frontend preview apps that support any combination of implementations using SSR and SSG.</p>
+                
+                <div class="case-study-subsection">
+                  <h4>6.2.1 Preview Apps as a Feature</h4>
+                  <p>The first category, preview apps as a feature, refers to preview app functionality that is included as part of a hosting platform. Preview apps as a feature are generally easy to set up and use, and offer an abundance of functionality; however, they require a company’s code and data to be hosted and deployed using that provider’s infrastructure.</p>
+                  <p>If a company is already using a platform like Vercel or Netlify, it would be simple for them to leverage the preview app features they already have access to, but changing hosting providers is a large and complex undertaking. It typically wouldn’t make sense to do so for the sole purpose of using preview apps.</p>
+                </div>
+                
+                <div class="case-study-subsection">
+                  <h4>6.2.2 Preview Apps as a Service</h4>
+                  <p>The other category is preview apps as a service: these are standalone options that can be used on their own, without changing hosting platforms. As a separate service, these options take more setup time and configuration, often requiring the user to write custom files before preview apps can be built and deployed. Preview apps offered as a service are also typically subscription-based, requiring payment for the service regardless of how much or how little it is being used.</p>
+                  <p><em>*Out of all the currently available preview apps solutions, only one, GitLab, is open-source, and it provides preview apps as a feature, meaning it requires that code be hosted on its platform to access its preview apps functionality.</em></p>
+                </div>
+              </div>
             </div>
           </div>
 
-          <!-- Section 10 -->
+          <!-- Team Section -->
           <div class="case-study-section team">
             <h2>10. The Bubble Team</h2>
             <br />
