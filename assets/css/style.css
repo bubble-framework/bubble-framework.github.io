@@ -2039,12 +2039,13 @@ code {
 .glide__arrow {
   width: 6em;
   opacity: 0.5;
-  position: static;
-  border: none;
+}
+
+.glide__arrow--left{
+  left: 150px
 }
 
 /* &#{$se}arrow {
-  position: static;
-  border: none;
+  left: 50%
   /* border-radius: 4px; */
 } */
