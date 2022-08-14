@@ -181,7 +181,7 @@
               <h3>2.2 Static Site Generation</h3>
                 <p>[Redundant server work gif]</p>
                 <p>As websites grew to serve more and more content, it became clear that some of this content didn’t necessarily need to be completely “dynamic,” meaning there would be little to no change required for a given page’s content on every request. For example, consider a company’s landing page or a blog post, where the content of these pages remains the same for long periods of time regardless of who’s requesting it—it quickly becomes wasteful and inefficient for the server to dynamically regenerate these kinds of pages each time a client makes a request. This led to the rise in popularity of **static site generation **(SSG).</p>
-                <p>[SSG architecture widget]</p>
+                <p>[SSG architecture widget-- stills live in /ssg]</p>
                 <p>With statically generated sites, HTML pages are pre-built before a user ever requests them. At build time, a server is responsible for retrieving data and fully generating the HTML. This process is very similar to SSR; the key difference lies in <strong><em>when</em></strong> the server carries out this responsibility. With SSR, this happens at request time—but with SSG, the HTML is generated before it’s ever requested.</p>
                 <p>The pre-built HTML, along with other assets needed to correctly display the page such as images and videos, is then typically cached in a content delivery network (CDN), a geographically distributed group of servers that can very quickly deliver content from a location near the client at request time.</p>
               </div>
