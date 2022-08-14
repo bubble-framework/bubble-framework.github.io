@@ -399,9 +399,341 @@
             </div>
           </div>
 
+          <div class="case-study-subsection">
+            <h2>7. Introducing Bubble</h2>
+            
+            <div class="case-study-subsection">
+              <h3>7.1 Where Bubble Fits In</h3>
+              <p>[Comparison table with Bubble]</p>
+              <p>Bubble combines some of the benefits of both preview apps as a feature and a DIY approach at the cost of supporting fewer features.</p>
+              <p>The benefits of using Bubble are that a company like Giraffe can have preview app functionality that’s easy to set up and use—like preview apps as a feature—while maintaining complete control of their code and data—like a DIY approach.</p>
+              <p>The tradeoff is that Bubble won’t be completely customized in the same way a made-from-scratch solution would be, nor does it support the range of languages and frameworks that a hosting platform would.</p>
+            </div>
+            
+            <div class="case-study-subsection">
+              <h3>7.2 What Bubble Supports</h3>
+              <p>At the moment, Bubble only supports applications built with the Next.js framework.</p>
+              <p>Bubble is intended as a tool for frontend developers working on UI/UX features, which are typically less data-intensive. Thus, we chose to target frontend applications that are decoupled from a database and only access their data layer through API calls. This microservices approach allows us to keep the preview apps lightweight, inexpensive, and quicker to deploy.</p>
+            </div>
+            
+            <div class="case-study-subsection">
+              <h3>7.3 Feature Overview</h3>
+              <p>Bubble has a few important features:</p>
+              <ul>
+              <li>It automatically deploys preview apps when a pull request is opened, as well as when subsequent commits are made to the branch associated with the pull request. Each deployment generates a shareable URL that will be posted on GitHub as a pull request comment.</li>
+              <li>When the branch is merged or the pull request is closed, all associated preview apps will automatically be torn down.</li>
+              </ul>
+              <p>Bubble provides two <strong>user interfaces</strong>: </p>
+              <ul>
+              <li><p>a visual dashboard where the user can manage preview apps across all their local repositories </p></li>
+          
+              <li><p>a command line interface where the user can interact with the preview apps for one repository at a time</p></li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="case-study-subsection">
+            <h2>8. Bubble Architecture</h2>
+            
+            <div class="case-study-subsection">
+              <h3>8.1 Architecture Overview</h3>
+              <p>[Overall architecture image]</p>
+              <p>Bubble consists of three main pieces of architecture: a local user interface, GitHub, and AWS.</p>
+              
+              <div class="case-study-subsection">
+                <h4>8.1.1 Interfaces</h4>
+                <p>[User interface mini-map image]</p>
+                <p>The user interface consists of two parts located on the user’s local machine.</p>
+                <p>Once Bubble is globally installed as an npm package, the user can then access the CLI to initialize an instance of Bubble in a repository directory. This adds necessary files to the local repo and updates files for the dashboard to use.</p>
+                <p>The dashboard is a locally-run web application that provides a user-friendly visual interface for viewing, managing, and destroying preview apps. It combines a back-end, which makes API calls to AWS, with a front-end, for the user to view in their browser.</p>
+              </div>
+              
+              <div class="case-study-subsection">
+                <h4>8.1.2 GitHub Actions</h4>
+                <p>[GitHub mini-map image]</p>
+                <p>Bubble uses GitHub Actions to automate the build, deploy, and destroy process for preview apps. These actions execute workflow files added by Bubble which are triggered through initial pull requests, subsequent commits to those requests, or HTTP requests to GitHub servers sent via the Bubble CLI.</p>
+                <p>GitHub Actions run on their own servers, so GitHub takes care of spinning them up and down and executing the workflow code.</p>
+              </div>
+              
+              <div class="case-study-subsection">
+                <h4>8.1.3 AWS Services</h4>
+                <p>[AWS infrastructure mini-map image]</p>
+                <p>The final piece of our architecture uses several AWS services to deploy the infrastructure for all preview apps.</p>
+                <p>Each preview app consists of three AWS microservices:</p>
+                <ol>
+                <li>SSR logic and API routes are deployed to **Lambda@Edge **functions.</li>
+                <li>**S3 Buckets **store static assets such as images and pre-built files.</li>
+                <li>**CloudFront **serves both static and dynamic content by associating the functions and S3 buckets to each route of each preview app.</li>
+                </ol>
+                <p>Permissions management and preview app metadata storage are achieved using two additional services:</p>
+                <ol>
+                <li>All AWS commands executed by Bubble are carried out through** IAM **users endowed only with the permissions they need to create, manage and destroy Bubble preview apps. This allows for separation of access from other resources on the user’s AWS account.</li>
+                <li>Two **DynamoDB *<em>tables</em>* **are provisioned to hold metadata related to users’ preview apps.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          
+          <div class="case-study-subsection">
+            <h2>9. The Build Process: Where to Build?</h2>
+            <p>The first major design decision we tackled was where the build process should take place. </p>
+            <p>Bubble automatically builds preview apps on two triggers. One is the opening of a new pull request and the other is any subsequent commit to a branch with an open pull request. Since these events occur within the context of a GitHub repository, we had to decide where we would be able to execute the build process as an automated response to these events.</p>
+            
+            <div class="case-study-subsection">
+              <h3>9.1 GitHub Actions</a></h3>
+              
+              <div class="case-study-subsection">
+                <h4>9.1.1 What is GitHub Actions?</h4>
+                <p>GitHub Actions is an automation tool that allows users to execute code written in files–called workflows– using GitHub Runners: temporary virtual servers that GitHub spins up and down.</p>
+                <p>[GitHub Actions gif]</p>
+                <p>The process– using a Bubble deployment as an example– works as follows: </p>
+                <ol>
+                <li>A Bubble workflow file in the user’s repository is set to listen for pull requests.</li>
+                <li>When a pull request is opened, the workflow is triggered and GitHub automatically spins up a runner to execute the workflow.</li>
+                <li>Based on the contents of the workflow file, the GitHub runner builds and deploys a preview app.</li>
+                <li>After the workflow file finishes execution, the GitHub runner is automatically spun down.</li>
+                </ol>
+                <p>Instead of having to provision and configure our own external build server to run each build process—which would add unnecessary complexity and setup work to our architecture—GitHub Actions provides a simpler way to integrate with GitHub and carry out the build process directly within the context of a repository. </p>
+              </div>
+              
+              <div class="case-study-subsection">
+                <h4>9.1.2 Benefits and Drawbacks of Github Actions</h4>
+                <p>As with most engineering decisions, there are tradeoffs associated with using GitHub Actions. </p>
+                <p>[GitHub Actions cons half]</p>
+                <p>One challenge with using GitHub runners is that they are entirely managed by GitHub and thus cannot be accessed directly, making it difficult to extract outputs and other environmental artifacts. In addition, development is much more constrained than it would be if we were configuring our own build server since workflows can only be defined with YAML files.</p>
+                <p>[GitHub Actions pros half]</p>
+                <p>However, the benefits of using GitHub Actions ultimately outweighed these drawbacks when it came to Bubble’s needs. GitHub Actions includes a free tier that we estimate provides enough compute to make building and deploying preview apps very inexpensive, if not free, for a typical mid-sized team using Bubble.</p>
+                <p>Relying on GitHub runners is also much simpler than implementing and configuring a custom build server and thus abstracts complexity away from our architecture.</p>
+                <p>Finally, since each section of a workflow file can be run on a separate GitHub runner, GitHub Actions allows Bubble to deploy and tear down preview apps in parallel, making this process more efficient. </p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="case-study-subsection">
+            <h2>10. The Build Process: How to Build?</h2>
+            
+            <div class="case-study-subsection">
+              <h3>10.1 The Application Server</h3>
+              <p>[Application server highlight image]</p>
+              <p>Recall that the essential architectural component differentiating a static frontend application from a more complex dynamic one is the need for an application server to generate SSR pages at request time. </p>
+              <p>Since Bubble aims to let users share new UI/UX features quickly and conveniently, we considered options that would allow us to build and deploy applications that include application servers in a lightweight and cost-efficient manner.</p>
+              
+              <div class="case-study-subsection">
+                <h4>10.1.1 Containers</h4>
+                <p>One option would be to deploy the server-side logic and static assets together in a container. </p>
+                <p>A container encapsulates the application code along with all the runtime elements necessary to execute it together in one package. </p>
+                <p>[Containers pros half]</p>
+                <p>With containers, we wouldn’t need to set up and configure multiple nodes of infrastructure or implement routing logic to connect them; instead, we’d be able to deploy only one single entity for each preview app, as the entire application would be spun up in the container as a whole. Since there’s only one piece to consider, containers can easily be moved around and deployed. </p>
+                <p>[Containers cons half]</p>
+                <p>However, containers are constantly running, and would therefore incur costs even while the application is not in use. They also have longer build times since the virtualized OS and runtime need to be built and packaged together on top of the preview app itself.</p>
+              </div>
+              
+              <div class="case-study-subsection">
+                <h4>10.1.2 Serverless Computing</h4>
+                <p>An alternative to containers would be deploying the server-side logic and static assets to separate services. Given our use case of providing temporary preview apps, we found serverless functions to be the most compelling option for deploying server-side logic.</p>
+                <p>[Serverless functions pros half]</p>
+                <p>Despite being called serverless, these functions do run on servers, but they abstract away the logistics of provisioning server resources. There are no ongoing expenses: developers are only charged for the server capacity that their application uses during the time it’s actually being executed.</p>
+                <p>Since they don’t need to include system dependencies, serverless functions are also very fast to deploy, typically going live within milliseconds. </p>
+                <p>[Serverless functions cons half]</p>
+                <p>One downside of serverless functions is the added complexity of the architecture for preview apps: as opposed to containers, using serverless functions requires multiple nodes of infrastructure as well as routing logic to direct traffic between them. </p>
+                <p>Another inherent drawback is what’s called “cold starts”: since serverless functions aren’t constantly running, they have to be spun up before beginning execution. This can sometimes take several seconds, which can lead to longer loading times for SSR pages.</p>
+                <p>Ultimately, we chose to use serverless functions rather than containers. Bubble’s preview apps do not need to be highly performant, so cold starts are acceptable. In terms of the architectural complexity, although serverless functions necessitate additional infrastructure, being able to use separate services for SSR and SSG allows us to fully optimize for the hybrid approach that Next.js supports.</p>
+                <p>As we delved further into utilizing serverless functions for our preview apps, we considered three open-source frameworks with which to automate deployment.</p>
+              </div>
+            </div>
+            
+            <div class="case-study-subsection">
+              <h3>10.2 Serverless Computing Options</h3>
+              
+              <div class="case-study-subsection">
+                <h4>10.2.1 <a href="https://tsh.io/blog/aws-infrastructure-terraform-serverless/#:~:text=You%20write%20code%20that%20defines,place%20where%20you%20create%20code.">Terraform</a></h4>
+                <p>[Terraform infrastructure image]</p>
+                <p>The Terraform Next.js module for AWS is the first tool we considered.</p>
+                <p>This open-source module uses Terraform – an “infrastructure as code” framework used to manage the lifecycle of cloud components - to deploy Next.js applications on AWS services. The upsides to this option are that it is actively maintained and supports all versions of Next.js.  </p>
+                <p>Compared to other solutions, the Terraform module uses a more complex architecture to deploy apps. The AWS services used include CloudFront to handle incoming traffic, a Lambda@Edge function that acts as a proxy handler to route requests, an S3 bucket for static content storage, Lambda functions for serving the dynamic SSR pages, and an API Gateway that balances traffic between the Lambda functions.</p>
+                <p>The cost of this heavy underlying infrastructure is lengthy deployment times. During our test runs using this module with multiple Next.js applications, we found that deploying a simple app took more than 15 minutes. We also encountered a few deployment failures, which were challenging to debug because of the architectural complexity, and these failures led us to question the reliability of this option. </p>
+              </div>
+              
+              <div class="case-study-subsection">
+                <h4>10.2.2 FAB</h4>
+                <p>[FAB infrastructure image]</p>
+                <p>Frontend Application Bundle (also called FAB) is another open-source framework that enables users to deploy Next.js applications through a CLI. </p>
+                <p>FAB zips up entire applications and ships static assets and server-side logic separately. Thus, the user has the option to choose separate platforms for serving static and dynamic content. For example, they could deploy static assets to AWS S3 while deploying serverless functions with Cloudflare workers. Although it aims to be platform agnostic, for serverless functions, FAB is currently most streamlined for Cloudflare Workers and AWS Lambdas. </p>
+                <p>When using FAB to deploy a few Next.js applications, it took no more than 5 minutes to deploy each app, which was significantly faster than other tools we considered, especially Terraform. </p>
+                <p>However, unlike the other options, FAB has not been maintained for over a year and a half and consequently doesn’t support Next.js applications beyond version 10. For reference, Next.js is currently on version 12. </p>
+              </div>
+              
+              <div class="case-study-subsection">
+                <h4>10.2.3 <a href="https://www.serverless.com/plugins/serverless-nextjs-plugin">Serverless Framework</a></h4>
+                <p>[Serverless Next.js infrastructure image]</p>
+                <p>The final option we considered was the Serverless Framework: specifically, the Serverless Next.js Component.</p>
+                <p>Serverless Next.js deploys apps using only three AWS services: CloudFront, Lambda@Edge, and S3. This is a simpler architecture in comparison to the Terraform module, which may be a contributing factor to its faster deployment time. While provisioning the CloudFront distribution does take a few minutes, it still took less than half the time to deploy compared to Terraform. </p>
+                <p>One downside of using Serverless Next.js is that unlike the flexibility of FAB, it currently only supports deployment on AWS infrastructure. Moreover, server-side logic can only be deployed to Lambda@Edge functions. However, while FAB is no longer actively maintained, Serverless Next.js continues to be a reliable framework considering how many people use it to deploy Next.js applications. The maintainers are still active and its latest version was released just a few months ago in March 2022. </p>
+                <p>In the end, we selected Serverless Next.js to build and deploy Bubble’s preview apps, due to its reliability, relatively fast deployment time, and simplified architecture, which would best serve Bubble’s goal of automating lightweight and convenient preview apps.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="case-study-subsection">
+            <h2>11. Additional AWS Services</h2>
+            
+            <div class="case-study-subsection">
+              <h3>11.1 IAM</h3>
+              <p>[IAM mini-flow image]</p>
+              <p>Bubble creates new IAM users for identity and access management. An IAM user for a particular GitHub repository will have limited access to only those resources needed for Bubble’s features. The access key for the user is saved locally on the user's computer and also in GitHub secrets. This allows a separation of access to resources on a user’s AWS account for other use, limiting the damage that a malicious user could do if they were to act on the IAM user’s behalf.</p>
+            </div>
+            
+            <div class="case-study-subsection">
+              <h3>11.2 DynamoDB</h3>
+              <p>[DynamoDB zoom-in mini-map image like our brainstorm?]</p>
+              <p>In order to keep track of all the preview apps and their resources including CloudFront distributions, S3 buckets, and associated Lambda functions, Bubble persists related metadata. Because Bubble automatically destroys preview apps on pull request triggers through workflow files, the data needs to be accessed remotely from a GitHub runner.</p>
+              <p>One option would have been to save the data locally on the user's computer and spin up a server listening for API calls from GitHub. However, that would necessitate a long-running server provisioned either on the user's local machine or through a cloud provider on their behalf.</p>
+              <p>Instead, Bubble provisions DynamoDB tables during initialization and saves metadata to them whenever a preview app is deployed. Because the IAM user’s access key is saved in GitHub secrets, workflow files can access those keys to configure the AWS command line tool on the GitHub server.</p>
+              <p>Furthermore, in pursuit of our goal of being lightweight and low-cost, DynamoDB tables are provisioned in an on-demand capacity mode. This means the user is only charged for data writes and reads. These tables are torn down automatically if the user ever executes Bubble’s resource destruction command from the Bubble CLI. </p>
+            </div>
+          </div>
+          
+          <div class="case-study-subsection">
+            <h2>12. Using Bubble</h2>
+            <p>Now that we’ve explained how Bubble was built, we can take a further look at the two user interfaces that Bubble provides: the CLI and the dashboard.</p>
+            
+            <div class="case-study-subsection">
+              <h3>12.1 Prerequisites &amp; Installing Bubble</h3>
+              <p>Getting started with Bubble for a Next.js project requires the following prerequisites:</p>
+              <ul>
+              <li>An AWS Account and AWS CLI configured to the account</li>
+              <li>A GitHub Token with repository-level permissions</li>
+              <li>Node.js and <code>npm</code></li>
+              </ul>
+              <p>Users can install Bubble by running the following npm command:</p>
+              <p><code>npm i -g jjam-bubble</code></p>
+            </div>
+            
+            <div class="case-study-subsection">
+              <h3>12.2 The Bubble CLI</h3>
+              <p>After installing Bubble, the following commands are available on the command line:</p>
+              <p>[Command table]</p>
+            </div>
+            
+            <div class="case-study-subsection">
+              <h3>12.3 The Bubble Dashboard</h3>
+              <p>[Dashboard demo gif if possible!]</p>
+              <p>Users can access the Bubble dashboard using the command <code>bubble dashboard</code> from a Bubble-enabled local repository.</p>
+              <p>Once the dashboard is open, all preview apps on all branches with open pull requests, for that repository, will be displayed. Users are provided links to each preview app, as well as to the GitHub workflow run for that preview app deployment, where the build logs are available.</p>
+              <p>From this view, the user is also able to hit the ‘Destroy’ button, which will begin the destruction process for all preview apps belonging to that repository.</p>
+              <p>Users may navigate to other Bubble-enabled repositories by using the sidebar or the homepage.</p>
+            </div>
+            
+            <div class="case-study-subsection">
+              <h3>12.4 Adding Bubble to a Project</h3>
+              <p>[Init demo?]</p>
+              <p>If the user has a Next.js project to which they would like to add Bubble, the first step is to run the <code>bubble init</code> command in their repository’s root directory.</p>
+              <p>Bubble will then request a GitHub Personal Access Token (if this isn’t the user’s first time using Bubble, they may continue to use the same token for subsequent Bubble-integrated projects).</p>
+              <p>A <code>.bubble</code> folder will be created in the user’s local machine’s home directory to house their configuration details, data on all active Bubble-integrated repositories, and all code and packages needed to successfully run the dashboard. Another folder, <code>.github/workflows</code>, will be created in the project directory. The contents of this folder are the GitHub Actions workflow files necessary for automating preview app deployment and destruction. </p>
+              <p>Afterward, Bubble provisions a new AWS IAM user and configures the user under a new AWS command line profile. Any AWS commands executed from the repository will run under that profile, so that Bubble only has access to resources related to the current repository’s deployments. The user’s AWS access information and  GitHub token will be encrypted and saved to GitHub secrets.</p>
+              <p>Lastly, to keep track of preview app metadata for the repository, a new DynamoDB table will be spun up with the newly created AWS IAM user credentials. </p>
+            </div>
+          </div>
+          
+          <div class="case-study-subsection">
+            <h2>13. Challenges</h2>
+            <p>Now that we’ve explored how Bubble works and some of the design decisions we made, let’s dive further into two of the challenges we encountered during implementation.</p>
+            
+            <div class="case-study-subsection">
+              <h3>13.1 Lambda Function Deletion</h3>
+              <p>[Lambda deletion issue gif]</p>
+              <p>One challenge occurred when we were deleting preview apps.</p>
+              <p>For building and deploying preview apps, we used GitHub Actions to run workflows, and we decided to use the same mechanism for tearing them down These workflows can be triggered automatically, by the closing of a pull request, or manually, using the <code>bubble destroy</code> command through the CLI.</p>
+              <p>When the workflow to destroy a preview app is executed, all AWS resources provisioned for that preview app should be torn down. These resources include the S3 Bucket storage, CloudFront distribution, and Lambda@Edge functions. AWS associates Lambdas with a CloudFront distribution, so the order in which we delete each resource is important.</p>
+              <p>In our Bubble Destroy implementation, we first request that AWS remove the S3 bucket storage, then the CloudFront distribution, and finally the Lambdas. However, even when the CloudFront distributions are successfully deleted, an error often occurs when we attempt to delete the Lambdas. The error states that additional time is needed before they can be deleted—this amount of time can range anywhere from a few hours to a day. </p>
+              <p>Upon further research, we learned this is an AWS limitation when working with Lambda@Edge functions, so we had to find a solution to work around this issue.</p>
+              
+              <div class="case-study-subsection">
+                <h4>13.1.1 Polling</h4>
+                <p>[Polling gif]</p>
+                <p>One solution we considered was polling: repeatedly trying to delete the lambdas and checking whether or not the attempt was successful. This would have involved setting up a process often referred to as a cron job, which enables developers to automatically and repeatedly execute scripts at specified times.</p>
+                <p>Had we chosen this approach, Bubble would have set up a cron job to execute in the background after the user executed <code>bubble destroy</code>: this cron job would have attempted to delete the Lambdas at a specified time every day until none remained.</p>
+                <p>The downside to this approach is that cron jobs run on the operating system: accordingly,   configurations would have differed across operating systems. Multiple implementations would have had to be developed for different systems, all of them including the cron job itself as well as the manual setup of logging in case of errors, the monitoring of those logs, and the additional logic needed to restart the job if the computer were rebooted. </p>
+                <p>Rather than relying on the user’s local machine, another possibility would be implementing a cron job on AWS; however, this would increase costs for the user and add another resource for the application to manage. </p>
+                <p>As a result, we decided that cron jobs would not be a good fit for this specific task.</p>
+              </div>
+              
+              <div class="case-study-subsection">
+                <h4>13.1.2 Additional CLI Command</h4>
+                <p>[Destroy vs. teardown comparison image]</p>
+                <p>Instead of cron jobs, we decided to add a command named <code>bubble teardown</code> which users can run themselves later after running <code>bubble destroy</code> to remove any remaining Lambda@Edge functions.  </p>
+                <p>To make this change, we had to adjust how we maintained the information necessary to tell AWS to remove these functions. We decided to add another table to the DynamoDB database to store metadata for each Lambda. This meant that we also had to alter the workflow for building and deploying preview apps so that the Lambda metadata would be saved during each deployment. </p>
+                <p>This new table is now used when the user runs <code>bubble teardown</code> so that Bubble can identify which functions to delete when issuing AWS CLI commands. The table is then removed once all functions are successfully deleted.</p>
+                <p>Modifying our build workflow and adding this additional table slightly increased the complexity of our application, but we felt it was simpler than implementing multiple cron jobs and the logic it would take to monitor and eventually remove them from the user's system or AWS.</p>
+              </div>
+            </div>
+            
+            <div class="case-study-subsection">
+              <h3>13.2 Build Logs</h3>
+              <p>[Build logs access issue gif or widget]</p>
+              <p>Another challenge we experienced involved capturing the preview app build logs and integrating them into our dashboard.</p>
+              <p>Inspecting build logs can be very beneficial for technical stakeholders because it allows them to examine how their code is being built and deployed, and to be able to investigate in case of failure. Therefore, we wanted to display them on the dashboard interface. </p>
+              <p>Our initial plan was to capture and parse the logs so that we could include them in full on the dashboard. That way, when a user selected a particular preview app deployment, they would be able to view the logs immediately. This turned out to be surprisingly difficult to implement.</p>
+              
+              <div class="case-study-subsection">
+                <h4>13.2.1 Accessing the Logs</h4>
+                <p>As previously discussed, we used Github Actions to deploy and build preview apps. One downside of GitHub Actions is how opaque the runtime environment is. </p>
+                <p>GitHub Actions run on temporary virtual servers which are spun up when a workflow is executed and spun down as soon as execution is complete; this means that the environment for each build is transitory. Therefore, we had to find a way to begin the process of capturing the logs live rather than after the fact. </p>
+                <p>Our first attempts to capture the logs during the build process were unsuccessful because the Action run logs are only available via an API call after the entire execution has finished. </p>
+                <p>We ended up having to cache the <em>run</em>id_ for each workflow on GitHub and then implement an entirely separate workflow which was triggered immediately after each build action finished. This allowed us to access the build logs in their entirety within the new workflow. </p>
+              </div>
+              
+              <div class="case-study-subsection">
+                <h4>13.2.2 Parsing the Logs</h4>
+                <p>[Parsing logs issue image]</p>
+                <p>The next hurdle after retrieving the logs was cleaning and parsing them.</p>
+                <p>As part of displaying workflow execution logs on their site, GitHub injects a variety of metadata and special character sequences. These sequences are used by GitHub when streaming the logs on the GitHub Actions console on their site, but they lead to numerous string parsing errors when handled within a workflow on a GitHub runner.</p>
+                <p>Trying to parse these logs was a painstaking process of manually going through thousands of lines of logs and attempting to eliminate these inserted characters without removing meaningful log data. The number of edge cases that required special handling kept growing and growing with no end in sight. </p>
+              </div>
+              
+              <div class="case-study-subsection">
+                <h4>13.2.3 Storing the Logs</h4>
+                <p>In addition to the snowballing parsing challenges, we also had to decide how and where we would store the logs. Build logs can easily contain thousands of lines, so they are not trivial to store. </p>
+                <p>Since we were already utilizing AWS microservices for our architecture, we limited our options to their offerings. We began by considering DynamoDB, which we were already using in each Bubble project. However, we realized that a set of logs could easily exceed the single-item storage limit.</p>
+                <p>Another option we thought about was using additional S3 buckets to store the logs as objects. After the initial parsing, there would be no need to ever update the logs; we could simply retrieve them later, in one piece, as they were originally stored. This means that object storage would be a good fit for the logs.</p>
+                <p>Although we’d found a suitable way to store the logs, another major concern that grew increasingly apparent was the potential impact of cost for the user: as the logs stored piled up, additional AWS charges would accrue for our end users.</p>
+                <p>[complicated stack of graphics (before the 'poof!') image]</p>
+                <p>As we progressed further down this route and realized both our development and architectural complexity were increasing notably, we chose to streamline this feature and move in a different direction.</p>
+              </div>
+              
+              <div class="case-study-subsection">
+                <h4>13.2.4 Solution: Link to Logs</h4>
+                <p>[Link to logs still image]</p>
+                <p>Instead of processing the logs ourselves and making them available in full on the Bubble dashboard, we decided to add a link on the dashboard for each preview app’s build log. When followed, this link takes the user directly to the GitHub workflow run where they have the option to download the logs for that specific preview app.</p>
+                <p>Although this option requires a couple more clicks for the user, it significantly reduces the complexity of Bubble itself as well as the storage needs (and costs) of the user’s AWS account. </p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="case-study-subsection">
+            <h2>14. Future Work</h2>
+            <p>[Future work image]</p>
+            <p>Now that we’re well-acquainted with Bubble and the design decisions that went into building it, the following are some features we’d like to include in the future.</p>
+            
+            <div class="case-study-subsection">
+              <h3>14.1 Support Additional Frameworks</h3>
+              <p>Currently, Bubble only supports the Next.js framework. We would eventually like to support building and deploying preview apps for other frontend frameworks such as React, Vue, etc</p>
+            </div>
+            
+            <div class="case-study-subsection">
+              <h3>14.2 Share the Dashboard</h3>
+              <p>At the moment, the dashboard can only be viewed by the developer who installed Bubble. In the future, we would like the dashboard to be more distributed so that developers from the same team can share one dashboard to manage and view their preview apps in one place.</p>
+            </div>
+            
+            <div class="case-study-subsection">
+              <h3>14.3 Deploy to Other Cloud Providers</h3>
+              <p>Finally, Bubble’s preview apps are currently only deployed on AWS infrastructure, but we’d be interested in exploring how to integrate our solution with alternative cloud providers, such as Cloudflare and Google Cloud. </p>
+            </div>
+          </div>
+
           <!-- Team Section -->
           <div class="case-study-section team">
-            <h2>10. The Bubble Team</h2>
+            <h2>11. The Bubble Team</h2>
             <br />
             <br />
             <div class="section team-section">
