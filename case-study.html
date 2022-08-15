@@ -430,7 +430,7 @@
                 infrastructure is provisioned for each preview deployment. And since each preview app has its own URL,
                 interested parties need to manage multiple links, which could become unwieldy as more previews are
                 deployed.</p>
-              <p>[Preview app downsides for third-party and DIY image]</p>
+              <img src="assets/images/case-study/preview_app_downsides.png">
               <p>Preview apps come with additional drawbacks, depending on whether a team chooses a third-party preview
                 app service or decides to DIY their own. The former racks up more costs in the form of usage fees, and
                 requires that code and data are shared externally with the preview app provider, which may be a concern
@@ -519,7 +519,7 @@
 
           <div class="case-study-subsection">
             <h3>7.1 Where Bubble Fits In</h3>
-            <p>[Comparison table with Bubble]</p>
+            <img src="assets/images/case-study/comparison_table_w_bubble.png">
             <p>Bubble combines some of the benefits of both preview apps as a feature and a DIY approach at the cost of
               supporting fewer features.</p>
             <p>The benefits of using Bubble are that a company like Giraffe can have preview app functionality that’s
@@ -572,7 +572,7 @@
 
             <div class="case-study-subsection">
               <h4>8.1.1 Interfaces</h4>
-              <p>[User interface mini-map image]</p>
+              <img src="assets/images/case-study/user_interface_minimap.png">
               <p>The user interface consists of two parts located on the user’s local machine.</p>
               <p>Once Bubble is globally installed as an npm package, the user can then access the CLI to initialize an
                 instance of Bubble in a repository directory. This adds necessary files to the local repo and updates
@@ -599,17 +599,18 @@
                 preview apps.</p>
               <p>Each preview app consists of three AWS microservices:</p>
               <ol>
-                <li>SSR logic and API routes are deployed to **Lambda@Edge **functions.</li>
-                <li>**S3 Buckets **store static assets such as images and pre-built files.</li>
-                <li>**CloudFront **serves both static and dynamic content by associating the functions and S3 buckets to
+                <li>SSR logic and API routes are deployed to <em>Lambda@Edge functions</em>.</li>
+                <li><em>S3 Buckets</em> store static assets such as images and pre-built files.</li>
+                <li><em>CloudFront</em> serves both static and dynamic content by associating the functions and S3
+                  buckets to
                   each route of each preview app.</li>
               </ol>
               <p>Permissions management and preview app metadata storage are achieved using two additional services:</p>
               <ol>
-                <li>All AWS commands executed by Bubble are carried out through** IAM **users endowed only with the
+                <li>All AWS commands executed by Bubble are carried out through <em>IAM</em> users endowed only with the
                   permissions they need to create, manage and destroy Bubble preview apps. This allows for separation of
                   access from other resources on the user’s AWS account.</li>
-                <li>Two **DynamoDB *<em>tables</em>* **are provisioned to hold metadata related to users’ preview apps.
+                <li>Two <em>DynamoDB tables</em> are provisioned to hold metadata related to users’ preview apps.
                 </li>
               </ol>
             </div>
@@ -726,9 +727,7 @@
             <h3>10.2 Serverless Computing Options</h3>
 
             <div class="case-study-subsection">
-              <h4>10.2.1 <a
-                  href="https://tsh.io/blog/aws-infrastructure-terraform-serverless/#:~:text=You%20write%20code%20that%20defines,place%20where%20you%20create%20code.">Terraform</a>
-              </h4>
+              <h4>10.2.1 Terraform</h4>
               <p>[Terraform pros and cons]</p>
               <p>The Terraform Next.js module for AWS is the first tool we considered.</p>
               <p>This open-source module uses Terraform – an “infrastructure as code” framework used to manage the
@@ -763,8 +762,7 @@
             </div>
 
             <div class="case-study-subsection">
-              <h4>10.2.3 <a href="https://www.serverless.com/plugins/serverless-nextjs-plugin">Serverless Framework</a>
-              </h4>
+              <h4>10.2.3 Serverless Framework</h4>
               <p>[Serverless Next.js infrastructure image]</p>
               <p>The final option we considered was the Serverless Framework: specifically, the Serverless Next.js
                 Component.</p>
@@ -994,7 +992,7 @@
               <p>Although we’d found a suitable way to store the logs, another major concern that grew increasingly
                 apparent was the potential impact of cost for the user: as the logs stored piled up, additional AWS
                 charges would accrue for our end users.</p>
-              <p>[complicated stack of graphics (before the 'poof!') image]</p>
+              <img src="assets/images/case-study/logging_complexity.png">
               <p>As we progressed further down this route and realized both our development and architectural complexity
                 were increasing notably, we chose to streamline this feature and move in a different direction.</p>
             </div>
