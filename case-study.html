@@ -119,11 +119,11 @@
               </h3>
               <p>
                 <div class="glider-contain">
-                  <button class="glider-prev glider-arrow">
+                  <button id="ssr-glider-prev" class="glider-prev">
                     <img src="assets/images/case-study/widgets/left.png">
                   </button>
 
-                  <div class="glider">
+                  <div id="ssr-glider" class="glider">
                     <div>
                       <img src="assets/images/case-study/widgets/ssr/ssr1.png" />
                     </div>
@@ -141,11 +141,11 @@
                     </div>
                   </div>
 
-                  <button class="glider-next glider-arrow">
+                  <button id="ssr-glider-next" class="glider-next glider-arrow">
                     <img src="assets/images/case-study/widgets/right.png">
                   </button>
 
-                  <div id="dots" class="glider-dots"></div>
+                  <div id="ssr-dots" class="glider-dots"></div>
                 </div>
               </p>
               <p>Traditionally, the most common strategy for building web pages was based on client-server
@@ -167,9 +167,43 @@
                 given page’s content on every request. For example, consider a company’s landing page or a blog post,
                 where the content of these pages remains the same for long periods of time regardless of who’s
                 requesting it—it quickly becomes wasteful and inefficient for the server to dynamically regenerate these
-                kinds of pages each time a client makes a request. This led to the rise in popularity of **static site
-                generation **(SSG).</p>
-              <p>[SSG architecture widget-- stills live in /ssg]</p>
+                kinds of pages each time a client makes a request. This led to the rise in popularity of <strong>static site
+                generation (SSG).</strong>
+              </p>
+              <p>
+                <div class="glider-contain">
+                  <button id="ssg-glider-prev" class="glider-prev">
+                    <img src="assets/images/case-study/widgets/left.png">
+                  </button>
+
+                  <div id="ssg-glider" class="glider">
+                    <div>
+                      <img src="assets/images/case-study/widgets/ssg/ssg1.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/ssg/ssg2.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/ssg/ssg3.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/ssg/ssg4.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/ssg/ssg5.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/ssg/ssg6.png" />
+                    </div>
+                  </div>
+
+                  <button id="ssg-glider-next" class="glider-next glider-arrow">
+                    <img src="assets/images/case-study/widgets/right.png">
+                  </button>
+
+                  <div id="ssg-dots" class="glider-dots"></div>
+                </div>
+              </p>
               <p>With statically generated sites, HTML pages are pre-built before a user ever requests them. At build
                 time, a server is responsible for retrieving data and fully generating the HTML. This process is very
                 similar to SSR; the key difference lies in <strong><em>when</em></strong> the server carries out this
@@ -1437,12 +1471,21 @@
 
   <script src="assets/scripts/glider.min.js"></script>
   <script>
-    new Glider(document.querySelector('.glider'), {
+    new Glider(document.querySelector('#ssr-glider'), {
       slidesToShow: 1,
-      dots: '#dots',
+      dots: '#ssr-dots',
       arrows: {
-        prev: '.glider-prev',
-        next: '.glider-next'
+        prev: '#ssr-glider-prev',
+        next: '#ssr-glider-next'
+      }
+    });
+
+    new Glider(document.querySelector('#ssg-glider'), {
+      slidesToShow: 1,
+      dots: '#ssg-dots',
+      arrows: {
+        prev: '#ssg-glider-prev',
+        next: '#ssg-glider-next'
       }
     });
   </script>
