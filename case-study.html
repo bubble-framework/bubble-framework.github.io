@@ -432,7 +432,58 @@
                 changes, and developers can more quickly iterate after receiving that feedback.</p>
               <p>Each time they wanted to show a new change, a Giraffe developer could deploy a new preview app and
                 share its URL with all relevant stakeholders for evaluation.</p>
-              <p>[Preview App workflow widget w/ numbering]</p>
+              <p>
+                <div class="glider-contain">
+                  <button id="preview-glider-prev" class="glider-prev">
+                    <img src="assets/images/case-study/widgets/left.png">
+                  </button>
+
+                  <div id="preview-glider" class="glider">
+                    <div>
+                      <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_1.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_2.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_3.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_4.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_5.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_6.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_7.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_8.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_9.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_10.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_11.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_12.png" />
+                    </div>
+                  </div>
+
+                  <button id="preview-glider-next" class="glider-next glider-arrow">
+                    <img src="assets/images/case-study/widgets/right.png">
+                  </button>
+
+                  <div id="preview-dots" class="glider-dots"></div>
+                </div>
+              </p>
               <p>The development workflow using preview apps would be carried out as follows: </p>
               <ol>
                 <li>When a developer is ready to share their new feature, they initiate a pull request for their feature
@@ -1486,6 +1537,15 @@
       arrows: {
         prev: '#ssg-glider-prev',
         next: '#ssg-glider-next'
+      }
+    });
+
+    new Glider(document.querySelector('#preview-glider'), {
+      slidesToShow: 1,
+      dots: '#preview-dots',
+      arrows: {
+        prev: '#preview-glider-prev',
+        next: '#preview-glider-next'
       }
     });
   </script>
