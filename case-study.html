@@ -323,7 +323,7 @@
 
               <div class="case-study-subsection">
                 <h4>4.2.1 Batching</h4>
-                <p>[Just the batching image]</p>
+                <img src="assets/images/case-study/batching.png">
                 <p>Since there was only one staging environment for Giraffe to use, oftentimes newly-developed features
                   would end up living together, intermingled within a single environment. </p>
 
@@ -345,7 +345,7 @@
 
               <div class="case-study-subsection">
                 <h4>4.2.2 Queuing</h4>
-                <p>[Just the queuing image]</p>
+                <img src="assets/images/case-study/queuing.png">
                 <p>In an attempt to resolve these issues, Giraffe has switched to queuing instead, allowing only one
                   development team at a time to use the staging environment. This has taken care of the bugs, conflicts,
                   and bloated releases that occurred when distinct changes were all batched together, but has introduced
@@ -650,12 +650,12 @@
             <div class="case-study-subsection">
               <h4>9.1.2 Benefits and Drawbacks of Github Actions</h4>
               <p>As with most engineering decisions, there are tradeoffs associated with using GitHub Actions. </p>
-              <p>[GitHub Actions cons half]</p>
+              <img src="assets/images/case-study/gh_actions_cons.png">
               <p>One challenge with using GitHub runners is that they are entirely managed by GitHub and thus cannot be
                 accessed directly, making it difficult to extract outputs and other environmental artifacts. In
                 addition, development is much more constrained than it would be if we were configuring our own build
                 server since workflows can only be defined with YAML files.</p>
-              <p>[GitHub Actions pros half]</p>
+              <img src="assets/images/case-study/gh_actions_pros.png">
               <p>However, the benefits of using GitHub Actions ultimately outweighed these drawbacks when it came to
                 Bubble’s needs. GitHub Actions includes a free tier that we estimate provides enough compute to make
                 building and deploying preview apps very inexpensive, if not free, for a typical mid-sized team using
@@ -685,12 +685,12 @@
               <p>One option would be to deploy the server-side logic and static assets together in a container. </p>
               <p>A container encapsulates the application code along with all the runtime elements necessary to execute
                 it together in one package. </p>
-              <p>[Containers pros half]</p>
+              <img src="assets/images/case-study/containers_pros.png">
               <p>With containers, we wouldn’t need to set up and configure multiple nodes of infrastructure or implement
                 routing logic to connect them; instead, we’d be able to deploy only one single entity for each preview
                 app, as the entire application would be spun up in the container as a whole. Since there’s only one
                 piece to consider, containers can easily be moved around and deployed. </p>
-              <p>[Containers cons half]</p>
+              <img src="assets/images/case-study/containers_cons.png">
               <p>However, containers are constantly running, and would therefore incur costs even while the application
                 is not in use. They also have longer build times since the virtualized OS and runtime need to be built
                 and packaged together on top of the preview app itself.</p>
@@ -701,13 +701,13 @@
               <p>An alternative to containers would be deploying the server-side logic and static assets to separate
                 services. Given our use case of providing temporary preview apps, we found serverless functions to be
                 the most compelling option for deploying server-side logic.</p>
-              <p>[Serverless functions pros half]</p>
+              <img src="assets/images/case-study/serverless_pros.png">
               <p>Despite being called serverless, these functions do run on servers, but they abstract away the
                 logistics of provisioning server resources. There are no ongoing expenses: developers are only charged
                 for the server capacity that their application uses during the time it’s actually being executed.</p>
               <p>Since they don’t need to include system dependencies, serverless functions are also very fast to
                 deploy, typically going live within milliseconds. </p>
-              <p>[Serverless functions cons half]</p>
+              <img src="assets/images/case-study/serverless_cons.png">
               <p>One downside of serverless functions is the added complexity of the architecture for preview apps: as
                 opposed to containers, using serverless functions requires multiple nodes of infrastructure as well as
                 routing logic to direct traffic between them. </p>
@@ -728,7 +728,7 @@
 
             <div class="case-study-subsection">
               <h4>10.2.1 Terraform</h4>
-              <p>[Terraform pros and cons]</p>
+              <img src="assets/images/case-study/terraform_pros_cons.png">
               <p>The Terraform Next.js module for AWS is the first tool we considered.</p>
               <p>This open-source module uses Terraform – an “infrastructure as code” framework used to manage the
                 lifecycle of cloud components - to deploy Next.js applications on AWS services. The upsides to this
@@ -746,7 +746,7 @@
 
             <div class="case-study-subsection">
               <h4>10.2.2 FAB</h4>
-              <p>[FAB pros and cons]</p>
+              <img src="assets/images/case-study/fab_pros_cons.png">
               <p>Frontend Application Bundle (also called FAB) is another open-source framework that enables users to
                 deploy Next.js applications through a CLI. </p>
               <p>FAB zips up entire applications and ships static assets and server-side logic separately. Thus, the
@@ -763,7 +763,7 @@
 
             <div class="case-study-subsection">
               <h4>10.2.3 Serverless Framework</h4>
-              <p>[Serverless Next.js infrastructure image]</p>
+              <img src="assets/images/case-study/serverless_pros_cons.png">
               <p>The final option we considered was the Serverless Framework: specifically, the Serverless Next.js
                 Component.</p>
               <p>Serverless Next.js deploys apps using only three AWS services: CloudFront, Lambda@Edge, and S3. This is
