@@ -1,48 +1,34 @@
 <!DOCTYPE html>
 <html data-wf-page="5f71dd169010d6326b65485d">
-  <head>
-    <meta charset="utf-8" />
-    <title>Bubble • Case Study</title>
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.core.min.css" rel="stylesheet" type="text/css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.theme.min.css" rel="stylesheet" type="text/css" />
-    <script
-      src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"
-      type="text/javascript"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Inter:regular,500,600,700"
-      media="all"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Work+Sans"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Nunito+Sans"
-    />
-    <meta
-    name="image"
-    property="og:image"
-    content="assets/images/synapse-case-study.png"
-  />
-    <script type="text/javascript">
-      WebFont.load({ google: { families: ["Inter:regular,500,600,700"] } });
-    </script>
-    <script type="text/javascript">
-      !(function (o, c) {
-        var n = c.documentElement,
-          t = " w-mod-";
-        (n.className += t + "js"),
-          ("ontouchstart" in o ||
-            (o.DocumentTouch && c instanceof DocumentTouch)) &&
-            (n.className += t + "touch");
-      })(window, document);
-    </script>
-    <!-- <link
+
+<head>
+  <meta charset="utf-8" />
+  <title>Bubble • Case Study</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.core.min.css" rel="stylesheet"
+    type="text/css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.theme.min.css" rel="stylesheet"
+    type="text/css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:regular,500,600,700" media="all" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans" />
+  <meta name="image" property="og:image" content="assets/images/synapse-case-study.png" />
+  <script type="text/javascript">
+    WebFont.load({ google: { families: ["Inter:regular,500,600,700"] } });
+  </script>
+  <script type="text/javascript">
+    !(function (o, c) {
+      var n = c.documentElement,
+        t = " w-mod-";
+      (n.className += t + "js"),
+        ("ontouchstart" in o ||
+          (o.DocumentTouch && c instanceof DocumentTouch)) &&
+        (n.className += t + "touch");
+    })(window, document);
+  </script>
+  <!-- <link
       href="assets/images/logo-mono.png"
       rel="shortcut icon"
       type="image/x-icon"
@@ -52,896 +38,1158 @@
       src="https://kit.fontawesome.com/d019875f94.js"
       crossorigin="anonymous"
     ></script> -->
-    <meta
-      name="image"
-      property="og:image"
-      content="assets/images/thumbnail.png"
-    />
-  </head>
+  <meta name="image" property="og:image" content="assets/images/thumbnail.png" />
+</head>
 
-  <body>
-    <!--Navbar-->
-    <div class="navigation-wrap" id="navbar">
-      <div
-        data-collapse="medium"
-        data-animation="default"
-        data-duration="400"
-        role="banner"
-        class="navigation w-nav"
-      >
-        <div class="navigation-container">
-          <div class="navigation-left">
-            <a
-              href="/"
-              aria-current="page"
-              class="brand w-nav-brand w--current"
-              aria-label="home"
-            >
-            <img
-            src="assets/images/bubble-logo-full-light.png"
-            alt=""
-            class="template-logo"
-            onmouseover="hover(this);"
-            onmouseout="unhover(this);"
-          />
+<body>
+  <!--Navbar-->
+  <div class="navigation-wrap" id="navbar">
+    <div data-collapse="medium" data-animation="default" data-duration="400" role="banner" class="navigation w-nav">
+      <div class="navigation-container">
+        <div class="navigation-left">
+          <a href="/" aria-current="page" class="brand w-nav-brand w--current" aria-label="home">
+            <img src="assets/images/bubble-logo-full-light.png" alt="" class="template-logo" onmouseover="hover(this);"
+              onmouseout="unhover(this);" />
+          </a>
+
+          <nav role="navigation" class="nav-menu w-nav-menu">
+            <a href="/case-study" class="link-block w-inline-block">
+              <div>Case Study</div>
             </a>
-
-            <nav role="navigation" class="nav-menu w-nav-menu">
-              <a href="/case-study" class="link-block w-inline-block">
-                <div>Case Study</div>
-              </a>
-              <a href="/team" class="link-block w-inline-block">
-                <div>Team</div>
-              </a>
-            </nav>
-          </div>
-          <div class="navigation-right">
-            <div class="login-buttons">
-              <a
-                href="https://github.com/jjam-bubble/bubble-framework"
-                target="_blank"
-              >
-                <span style="color: #0a0188">
-                  <i class="fab fa-github fa-lg"></i>
-                </span>
-              </a>
-            </div>
+            <a href="/team" class="link-block w-inline-block">
+              <div>Team</div>
+            </a>
+          </nav>
+        </div>
+        <div class="navigation-right">
+          <div class="login-buttons">
+            <a href="https://github.com/jjam-bubble/bubble-framework" target="_blank">
+              <span style="color: #0a0188">
+                <i class="fab fa-github fa-lg"></i>
+              </span>
+            </a>
           </div>
         </div>
-        <div class="w-nav-overlay" data-wf-ignore="" id="w-nav-overlay-0"></div>
       </div>
+      <div class="w-nav-overlay" data-wf-ignore="" id="w-nav-overlay-0"></div>
     </div>
+  </div>
 
-    <!-- <div class="wrapper"></div> -->
+  <!-- <div class="wrapper"></div> -->
 
-    <div id="sidebar" class="toc"></div>
+  <div id="sidebar" class="toc"></div>
 
-    <div class="section header">
-      <article class="container case-study-container">
-        <div class="hero-text-container">
-          <h1 class="h1 centered">Case Study</h1>
+  <div class="section header">
+    <article class="container case-study-container">
+      <div class="hero-text-container">
+        <h1 class="h1 centered">Case Study</h1>
+      </div>
+      <div id="case-study">
+        <br />
+        <br />
+
+        <div class="case-study-section">
+          <div class="case-study-subsection">
+            <h2>1. Introduction</h2>
+            <p>Bubble is an open-source solution that automates the deployment of preview apps for dynamic frontend
+              applications.</p>
+            <p>Whenever a developer makes a pull request for a new UI/UX feature they are working on, Bubble will
+              automatically build and deploy a fully-functioning draft of their web application—called a preview app—and
+              provide a shareable URL. This makes it easy for all relevant stakeholders to immediately review the
+              changes and give feedback. </p>
+            <p>Bubble integrates with GitHub repositories and automates the deployment and teardown of preview apps
+              through a developer’s own AWS account, allowing developers to maintain full control over their source code
+              and self-hosted cloud-based infrastructure. All preview apps can be easily managed through Bubble’s CLI
+              tool as well as its user-friendly dashboard interface.</p>
+            <p>This case study delves into the problems faced by developers that Bubble aims to solve, how Bubble works,
+              and the key design decisions and tradeoffs we made when building it.</p>
+          </div>
         </div>
-        <div id="case-study">
-          <br />
-          <br />
 
-          <div class="case-study-section">
+        <div class="case-study-section">
+          <div class="case-study-subsection">
+            <h2>2. Brief History of Web Development</h2>
+            <p>To understand Bubble’s use case, we’ll need to be familiar with the web development architecture a
+              typical Bubble user’s application would be built with. Let’s take a step back and walk through a brief
+              history of how web development approaches have evolved.</p>
+
             <div class="case-study-subsection">
-              <h2>1. Introduction</h2>
-              <p>Bubble is an open-source solution that automates the deployment of preview apps for dynamic frontend applications.</p>
-              <p>Whenever a developer makes a pull request for a new UI/UX feature they are working on, Bubble will automatically build and deploy a fully-functioning draft of their web application—called a preview app—and provide a shareable URL. This makes it easy for all relevant stakeholders to immediately review the changes and give feedback. </p>
-              <p>Bubble integrates with GitHub repositories and automates the deployment and teardown of preview apps through a developer’s own AWS account, allowing developers to maintain full control over their source code and self-hosted cloud-based infrastructure. All preview apps can be easily managed through Bubble’s CLI tool as well as its user-friendly dashboard interface.</p>
-              <p>This case study delves into the problems faced by developers that Bubble aims to solve, how Bubble works, and the key design decisions and tradeoffs we made when building it.</p>
-            </div>
-          </div>
-          
-          <div class="case-study-section">
-            <div class="case-study-subsection">
-              <h2>2. Brief History of Web Development</h2>
-              <p>To understand Bubble’s use case, we’ll need to be familiar with the web development architecture a typical Bubble user’s application would be built with. Let’s take a step back and walk through a brief history of how web development approaches have evolved.</p>
-              
-              <div class="case-study-subsection">
-                <h3>2.1 Server-Side Rendering</h3>
-                <p>
-                  <div class="glide">
-                    <div class="glide__track" data-glide-el="track">
-                      <ul class="glide__slides">
-                        <li class="glide__slide">
-                          <img src="assets/images/case-study/widgets/ssr/_ssr1.png" />
-                        </li>
-                        <li class="glide__slide">
-                          <img src="assets/images/case-study/widgets/ssr/_ssr2.png" />
-                        </li>
-                        <li class="glide__slide">
-                          <img src="assets/images/case-study/widgets/ssr/_ssr3.png" />
-                        </li>
-                        <li class="glide__slide">
-                          <img src="assets/images/case-study/widgets/ssr/_ssr4.png" />
-                        </li>
-                        <li class="glide__slide">
-                          <img src="assets/images/case-study/widgets/ssr/_ssr5.png" />
-                        </li>
-                      </ul>
-                    </div>
-          
-                    <div class="glide__arrows" data-glide-el="controls">
-                      <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
-                        <img src="assets/images/case-study/widgets/left.png">
-                      </button>
-                      <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
-                        <img src="assets/images/case-study/widgets/right.png">
-                      </button>
-                    </div>
-                  </div>
-                </p>
-                <p>Traditionally, the most common strategy for building web pages was based on client-server communication: a client – for example, an end user’s browser – would request a page from a website and the server would be responsible for responding with a fully-generated HTML page. With this approach, the server does most of the heavy lifting at request time. When it receives the request, the server fetches any data from the database along with other resources (i.e. CSS, images, etc.) needed, generates the full HTML, and then sends it back to the client to display to the end user. This process, appropriately named <strong>server-side rendering</strong> (SSR), is repeated with every request from the client.</p>
+              <h3>2.1 Server-Side Rendering</h3>
+              <p>
+              <div class="glide">
+                <div class="glide__track" data-glide-el="track">
+                  <ul class="glide__slides">
+                    <li class="glide__slide">
+                      <img src="/assets/images/case-study/widgets/ssr/_ssr1.png" />
+                    </li>
+                    <li class="glide__slide">
+                      <img src="/assets/images/case-study/widgets/ssr/_ssr2.png" />
+                    </li>
+                    <li class="glide__slide">
+                      <img src="/assets/images/case-study/widgets/ssr/_ssr3.png" />
+                    </li>
+                    <li class="glide__slide">
+                      <img src="/assets/images/case-study/widgets/ssr/_ssr4.png" />
+                    </li>
+                    <li class="glide__slide">
+                      <img src="/assets/images/case-study/widgets/ssr/_ssr5.png" />
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="glide__arrows" data-glide-el="controls">
+                  <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+                    <img src="assets/images/case-study/widgets/left.png">
+                  </button>
+                  <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+                    <img src="assets/images/case-study/widgets/right.png">
+                  </button>
+                </div>
               </div>
-              
-              <div class="case-study-subsection">
+              </p>
+              <p>Traditionally, the most common strategy for building web pages was based on client-server
+                communication: a client – for example, an end user’s browser – would request a page from a website and
+                the server would be responsible for responding with a fully-generated HTML page. With this approach, the
+                server does most of the heavy lifting at request time. When it receives the request, the server fetches
+                any data from the database along with other resources (i.e. CSS, images, etc.) needed, generates the
+                full HTML, and then sends it back to the client to display to the end user. This process, appropriately
+                named <strong>server-side rendering</strong> (SSR), is repeated with every request from the client.</p>
+            </div>
+
+            <div class="case-study-subsection">
               <h3>2.2 Static Site Generation</h3>
-                <p>[Redundant server work gif]</p>
-                <p>As websites grew to serve more and more content, it became clear that some of this content didn’t necessarily need to be completely “dynamic,” meaning there would be little to no change required for a given page’s content on every request. For example, consider a company’s landing page or a blog post, where the content of these pages remains the same for long periods of time regardless of who’s requesting it—it quickly becomes wasteful and inefficient for the server to dynamically regenerate these kinds of pages each time a client makes a request. This led to the rise in popularity of **static site generation **(SSG).</p>
-                <p>[SSG architecture widget-- stills live in /ssg]</p>
-                <p>With statically generated sites, HTML pages are pre-built before a user ever requests them. At build time, a server is responsible for retrieving data and fully generating the HTML. This process is very similar to SSR; the key difference lies in <strong><em>when</em></strong> the server carries out this responsibility. With SSR, this happens at request time—but with SSG, the HTML is generated before it’s ever requested.</p>
-                <p>The pre-built HTML, along with other assets needed to correctly display the page such as images and videos, is then typically cached in a content delivery network (CDN), a geographically distributed group of servers that can very quickly deliver content from a location near the client at request time.</p>
-              </div>
-              
+              <p>[Redundant server work gif]</p>
+              <p>As websites grew to serve more and more content, it became clear that some of this content didn’t
+                necessarily need to be completely “dynamic,” meaning there would be little to no change required for a
+                given page’s content on every request. For example, consider a company’s landing page or a blog post,
+                where the content of these pages remains the same for long periods of time regardless of who’s
+                requesting it—it quickly becomes wasteful and inefficient for the server to dynamically regenerate these
+                kinds of pages each time a client makes a request. This led to the rise in popularity of **static site
+                generation **(SSG).</p>
+              <p>[SSG architecture widget-- stills live in /ssg]</p>
+              <p>With statically generated sites, HTML pages are pre-built before a user ever requests them. At build
+                time, a server is responsible for retrieving data and fully generating the HTML. This process is very
+                similar to SSR; the key difference lies in <strong><em>when</em></strong> the server carries out this
+                responsibility. With SSR, this happens at request time—but with SSG, the HTML is generated before it’s
+                ever requested.</p>
+              <p>The pre-built HTML, along with other assets needed to correctly display the page such as images and
+                videos, is then typically cached in a content delivery network (CDN), a geographically distributed group
+                of servers that can very quickly deliver content from a location near the client at request time.</p>
+            </div>
+
+            <div class="case-study-subsection">
+              <h3>2.3 Comparison of SSR &amp; SSG</h3>
+              <p>Now that we have an idea of what each approach entails, we can ask: what types of web applications
+                would be better served by each strategy?</p>
+              <p>[SSR vs. SSG table]</p>
+
               <div class="case-study-subsection">
-                <h3>2.3 Comparison of SSR &amp; SSG</h3>
-                <p>Now that we have an idea of what each approach entails, we can ask: what types of web applications would be better served by each strategy?</p>
-                <p>[SSR vs. SSG table]</p>
-                
+                <h4>2.3.1 Search Engine Optimization (SEO)</h4>
+                <p>Both SSR and SSG are beneficial for apps that value Search Engine Optimization (SEO) since the HTML
+                  sent back to the client is already fully formed for web crawlers to parse and index.</p>
+              </div>
+
+              <div class="case-study-subsection">
+                <h4>2.3.2 Request-Time Access to Sensitive Information</h4>
+                <p>Only SSR makes it possible to dynamically retrieve data at request time without needing to make a
+                  public API call using client-side JavaScript. This is necessary for apps that use secrets that
+                  shouldn’t be publicly accessible, for example, authentication information that may be needed to fetch
+                  data from a database and should only be known to the server.</p>
+                <p>However, SSG does offer its own security benefits in that with pre-built static files, there are
+                  fewer opportunities for attackers to inject malicious code or take advantage of potential server-side
+                  security holes. As a result, SSG is not suitable for displaying user authenticated content or
+                  processing user data. Although many features have been developed to overcome these limitations, SSG
+                  generally works best when the pages are consistent for all users.</p>
+              </div>
+
+              <div class="case-study-subsection">
+                <h4>2.3.3 Frequent Page Updates</h4>
+                <p>SSR is a good fit for apps whose page content needs to remain up-to-date because the server
+                  regenerates the page on every single request. In contrast, SSG isn’t well-suited for such frequent
+                  changes since a build and deployment process must be executed each time a page’s content needs to be
+                  updated.</p>
+              </div>
+
+              <div class="case-study-subsection">
+                <h4>2.3.4 Page Load Speed</h4>
+                <p>SSG is particularly useful for sites that require fast page loads. Statically generated sites excel
+                  in performance since all webpages are pre-built and served by a CDN without needing to run
+                  resource-intensive server-side scripts at request time. </p>
+                <p>With SSR, even though initial page loads are typically fast, there may be slower subsequent loading
+                  times. </p>
+              </div>
+
+              <div class="case-study-subsection">
+                <h4>2.3.5 Scaling For Users</h4>
+                <p>Finally, SSG is a better fit for scaling for many users since CDNs by default can handle increased
+                  traffic at scale. An SSR architecture by nature does not necessarily have this same benefit.</p>
+              </div>
+
+              <div class="case-study-subsection">
+                <h4>2.3.6 Summary of Use Cases for SSR vs. SSG</h4>
+                <p>Overall, web applications that can tolerate slightly longer page loads and whose pages need to remain
+                  up-to-date, access private data, and remain high in search engine rankings are well-suited to use SSR.
+                </p>
+                <p>SSG, on the other hand, is well-suited for applications where fast load times are a primary concern
+                  and the content does not frequently change. </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-study-section">
+          <div class="case-study-subsection">
+            <h2>3. The Changing Landscape</h2>
+
+            <div class="case-study-subsection">
+              <h3>3.1. Modern Web Development</h3>
+              <p>[Hybrid SSR and SSG image]</p>
+              <p>Historically, applications could be neatly categorized into using either SSR or SSG. However, modern
+                web development frameworks have begun to blur the lines between static and dynamic applications,
+                ushering in greater flexibility by making use of a hybrid approach. </p>
+              <p>For example, Next.js is a popular framework that fits into this new wave of modern frameworks that
+                allow developers to better optimize their applications. It began primarily as an SSR framework, but in
+                recent years, it has introduced support for SSG. Today, Next.js allows developers to build apps with
+                both SSR and SSG on a per-page basis. </p>
+              <p>For applications that are content-rich but only require frequent dynamic data retrieval for select
+                pages, it makes sense to use SSG to pre-build their simpler static pages. Those pages can then be served
+                up quickly, while SSR can handle the other pages requiring frequently changing, up-to-date content on
+                demand.</p>
+              <p>We’ve seen that SSG and SSR are good approaches for apps that value SEO, so if used in conjunction,
+                developers can continue to reap this benefit; this is essential for apps that rely on search and
+                filtering to improve page ranking and bring in new customers. A common real-world use case for this
+                blended approach is with e-commerce applications.</p>
+            </div>
+
+            <div class="case-study-subsection">
+              <h3>3.2. Giraffe: A Target User</h3>
+              <p>Let’s consider a hypothetical company named Giraffe as an example to better illustrate Bubble’s use
+                case.</p>
+              <p>[Giraffe categories page image (slide 10)]</p>
+              <p>Giraffe is an e-commerce application that sells giraffe-related merchandise. They self-host an online
+                storefront implemented with the Next.js framework. </p>
+              <p>Their application uses a mix of SSG and SSR to generate content: for example, the product categories
+                page is generated through SSG, while product recommendation pages—which require data that’s unique to
+                every user—are generated with SSR.</p>
+              <p>Giraffe chose Next.js for its many features that align with marketing optimization, such as image
+                optimization for product discovery and built-in analytics for the performance of their site. </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-study-section">
+          <div class="case-study-subsection">
+            <h2>4. The Problem</h2>
+            <p>Recently, Giraffe’s been doing very well. They’ve hired additional engineers to develop new features and
+              bring a new look to their website, but they’re starting to experience bottlenecks during the development
+              process.</p>
+            <p>[Giraffe developers bottleneck image]</p>
+            <p>Since multiple developers often work on new features simultaneously and also need to collaborate with
+              various other departments, collecting feedback from different teams is starting to take too long and
+              involves a lot of back-and-forth—even for very simple UI changes.</p>
+            <p>At this point, Giraffe is asking what they can do to streamline this process.</p>
+
+            <div class="case-study-subsection">
+              <h3>4.1. Getting Feedback In a Manual Way</h3>
+              <p>[Manual feedback image]</p>
+              <p>Before the recent expansions in their organization and additions to their site, sharing progress was
+                easier for developers at Giraffe.</p>
+              <p>They used manual approaches like sending screenshots to each other, or screen-sharing for interactive
+                features. </p>
+              <p>Occasionally, when non-technical stakeholders from other teams wanted to look at the progress more
+                closely, developers would take the time to help them pull down the code and run it on their local
+                machine. However, with larger teams including remote colleagues and more non-technical stakeholders,
+                it’s no longer practical to spend increasing amounts of developer time helping colleagues download and
+                run local versions of the application to review changes.</p>
+            </div>
+
+            <div class="case-study-subsection">
+              <h3>4.2. Using a Shared Staging Environment</h3>
+              <p>[Shared staging environment image]</p>
+              <p>One tool that Giraffe uses as part of their development workflow is a shared staging environment. This
+                is an environment shared amongst all developers collaborating on a repository. </p>
+              <p>A shared staging environment aims to mimic the production environment as closely as possible to ensure
+                all new changes are working as intended before they are released live.</p>
+              <p>Different types of testing can occur when code is pushed to this kind of environment: for example, load
+                testing to simulate real-life traffic and determine a website’s performance under such conditions.</p>
+              <p>Using a shared staging environment gives non-technical stakeholders a way to examine changes without
+                having to build and run the application themselves. This allows them to easily examine and provide
+                feedback on in-development UI/UX features.</p>
+              <p>However, multiple teams making different changes to a single environment presented another set of
+                challenges to Giraffe’s workflow.</p>
+            </div>
+
+            <div class="case-study-subsection">
+              <h3>4.2. Downsides to a Shared Staging Environment</h3>
+
+              <div class="case-study-subsection">
+                <h4>4.2.1 Batching</h4>
+                <p>[Just the batching image]</p>
+                <p>Since there was only one staging environment for Giraffe to use, oftentimes newly-developed features
+                  would end up living together, intermingled within a single environment. </p>
+
                 <div class="case-study-subsection">
-                  <h4>2.3.1 Search Engine Optimization (SEO)</h4>
-                  <p>Both SSR and SSG are beneficial for apps that value Search Engine Optimization (SEO) since the HTML sent back to the client is already fully formed for web crawlers to parse and index.</p>
+                  <h5>4.2.1.1 Bugs</h5>
+                  <p>Batching together multiple distinct changes in this way caused bugs to arise that were difficult to
+                    troubleshoot, because they could have stemmed from conflicts between any of the code updates pushed
+                    to the staging environment by different developers.</p>
                 </div>
-                
+
                 <div class="case-study-subsection">
-                  <h4>2.3.2 Request-Time Access to Sensitive Information</h4>
-                  <p>Only SSR makes it possible to dynamically retrieve data at request time without needing to make a public API call using client-side JavaScript. This is necessary for apps that use secrets that shouldn’t be publicly accessible, for example, authentication information that may be needed to fetch data from a database and should only be known to the server.</p>
-                  <p>However, SSG does offer its own security benefits in that with pre-built static files, there are fewer opportunities for attackers to inject malicious code or take advantage of potential server-side security holes. As a result, SSG is not suitable for displaying user authenticated content or processing user data. Although many features have been developed to overcome these limitations, SSG generally works best when the pages are consistent for all users.</p>
+                  <h5>4.2.1.2 Bloated Releases</h5>
+                  <p>This type of workflow also led to less-frequent and more bloated releases: with only one
+                    centralized environment for non-technical stakeholders to use, reviews tended to happen in larger
+                    batches. And when something went wrong and a release needed to be rolled back, it was much more
+                    challenging since the releases weren’t atomic.</p>
                 </div>
-                
+              </div>
+
+              <div class="case-study-subsection">
+                <h4>4.2.2 Queuing</h4>
+                <p>[Just the queuing image]</p>
+                <p>In an attempt to resolve these issues, Giraffe has switched to queuing instead, allowing only one
+                  development team at a time to use the staging environment. This has taken care of the bugs, conflicts,
+                  and bloated releases that occurred when distinct changes were all batched together, but has introduced
+                  a different set of challenges to their development workflow.</p>
+
                 <div class="case-study-subsection">
-                  <h4>2.3.3 Frequent Page Updates</h4>
-                  <p>SSR is a good fit for apps whose page content needs to remain up-to-date because the server regenerates the page on every single request. In contrast, SSG isn’t well-suited for such frequent changes since a build and deployment process must be executed each time a page’s content needs to be updated.</p>
+                  <h5>4.2.2.1 Wait Time &amp; Premature Deployment</h5>
+                  <p>With only one team allowed to use the shared environment at a time, developers now have to wait for
+                    the environment to be freed up before they can use it. One side effect of queuing is a higher risk
+                    of deploying unsafe code: when a developer mistakenly rushes to deploy another colleague’s work in
+                    an attempt to free up the staging environment for their own use.</p>
                 </div>
-                
+
                 <div class="case-study-subsection">
-                  <h4>2.3.4 Page Load Speed</h4>
-                  <p>SSG is particularly useful for sites that require fast page loads. Statically generated sites excel in performance since all webpages are pre-built and served by a CDN without needing to run resource-intensive server-side scripts at request time. </p>
-                  <p>With SSR, even though initial page loads are typically fast, there may be slower subsequent loading times. </p>
-                </div>
-                
-                <div class="case-study-subsection">
-                  <h4>2.3.5 Scaling For Users</h4>
-                  <p>Finally, SSG is a better fit for scaling for many users since CDNs by default can handle increased traffic at scale. An SSR architecture by nature does not necessarily have this same benefit.</p>
-                </div>
-                
-                <div class="case-study-subsection">
-                  <h4>2.3.6 Summary of Use Cases for SSR vs. SSG</h4>
-                  <p>Overall, web applications that can tolerate slightly longer page loads and whose pages need to remain up-to-date, access private data, and remain high in search engine rankings are well-suited to use SSR.</p>
-                  <p>SSG, on the other hand, is well-suited for applications where fast load times are a primary concern and the content does not frequently change. </p>
+                  <h5>4.2.2.2 Long Feedback Loop</h5>
+                  <p>Another consequence of queuing has been that valuable developer time is wasted: the feedback loops
+                    formed by developers and reviewers are now much longer than before since features often need
+                    multiple rounds of changes before they can be moved out of the shared staging environment. Only then
+                    can next-in-line changes be reviewed.</p>
                 </div>
               </div>
             </div>
           </div>
-          
-          <div class="case-study-section">
+        </div>
+
+        <div class="case-study-section">
+          <div class="case-study-subsection">
+            <h2>5. Preview Apps</h2>
+            <p>Because of the challenges associated with using their shared staging environment to iterate on UI/UX
+              changes, Giraffe is looking for other options that could allow them to shorten their feedback loop and
+              minimize bugs from conflicting updates.</p>
+
             <div class="case-study-subsection">
-              <h2>3. The Changing Landscape</h2>
-              
+              <h3>5.1. What Are Preview Apps?</h3>
+              <p>[Giraffe preview app image (slide 16)]</p>
+              <p>Preview apps are one way to allow non-technical stakeholders to quickly review UI/UX changes. Preview
+                apps are ephemeral, lightweight, and fully functional versions of an application that can be easily
+                built and deployed—and just as easily torn down. They allow multiple versions of a site to be quickly
+                deployed in isolation: this way, non-technical stakeholders can more easily give feedback on UI/UX
+                changes, and developers can more quickly iterate after receiving that feedback.</p>
+              <p>Each time they wanted to show a new change, a Giraffe developer could deploy a new preview app and
+                share its URL with all relevant stakeholders for evaluation.</p>
+              <p>[Preview App workflow widget w/ numbering]</p>
+              <p>The development workflow using preview apps would be carried out as follows: </p>
+              <ol>
+                <li>When a developer is ready to share their new feature, they initiate a pull request for their feature
+                  branch.</li>
+                <li>A preview app is automatically built and deployed with the new feature code, and a unique URL is
+                  generated to access it. Product managers and non-technical teams interested in the feature use this
+                  URL for reviewing the changes.</li>
+                <li>The developer makes any necessary changes based on feedback and commits to the same feature branch.
+                </li>
+                <li>A new preview app is deployed with the changes with a distinct URL. Since each iteration on the
+                  feature branch has its own separate preview app and URL, they can easily be compared side-by-side.
+                </li>
+                <li>The feedback/preview app cycle continues until all stakeholders are happy with the new feature, at
+                  which point the code can proceed to the next step in the development pipeline.</li>
+                <li>Once the developer merges and closes the pull request, any associated preview apps are automatically
+                  torn down.</li>
+              </ol>
+            </div>
+
+            <div class="case-study-subsection">
+              <h3>5.2. Benefits of Preview Apps</h3>
+              <p>[Preview app benefits icons]</p>
+              <p>Preview apps reduce some of the headaches that occur when stakeholders use a shared staging environment
+                to review and discuss UI/UX changes.</p>
+              <p>Each new feature can be reviewed in isolation from other application changes still under development,
+                eliminating the chances for hard-to-track-down bugs that may crop up from code conflicts with other new
+                features. </p>
+              <p>In addition, since each developer can deploy and share a preview app for each new feature as frequently
+                as they’d like, they can receive feedback from all stakeholders faster, leading to a more efficient
+                development process with a shortened feedback loop.</p>
+            </div>
+
+            <div class="case-study-subsection">
+              <h3>5.3. Downsides of Preview Apps</h3>
+              <p>While preview apps help to streamline the process of developing frontend features, they may not be the
+                right choice for everyone. </p>
+              <p>Since they’re intended for testing new features in isolation, preview apps are not a good fit for
+                testing how multiple changes integrate with one another. They also incur costs, as additional
+                infrastructure is provisioned for each preview deployment. And since each preview app has its own URL,
+                interested parties need to manage multiple links, which could become unwieldy as more previews are
+                deployed.</p>
+              <p>[Preview app downsides for third-party and DIY image]</p>
+              <p>Preview apps come with additional drawbacks, depending on whether a team chooses a third-party preview
+                app service or decides to DIY their own. The former racks up more costs in the form of usage fees, and
+                requires that code and data are shared externally with the preview app provider, which may be a concern
+                for some organizations.</p>
+              <p>The DIY solution, on the other hand, adds labor and opportunity costs in the form of development time.
+              </p>
+              <p>After weighing the pros and cons, Giraffe has decided to move forward with integrating the use of
+                preview apps into their development process. Now they need to consider the specific type of preview app
+                solution they will need.</p>
+            </div>
+
+            <div class="case-study-subsection">
+              <h3>5.4. What Are Dynamic Frontend Preview Apps?</h3>
+              <p>As the landscape of web development has changed and the lines between SSR and SSG have become blurred,
+                the requirements for preview apps have grown. </p>
+              <p>[Dynamic app image (slide 20)]</p>
+              <p>For applications using only SSG, all that a preview app would need is a CDN to deliver static assets;
+                for only SSR, that preview app would only require a server. However, to support applications utilizing
+                both SSR and SSG, the preview app architecture must include both an application server and a CDN, and
+                this adds significant complexity to the design.</p>
+              <p>To support their hybrid application, Giraffe will thus need to find a preview app provider that can
+                handle this complexity to allow them to benefit from fully functional preview apps.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-study-section">
+          <div class="case-study-subsection">
+            <h2>6. Existing Solutions</h2>
+            <p>There are several existing solutions for preview apps that present different benefits and drawbacks for a
+              company like Giraffe.</p>
+
+            <div class="case-study-subsection">
+              <h3>6.1 DIY</h3>
+              <p>[Overwhelming DIY image]</p>
+              <p>One option would be a DIY approach. </p>
+              <p>Building their own system would allow Giraffe to customize their solution according to their exact
+                needs while maintaining full control of their code and preview app infrastructure. The downside is that
+                it’s a time-consuming and complex task to make all the necessary decisions and build out all the
+                components necessary to implement fully-functional preview apps.</p>
+              <p>To construct their DIY solution, Giraffe would need to examine multiple sets of tradeoffs to decide
+                where and how to build and deploy their preview apps. With their design decisions made, they would then
+                need to implement their system, which would include configuring, building, and deploying static assets,
+                routing, and business logic—as well as writing code to automate this entire process and integrate it
+                into their development workflow.</p>
+              <p>Given the time and resources it would take to implement their own system, Giraffe may prefer to look at
+                already-made options.</p>
+            </div>
+
+            <div class="case-study-subsection">
+              <h3>6.2. Feature vs. Service</h3>
+              <p>[Feature vs. Service table]</p>
+              <p>Preview app solutions on the market typically fall into two categories: feature and service. Both can
+                offer a variety of features and provide dynamic frontend preview apps that support any combination of
+                implementations using SSR and SSG.</p>
+
               <div class="case-study-subsection">
-                <h3>3.1. Modern Web Development</h3>
-                <p>[Hybrid SSR and SSG image]</p>
-                <p>Historically, applications could be neatly categorized into using either SSR or SSG. However, modern web development frameworks have begun to blur the lines between static and dynamic applications, ushering in greater flexibility by making use of a hybrid approach. </p>
-                <p>For example, Next.js is a popular framework that fits into this new wave of modern frameworks that allow developers to better optimize their applications. It began primarily as an SSR framework, but in recent years, it has introduced support for SSG. Today, Next.js allows developers to build apps with both SSR and SSG on a per-page basis. </p>
-                <p>For applications that are content-rich but only require frequent dynamic data retrieval for select pages, it makes sense to use SSG to pre-build their simpler static pages. Those pages can then be served up quickly, while SSR can handle the other pages requiring frequently changing, up-to-date content on demand.</p>
-                <p>We’ve seen that SSG and SSR are good approaches for apps that value SEO, so if used in conjunction, developers can continue to reap this benefit; this is essential for apps that rely on search and filtering to improve page ranking and bring in new customers. A common real-world use case for this blended approach is with e-commerce applications.</p>
+                <h4>6.2.1 Preview Apps as a Feature</h4>
+                <p>The first category, preview apps as a feature, refers to preview app functionality that is included
+                  as part of a hosting platform. Preview apps as a feature are generally easy to set up and use, and
+                  offer an abundance of functionality; however, they require a company’s code and data to be hosted and
+                  deployed using that provider’s infrastructure.</p>
+                <p>If a company is already using a platform like Vercel or Netlify, it would be simple for them to
+                  leverage the preview app features they already have access to, but changing hosting providers is a
+                  large and complex undertaking. It typically wouldn’t make sense to do so for the sole purpose of using
+                  preview apps.</p>
               </div>
-              
+
               <div class="case-study-subsection">
-                <h3>3.2. Giraffe: A Target User</h3>
-                <p>Let’s consider a hypothetical company named Giraffe as an example to better illustrate Bubble’s use case.</p>
-                <p>[Giraffe categories page image (slide 10)]</p>
-                <p>Giraffe is an e-commerce application that sells giraffe-related merchandise. They self-host an online storefront implemented with the Next.js framework. </p>
-                <p>Their application uses a mix of SSG and SSR to generate content: for example, the product categories page is generated through SSG, while product recommendation pages—which require data that’s unique to every user—are generated with SSR.</p>
-                <p>Giraffe chose Next.js for its many features that align with marketing optimization, such as image optimization for product discovery and built-in analytics for the performance of their site. </p>
+                <h4>6.2.2 Preview Apps as a Service</h4>
+                <p>The other category is preview apps as a service: these are standalone options that can be used on
+                  their own, without changing hosting platforms. As a separate service, these options take more setup
+                  time and configuration, often requiring the user to write custom files before preview apps can be
+                  built and deployed. Preview apps offered as a service are also typically subscription-based, requiring
+                  payment for the service regardless of how much or how little it is being used.</p>
+                <p><em>*Out of all the currently available preview apps solutions, only one, GitLab, is open-source, and
+                    it provides preview apps as a feature, meaning it requires that code be hosted on its platform to
+                    access its preview apps functionality.</em></p>
               </div>
             </div>
           </div>
-          
-          <div class="case-study-section">
-            <div class="case-study-subsection">
-              <h2>4. The Problem</h2>
-              <p>Recently, Giraffe’s been doing very well. They’ve hired additional engineers to develop new features and bring a new look to their website, but they’re starting to experience bottlenecks during the development process.</p>
-              <p>[Giraffe developers bottleneck image]</p>
-              <p>Since multiple developers often work on new features simultaneously and also need to collaborate with various other departments, collecting feedback from different teams is starting to take too long and involves a lot of back-and-forth—even for very simple UI changes.</p>
-              <p>At this point, Giraffe is asking what they can do to streamline this process.</p>
-              
-              <div class="case-study-subsection">
-                <h3>4.1. Getting Feedback In a Manual Way</h3>
-                <p>[Manual feedback image]</p>
-                <p>Before the recent expansions in their organization and additions to their site, sharing progress was easier for developers at Giraffe.</p>
-                <p>They used manual approaches like sending screenshots to each other, or screen-sharing for interactive features. </p>
-                <p>Occasionally, when non-technical stakeholders from other teams wanted to look at the progress more closely, developers would take the time to help them pull down the code and run it on their local machine. However, with larger teams including remote colleagues and more non-technical stakeholders, it’s no longer practical to spend increasing amounts of developer time helping colleagues download and run local versions of the application to review changes.</p>
-              </div>
-              
-              <div class="case-study-subsection">
-                <h3>4.2. Using a Shared Staging Environment</h3>
-                <p>[Shared staging environment image]</p>
-                <p>One tool that Giraffe uses as part of their development workflow is a shared staging environment. This is an environment shared amongst all developers collaborating on a repository. </p>
-                <p>A shared staging environment aims to mimic the production environment as closely as possible to ensure all new changes are working as intended before they are released live.</p>
-                <p>Different types of testing can occur when code is pushed to this kind of environment: for example, load testing to simulate real-life traffic and determine a website’s performance under such conditions.</p>
-                <p>Using a shared staging environment gives non-technical stakeholders a way to examine changes without having to build and run the application themselves. This allows them to easily examine and provide feedback on in-development UI/UX features.</p>
-                <p>However, multiple teams making different changes to a single environment presented another set of challenges to Giraffe’s workflow.</p>
-              </div>
-              
-              <div class="case-study-subsection">
-                <h3>4.2. Downsides to a Shared Staging Environment</h3>
-                
-                <div class="case-study-subsection">
-                  <h4>4.2.1 Batching</h4>
-                  <p>[Just the batching image]</p>
-                  <p>Since there was only one staging environment for Giraffe to use, oftentimes newly-developed features would end up living together, intermingled within a single environment. </p>
-                  
-                  <div class="case-study-subsection">
-                    <h5>4.2.1.1 Bugs</h5>
-                    <p>Batching together multiple distinct changes in this way caused bugs to arise that were difficult to troubleshoot, because they could have stemmed from conflicts between any of the code updates pushed to the staging environment by different developers.</p>
-                  </div>
-                  
-                  <div class="case-study-subsection">
-                    <h5>4.2.1.2 Bloated Releases</h5>
-                    <p>This type of workflow also led to less-frequent and more bloated releases: with only one centralized environment for non-technical stakeholders to use, reviews tended to happen in larger batches. And when something went wrong and a release needed to be rolled back, it was much more challenging since the releases weren’t atomic.</p>
-                  </div>
-                </div>
-                
-                <div class="case-study-subsection">
-                  <h4>4.2.2 Queuing</h4>
-                  <p>[Just the queuing image]</p>
-                  <p>In an attempt to resolve these issues, Giraffe has switched to queuing instead, allowing only one development team at a time to use the staging environment. This has taken care of the bugs, conflicts, and bloated releases that occurred when distinct changes were all batched together, but has introduced a different set of challenges to their development workflow.</p>
-                  
-                  <div class="case-study-subsection">
-                    <h5>4.2.2.1 Wait Time &amp; Premature Deployment</h5>
-                    <p>With only one team allowed to use the shared environment at a time, developers now have to wait for the environment to be freed up before they can use it. One side effect of queuing is a higher risk of deploying unsafe code: when a developer mistakenly rushes to deploy another colleague’s work in an attempt to free up the staging environment for their own use.</p>
-                  </div>
-                  
-                  <div class="case-study-subsection">
-                    <h5>4.2.2.2 Long Feedback Loop</h5>
-                    <p>Another consequence of queuing has been that valuable developer time is wasted: the feedback loops formed by developers and reviewers are now much longer than before since features often need multiple rounds of changes before they can be moved out of the shared staging environment. Only then can next-in-line changes be reviewed.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="case-study-section">
-            <div class="case-study-subsection">
-              <h2>5. Preview Apps</h2>
-              <p>Because of the challenges associated with using their shared staging environment to iterate on UI/UX changes, Giraffe is looking for other options that could allow them to shorten their feedback loop and minimize bugs from conflicting updates.</p>
-              
-              <div class="case-study-subsection">
-                <h3>5.1. What Are Preview Apps?</h3>
-                <p>[Giraffe preview app image (slide 16)]</p>
-                <p>Preview apps are one way to allow non-technical stakeholders to quickly review UI/UX changes. Preview apps are ephemeral, lightweight, and fully functional versions of an application that can be easily built and deployed—and just as easily torn down. They allow multiple versions of a site to be quickly deployed in isolation: this way, non-technical stakeholders can more easily give feedback on UI/UX changes, and developers can more quickly iterate after receiving that feedback.</p>
-                <p>Each time they wanted to show a new change, a Giraffe developer could deploy a new preview app and share its URL with all relevant stakeholders for evaluation.</p>
-                <p>[Preview App workflow widget w/ numbering]</p>
-                <p>The development workflow using preview apps would be carried out as follows: </p>
-                <ol>
-                <li>When a developer is ready to share their new feature, they initiate a pull request for their feature branch.</li>
-                <li>A preview app is automatically built and deployed with the new feature code, and a unique URL is generated to access it. Product managers and non-technical teams interested in the feature use this URL for reviewing the changes.</li>
-                <li>The developer makes any necessary changes based on feedback and commits to the same feature branch.</li>
-                <li>A new preview app is deployed with the changes with a distinct URL. Since each iteration on the feature branch has its own separate preview app and URL, they can easily be compared side-by-side.</li>
-                <li>The feedback/preview app cycle continues until all stakeholders are happy with the new feature, at which point the code can proceed to the next step in the development pipeline.</li>
-                <li>Once the developer merges and closes the pull request, any associated preview apps are automatically torn down.</li>
-                </ol>
-              </div>
-              
-              <div class="case-study-subsection">
-                <h3>5.2. Benefits of Preview Apps</h3>
-                <p>[Preview app benefits icons]</p>
-                <p>Preview apps reduce some of the headaches that occur when stakeholders use a shared staging environment to review and discuss UI/UX changes.</p>
-                <p>Each new feature can be reviewed in isolation from other application changes still under development, eliminating the chances for hard-to-track-down bugs that may crop up from code conflicts with other new features. </p>
-                <p>In addition, since each developer can deploy and share a preview app for each new feature as frequently as they’d like, they can receive feedback from all stakeholders faster, leading to a more efficient development process with a shortened feedback loop.</p>
-              </div>
-              
-              <div class="case-study-subsection">
-                <h3>5.3. Downsides of Preview Apps</h3>
-                <p>While preview apps help to streamline the process of developing frontend features, they may not be the right choice for everyone. </p>
-                <p>Since they’re intended for testing new features in isolation, preview apps are not a good fit for testing how multiple changes integrate with one another. They also incur costs, as additional infrastructure is provisioned for each preview deployment. And since each preview app has its own URL, interested parties need to manage multiple links, which could become unwieldy as more previews are deployed.</p>
-                <p>[Preview app downsides for third-party and DIY image]</p>
-                <p>Preview apps come with additional drawbacks, depending on whether a team chooses a third-party preview app service or decides to DIY their own. The former racks up more costs in the form of usage fees, and requires that code and data are shared externally with the preview app provider, which may be a concern for some organizations.</p>
-                <p>The DIY solution, on the other hand, adds labor and opportunity costs in the form of development time. </p>
-                <p>After weighing the pros and cons, Giraffe has decided to move forward with integrating the use of preview apps into their development process. Now they need to consider the specific type of preview app solution they will need.</p>
-              </div>
-              
-              <div class="case-study-subsection">
-                <h3>5.4. What Are Dynamic Frontend Preview Apps?</h3>
-                <p>As the landscape of web development has changed and the lines between SSR and SSG have become blurred, the requirements for preview apps have grown. </p>
-                <p>[Dynamic app image (slide 20)]</p>
-                <p>For applications using only SSG, all that a preview app would need is a CDN to deliver static assets; for only SSR, that preview app would only require a server. However, to support applications utilizing both SSR and SSG, the preview app architecture must include both an application server and a CDN, and this adds significant complexity to the design.</p>
-                <p>To support their hybrid application, Giraffe will thus need to find a preview app provider that can handle this complexity to allow them to benefit from fully functional preview apps.</p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="case-study-section">
-            <div class="case-study-subsection">
-              <h2>6. Existing Solutions</h2>
-              <p>There are several existing solutions for preview apps that present different benefits and drawbacks for a company like Giraffe.</p>
-              
-              <div class="case-study-subsection">
-                <h3>6.1 DIY</h3>
-                <p>[Overwhelming DIY image]</p>
-                <p>One option would be a DIY approach. </p>
-                <p>Building their own system would allow Giraffe to customize their solution according to their exact needs while maintaining full control of their code and preview app infrastructure. The downside is that it’s a time-consuming and complex task to make all the necessary decisions and build out all the components necessary to implement fully-functional preview apps.</p>
-                <p>To construct their DIY solution, Giraffe would need to examine multiple sets of tradeoffs to decide where and how to build and deploy their preview apps. With their design decisions made, they would then need to implement their system, which would include configuring, building, and deploying static assets, routing, and business logic—as well as writing code to automate this entire process and integrate it into their development workflow.</p>
-                <p>Given the time and resources it would take to implement their own system, Giraffe may prefer to look at already-made options.</p>
-              </div>
-              
-              <div class="case-study-subsection">
-                <h3>6.2. Feature vs. Service</h3>
-                <p>[Feature vs. Service table]</p>
-                <p>Preview app solutions on the market typically fall into two categories: feature and service. Both can offer a variety of features and provide dynamic frontend preview apps that support any combination of implementations using SSR and SSG.</p>
-                
-                <div class="case-study-subsection">
-                  <h4>6.2.1 Preview Apps as a Feature</h4>
-                  <p>The first category, preview apps as a feature, refers to preview app functionality that is included as part of a hosting platform. Preview apps as a feature are generally easy to set up and use, and offer an abundance of functionality; however, they require a company’s code and data to be hosted and deployed using that provider’s infrastructure.</p>
-                  <p>If a company is already using a platform like Vercel or Netlify, it would be simple for them to leverage the preview app features they already have access to, but changing hosting providers is a large and complex undertaking. It typically wouldn’t make sense to do so for the sole purpose of using preview apps.</p>
-                </div>
-                
-                <div class="case-study-subsection">
-                  <h4>6.2.2 Preview Apps as a Service</h4>
-                  <p>The other category is preview apps as a service: these are standalone options that can be used on their own, without changing hosting platforms. As a separate service, these options take more setup time and configuration, often requiring the user to write custom files before preview apps can be built and deployed. Preview apps offered as a service are also typically subscription-based, requiring payment for the service regardless of how much or how little it is being used.</p>
-                  <p><em>*Out of all the currently available preview apps solutions, only one, GitLab, is open-source, and it provides preview apps as a feature, meaning it requires that code be hosted on its platform to access its preview apps functionality.</em></p>
-                </div>
-              </div>
-            </div>
+        </div>
+
+        <div class="case-study-subsection">
+          <h2>7. Introducing Bubble</h2>
+
+          <div class="case-study-subsection">
+            <h3>7.1 Where Bubble Fits In</h3>
+            <p>[Comparison table with Bubble]</p>
+            <p>Bubble combines some of the benefits of both preview apps as a feature and a DIY approach at the cost of
+              supporting fewer features.</p>
+            <p>The benefits of using Bubble are that a company like Giraffe can have preview app functionality that’s
+              easy to set up and use—like preview apps as a feature—while maintaining complete control of their code and
+              data—like a DIY approach.</p>
+            <p>The tradeoff is that Bubble won’t be completely customized in the same way a made-from-scratch solution
+              would be, nor does it support the range of languages and frameworks that a hosting platform would.</p>
           </div>
 
           <div class="case-study-subsection">
-            <h2>7. Introducing Bubble</h2>
-            
-            <div class="case-study-subsection">
-              <h3>7.1 Where Bubble Fits In</h3>
-              <p>[Comparison table with Bubble]</p>
-              <p>Bubble combines some of the benefits of both preview apps as a feature and a DIY approach at the cost of supporting fewer features.</p>
-              <p>The benefits of using Bubble are that a company like Giraffe can have preview app functionality that’s easy to set up and use—like preview apps as a feature—while maintaining complete control of their code and data—like a DIY approach.</p>
-              <p>The tradeoff is that Bubble won’t be completely customized in the same way a made-from-scratch solution would be, nor does it support the range of languages and frameworks that a hosting platform would.</p>
-            </div>
-            
-            <div class="case-study-subsection">
-              <h3>7.2 What Bubble Supports</h3>
-              <p>At the moment, Bubble only supports applications built with the Next.js framework.</p>
-              <p>Bubble is intended as a tool for frontend developers working on UI/UX features, which are typically less data-intensive. Thus, we chose to target frontend applications that are decoupled from a database and only access their data layer through API calls. This microservices approach allows us to keep the preview apps lightweight, inexpensive, and quicker to deploy.</p>
-            </div>
-            
-            <div class="case-study-subsection">
-              <h3>7.3 Feature Overview</h3>
-              <p>Bubble has a few important features:</p>
-              <ul>
-              <li>It automatically deploys preview apps when a pull request is opened, as well as when subsequent commits are made to the branch associated with the pull request. Each deployment generates a shareable URL that will be posted on GitHub as a pull request comment.</li>
-              <li>When the branch is merged or the pull request is closed, all associated preview apps will automatically be torn down.</li>
-              </ul>
-              <p>Bubble provides two <strong>user interfaces</strong>: </p>
-              <ul>
-              <li><p>a visual dashboard where the user can manage preview apps across all their local repositories </p></li>
-          
-              <li><p>a command line interface where the user can interact with the preview apps for one repository at a time</p></li>
-              </ul>
-            </div>
+            <h3>7.2 What Bubble Supports</h3>
+            <p>At the moment, Bubble only supports applications built with the Next.js framework.</p>
+            <p>Bubble is intended as a tool for frontend developers working on UI/UX features, which are typically less
+              data-intensive. Thus, we chose to target frontend applications that are decoupled from a database and only
+              access their data layer through API calls. This microservices approach allows us to keep the preview apps
+              lightweight, inexpensive, and quicker to deploy.</p>
           </div>
-          
+
           <div class="case-study-subsection">
-            <h2>8. Bubble Architecture</h2>
-            
+            <h3>7.3 Feature Overview</h3>
+            <p>Bubble has a few important features:</p>
+            <ul>
+              <li>It automatically deploys preview apps when a pull request is opened, as well as when subsequent
+                commits are made to the branch associated with the pull request. Each deployment generates a shareable
+                URL that will be posted on GitHub as a pull request comment.</li>
+              <li>When the branch is merged or the pull request is closed, all associated preview apps will
+                automatically be torn down.</li>
+            </ul>
+            <p>Bubble provides two <strong>user interfaces</strong>: </p>
+            <ul>
+              <li>
+                <p>a visual dashboard where the user can manage preview apps across all their local repositories </p>
+              </li>
+
+              <li>
+                <p>a command line interface where the user can interact with the preview apps for one repository at a
+                  time</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="case-study-subsection">
+          <h2>8. Bubble Architecture</h2>
+
+          <div class="case-study-subsection">
+            <h3>8.1 Architecture Overview</h3>
+            <p>[Overall architecture image]</p>
+            <p>Bubble consists of three main pieces of architecture: a local user interface, GitHub, and AWS.</p>
+
             <div class="case-study-subsection">
-              <h3>8.1 Architecture Overview</h3>
-              <p>[Overall architecture image]</p>
-              <p>Bubble consists of three main pieces of architecture: a local user interface, GitHub, and AWS.</p>
-              
-              <div class="case-study-subsection">
-                <h4>8.1.1 Interfaces</h4>
-                <p>[User interface mini-map image]</p>
-                <p>The user interface consists of two parts located on the user’s local machine.</p>
-                <p>Once Bubble is globally installed as an npm package, the user can then access the CLI to initialize an instance of Bubble in a repository directory. This adds necessary files to the local repo and updates files for the dashboard to use.</p>
-                <p>The dashboard is a locally-run web application that provides a user-friendly visual interface for viewing, managing, and destroying preview apps. It combines a back-end, which makes API calls to AWS, with a front-end, for the user to view in their browser.</p>
-              </div>
-              
-              <div class="case-study-subsection">
-                <h4>8.1.2 GitHub Actions</h4>
-                <p>[GitHub mini-map image]</p>
-                <p>Bubble uses GitHub Actions to automate the build, deploy, and destroy process for preview apps. These actions execute workflow files added by Bubble which are triggered through initial pull requests, subsequent commits to those requests, or HTTP requests to GitHub servers sent via the Bubble CLI.</p>
-                <p>GitHub Actions run on their own servers, so GitHub takes care of spinning them up and down and executing the workflow code.</p>
-              </div>
-              
-              <div class="case-study-subsection">
-                <h4>8.1.3 AWS Services</h4>
-                <p>[AWS infrastructure mini-map image]</p>
-                <p>The final piece of our architecture uses several AWS services to deploy the infrastructure for all preview apps.</p>
-                <p>Each preview app consists of three AWS microservices:</p>
-                <ol>
+              <h4>8.1.1 Interfaces</h4>
+              <p>[User interface mini-map image]</p>
+              <p>The user interface consists of two parts located on the user’s local machine.</p>
+              <p>Once Bubble is globally installed as an npm package, the user can then access the CLI to initialize an
+                instance of Bubble in a repository directory. This adds necessary files to the local repo and updates
+                files for the dashboard to use.</p>
+              <p>The dashboard is a locally-run web application that provides a user-friendly visual interface for
+                viewing, managing, and destroying preview apps. It combines a back-end, which makes API calls to AWS,
+                with a front-end, for the user to view in their browser.</p>
+            </div>
+
+            <div class="case-study-subsection">
+              <h4>8.1.2 GitHub Actions</h4>
+              <p>[GitHub mini-map image]</p>
+              <p>Bubble uses GitHub Actions to automate the build, deploy, and destroy process for preview apps. These
+                actions execute workflow files added by Bubble which are triggered through initial pull requests,
+                subsequent commits to those requests, or HTTP requests to GitHub servers sent via the Bubble CLI.</p>
+              <p>GitHub Actions run on their own servers, so GitHub takes care of spinning them up and down and
+                executing the workflow code.</p>
+            </div>
+
+            <div class="case-study-subsection">
+              <h4>8.1.3 AWS Services</h4>
+              <p>[AWS infrastructure mini-map image]</p>
+              <p>The final piece of our architecture uses several AWS services to deploy the infrastructure for all
+                preview apps.</p>
+              <p>Each preview app consists of three AWS microservices:</p>
+              <ol>
                 <li>SSR logic and API routes are deployed to **Lambda@Edge **functions.</li>
                 <li>**S3 Buckets **store static assets such as images and pre-built files.</li>
-                <li>**CloudFront **serves both static and dynamic content by associating the functions and S3 buckets to each route of each preview app.</li>
-                </ol>
-                <p>Permissions management and preview app metadata storage are achieved using two additional services:</p>
-                <ol>
-                <li>All AWS commands executed by Bubble are carried out through** IAM **users endowed only with the permissions they need to create, manage and destroy Bubble preview apps. This allows for separation of access from other resources on the user’s AWS account.</li>
-                <li>Two **DynamoDB *<em>tables</em>* **are provisioned to hold metadata related to users’ preview apps.</li>
-                </ol>
-              </div>
+                <li>**CloudFront **serves both static and dynamic content by associating the functions and S3 buckets to
+                  each route of each preview app.</li>
+              </ol>
+              <p>Permissions management and preview app metadata storage are achieved using two additional services:</p>
+              <ol>
+                <li>All AWS commands executed by Bubble are carried out through** IAM **users endowed only with the
+                  permissions they need to create, manage and destroy Bubble preview apps. This allows for separation of
+                  access from other resources on the user’s AWS account.</li>
+                <li>Two **DynamoDB *<em>tables</em>* **are provisioned to hold metadata related to users’ preview apps.
+                </li>
+              </ol>
             </div>
           </div>
-          
+        </div>
+
+        <div class="case-study-subsection">
+          <h2>9. The Build Process: Where to Build?</h2>
+          <p>The first major design decision we tackled was where the build process should take place. </p>
+          <p>Bubble automatically builds preview apps on two triggers. One is the opening of a new pull request and the
+            other is any subsequent commit to a branch with an open pull request. Since these events occur within the
+            context of a GitHub repository, we had to decide where we would be able to execute the build process as an
+            automated response to these events.</p>
+
           <div class="case-study-subsection">
-            <h2>9. The Build Process: Where to Build?</h2>
-            <p>The first major design decision we tackled was where the build process should take place. </p>
-            <p>Bubble automatically builds preview apps on two triggers. One is the opening of a new pull request and the other is any subsequent commit to a branch with an open pull request. Since these events occur within the context of a GitHub repository, we had to decide where we would be able to execute the build process as an automated response to these events.</p>
-            
+            <h3>9.1 GitHub Actions</a></h3>
+
             <div class="case-study-subsection">
-              <h3>9.1 GitHub Actions</a></h3>
-              
-              <div class="case-study-subsection">
-                <h4>9.1.1 What is GitHub Actions?</h4>
-                <p>GitHub Actions is an automation tool that allows users to execute code written in files–called workflows– using GitHub Runners: temporary virtual servers that GitHub spins up and down.</p>
-                <p>[GitHub Actions gif]</p>
-                <p>The process– using a Bubble deployment as an example– works as follows: </p>
-                <ol>
+              <h4>9.1.1 What is GitHub Actions?</h4>
+              <p>GitHub Actions is an automation tool that allows users to execute code written in files–called
+                workflows– using GitHub Runners: temporary virtual servers that GitHub spins up and down.</p>
+              <p>[GitHub Actions gif]</p>
+              <p>The process– using a Bubble deployment as an example– works as follows: </p>
+              <ol>
                 <li>A Bubble workflow file in the user’s repository is set to listen for pull requests.</li>
-                <li>When a pull request is opened, the workflow is triggered and GitHub automatically spins up a runner to execute the workflow.</li>
+                <li>When a pull request is opened, the workflow is triggered and GitHub automatically spins up a runner
+                  to execute the workflow.</li>
                 <li>Based on the contents of the workflow file, the GitHub runner builds and deploys a preview app.</li>
                 <li>After the workflow file finishes execution, the GitHub runner is automatically spun down.</li>
-                </ol>
-                <p>Instead of having to provision and configure our own external build server to run each build process—which would add unnecessary complexity and setup work to our architecture—GitHub Actions provides a simpler way to integrate with GitHub and carry out the build process directly within the context of a repository. </p>
-              </div>
-              
-              <div class="case-study-subsection">
-                <h4>9.1.2 Benefits and Drawbacks of Github Actions</h4>
-                <p>As with most engineering decisions, there are tradeoffs associated with using GitHub Actions. </p>
-                <p>[GitHub Actions cons half]</p>
-                <p>One challenge with using GitHub runners is that they are entirely managed by GitHub and thus cannot be accessed directly, making it difficult to extract outputs and other environmental artifacts. In addition, development is much more constrained than it would be if we were configuring our own build server since workflows can only be defined with YAML files.</p>
-                <p>[GitHub Actions pros half]</p>
-                <p>However, the benefits of using GitHub Actions ultimately outweighed these drawbacks when it came to Bubble’s needs. GitHub Actions includes a free tier that we estimate provides enough compute to make building and deploying preview apps very inexpensive, if not free, for a typical mid-sized team using Bubble.</p>
-                <p>Relying on GitHub runners is also much simpler than implementing and configuring a custom build server and thus abstracts complexity away from our architecture.</p>
-                <p>Finally, since each section of a workflow file can be run on a separate GitHub runner, GitHub Actions allows Bubble to deploy and tear down preview apps in parallel, making this process more efficient. </p>
-              </div>
+              </ol>
+              <p>Instead of having to provision and configure our own external build server to run each build
+                process—which would add unnecessary complexity and setup work to our architecture—GitHub Actions
+                provides a simpler way to integrate with GitHub and carry out the build process directly within the
+                context of a repository. </p>
+            </div>
+
+            <div class="case-study-subsection">
+              <h4>9.1.2 Benefits and Drawbacks of Github Actions</h4>
+              <p>As with most engineering decisions, there are tradeoffs associated with using GitHub Actions. </p>
+              <p>[GitHub Actions cons half]</p>
+              <p>One challenge with using GitHub runners is that they are entirely managed by GitHub and thus cannot be
+                accessed directly, making it difficult to extract outputs and other environmental artifacts. In
+                addition, development is much more constrained than it would be if we were configuring our own build
+                server since workflows can only be defined with YAML files.</p>
+              <p>[GitHub Actions pros half]</p>
+              <p>However, the benefits of using GitHub Actions ultimately outweighed these drawbacks when it came to
+                Bubble’s needs. GitHub Actions includes a free tier that we estimate provides enough compute to make
+                building and deploying preview apps very inexpensive, if not free, for a typical mid-sized team using
+                Bubble.</p>
+              <p>Relying on GitHub runners is also much simpler than implementing and configuring a custom build server
+                and thus abstracts complexity away from our architecture.</p>
+              <p>Finally, since each section of a workflow file can be run on a separate GitHub runner, GitHub Actions
+                allows Bubble to deploy and tear down preview apps in parallel, making this process more efficient. </p>
             </div>
           </div>
-          
+        </div>
+
+        <div class="case-study-subsection">
+          <h2>10. The Build Process: How to Build?</h2>
+
           <div class="case-study-subsection">
-            <h2>10. The Build Process: How to Build?</h2>
-            
+            <h3>10.1 The Application Server</h3>
+            <p>[Application server highlight image]</p>
+            <p>Recall that the essential architectural component differentiating a static frontend application from a
+              more complex dynamic one is the need for an application server to generate SSR pages at request time. </p>
+            <p>Since Bubble aims to let users share new UI/UX features quickly and conveniently, we considered options
+              that would allow us to build and deploy applications that include application servers in a lightweight and
+              cost-efficient manner.</p>
+
             <div class="case-study-subsection">
-              <h3>10.1 The Application Server</h3>
-              <p>[Application server highlight image]</p>
-              <p>Recall that the essential architectural component differentiating a static frontend application from a more complex dynamic one is the need for an application server to generate SSR pages at request time. </p>
-              <p>Since Bubble aims to let users share new UI/UX features quickly and conveniently, we considered options that would allow us to build and deploy applications that include application servers in a lightweight and cost-efficient manner.</p>
-              
-              <div class="case-study-subsection">
-                <h4>10.1.1 Containers</h4>
-                <p>One option would be to deploy the server-side logic and static assets together in a container. </p>
-                <p>A container encapsulates the application code along with all the runtime elements necessary to execute it together in one package. </p>
-                <p>[Containers pros half]</p>
-                <p>With containers, we wouldn’t need to set up and configure multiple nodes of infrastructure or implement routing logic to connect them; instead, we’d be able to deploy only one single entity for each preview app, as the entire application would be spun up in the container as a whole. Since there’s only one piece to consider, containers can easily be moved around and deployed. </p>
-                <p>[Containers cons half]</p>
-                <p>However, containers are constantly running, and would therefore incur costs even while the application is not in use. They also have longer build times since the virtualized OS and runtime need to be built and packaged together on top of the preview app itself.</p>
-              </div>
-              
-              <div class="case-study-subsection">
-                <h4>10.1.2 Serverless Computing</h4>
-                <p>An alternative to containers would be deploying the server-side logic and static assets to separate services. Given our use case of providing temporary preview apps, we found serverless functions to be the most compelling option for deploying server-side logic.</p>
-                <p>[Serverless functions pros half]</p>
-                <p>Despite being called serverless, these functions do run on servers, but they abstract away the logistics of provisioning server resources. There are no ongoing expenses: developers are only charged for the server capacity that their application uses during the time it’s actually being executed.</p>
-                <p>Since they don’t need to include system dependencies, serverless functions are also very fast to deploy, typically going live within milliseconds. </p>
-                <p>[Serverless functions cons half]</p>
-                <p>One downside of serverless functions is the added complexity of the architecture for preview apps: as opposed to containers, using serverless functions requires multiple nodes of infrastructure as well as routing logic to direct traffic between them. </p>
-                <p>Another inherent drawback is what’s called “cold starts”: since serverless functions aren’t constantly running, they have to be spun up before beginning execution. This can sometimes take several seconds, which can lead to longer loading times for SSR pages.</p>
-                <p>Ultimately, we chose to use serverless functions rather than containers. Bubble’s preview apps do not need to be highly performant, so cold starts are acceptable. In terms of the architectural complexity, although serverless functions necessitate additional infrastructure, being able to use separate services for SSR and SSG allows us to fully optimize for the hybrid approach that Next.js supports.</p>
-                <p>As we delved further into utilizing serverless functions for our preview apps, we considered three open-source frameworks with which to automate deployment.</p>
-              </div>
+              <h4>10.1.1 Containers</h4>
+              <p>One option would be to deploy the server-side logic and static assets together in a container. </p>
+              <p>A container encapsulates the application code along with all the runtime elements necessary to execute
+                it together in one package. </p>
+              <p>[Containers pros half]</p>
+              <p>With containers, we wouldn’t need to set up and configure multiple nodes of infrastructure or implement
+                routing logic to connect them; instead, we’d be able to deploy only one single entity for each preview
+                app, as the entire application would be spun up in the container as a whole. Since there’s only one
+                piece to consider, containers can easily be moved around and deployed. </p>
+              <p>[Containers cons half]</p>
+              <p>However, containers are constantly running, and would therefore incur costs even while the application
+                is not in use. They also have longer build times since the virtualized OS and runtime need to be built
+                and packaged together on top of the preview app itself.</p>
             </div>
-            
+
             <div class="case-study-subsection">
-              <h3>10.2 Serverless Computing Options</h3>
-              
-              <div class="case-study-subsection">
-                <h4>10.2.1 <a href="https://tsh.io/blog/aws-infrastructure-terraform-serverless/#:~:text=You%20write%20code%20that%20defines,place%20where%20you%20create%20code.">Terraform</a></h4>
-                <p>[Terraform infrastructure image]</p>
-                <p>The Terraform Next.js module for AWS is the first tool we considered.</p>
-                <p>This open-source module uses Terraform – an “infrastructure as code” framework used to manage the lifecycle of cloud components - to deploy Next.js applications on AWS services. The upsides to this option are that it is actively maintained and supports all versions of Next.js.  </p>
-                <p>Compared to other solutions, the Terraform module uses a more complex architecture to deploy apps. The AWS services used include CloudFront to handle incoming traffic, a Lambda@Edge function that acts as a proxy handler to route requests, an S3 bucket for static content storage, Lambda functions for serving the dynamic SSR pages, and an API Gateway that balances traffic between the Lambda functions.</p>
-                <p>The cost of this heavy underlying infrastructure is lengthy deployment times. During our test runs using this module with multiple Next.js applications, we found that deploying a simple app took more than 15 minutes. We also encountered a few deployment failures, which were challenging to debug because of the architectural complexity, and these failures led us to question the reliability of this option. </p>
-              </div>
-              
-              <div class="case-study-subsection">
-                <h4>10.2.2 FAB</h4>
-                <p>[FAB infrastructure image]</p>
-                <p>Frontend Application Bundle (also called FAB) is another open-source framework that enables users to deploy Next.js applications through a CLI. </p>
-                <p>FAB zips up entire applications and ships static assets and server-side logic separately. Thus, the user has the option to choose separate platforms for serving static and dynamic content. For example, they could deploy static assets to AWS S3 while deploying serverless functions with Cloudflare workers. Although it aims to be platform agnostic, for serverless functions, FAB is currently most streamlined for Cloudflare Workers and AWS Lambdas. </p>
-                <p>When using FAB to deploy a few Next.js applications, it took no more than 5 minutes to deploy each app, which was significantly faster than other tools we considered, especially Terraform. </p>
-                <p>However, unlike the other options, FAB has not been maintained for over a year and a half and consequently doesn’t support Next.js applications beyond version 10. For reference, Next.js is currently on version 12. </p>
-              </div>
-              
-              <div class="case-study-subsection">
-                <h4>10.2.3 <a href="https://www.serverless.com/plugins/serverless-nextjs-plugin">Serverless Framework</a></h4>
-                <p>[Serverless Next.js infrastructure image]</p>
-                <p>The final option we considered was the Serverless Framework: specifically, the Serverless Next.js Component.</p>
-                <p>Serverless Next.js deploys apps using only three AWS services: CloudFront, Lambda@Edge, and S3. This is a simpler architecture in comparison to the Terraform module, which may be a contributing factor to its faster deployment time. While provisioning the CloudFront distribution does take a few minutes, it still took less than half the time to deploy compared to Terraform. </p>
-                <p>One downside of using Serverless Next.js is that unlike the flexibility of FAB, it currently only supports deployment on AWS infrastructure. Moreover, server-side logic can only be deployed to Lambda@Edge functions. However, while FAB is no longer actively maintained, Serverless Next.js continues to be a reliable framework considering how many people use it to deploy Next.js applications. The maintainers are still active and its latest version was released just a few months ago in March 2022. </p>
-                <p>In the end, we selected Serverless Next.js to build and deploy Bubble’s preview apps, due to its reliability, relatively fast deployment time, and simplified architecture, which would best serve Bubble’s goal of automating lightweight and convenient preview apps.</p>
-              </div>
+              <h4>10.1.2 Serverless Computing</h4>
+              <p>An alternative to containers would be deploying the server-side logic and static assets to separate
+                services. Given our use case of providing temporary preview apps, we found serverless functions to be
+                the most compelling option for deploying server-side logic.</p>
+              <p>[Serverless functions pros half]</p>
+              <p>Despite being called serverless, these functions do run on servers, but they abstract away the
+                logistics of provisioning server resources. There are no ongoing expenses: developers are only charged
+                for the server capacity that their application uses during the time it’s actually being executed.</p>
+              <p>Since they don’t need to include system dependencies, serverless functions are also very fast to
+                deploy, typically going live within milliseconds. </p>
+              <p>[Serverless functions cons half]</p>
+              <p>One downside of serverless functions is the added complexity of the architecture for preview apps: as
+                opposed to containers, using serverless functions requires multiple nodes of infrastructure as well as
+                routing logic to direct traffic between them. </p>
+              <p>Another inherent drawback is what’s called “cold starts”: since serverless functions aren’t constantly
+                running, they have to be spun up before beginning execution. This can sometimes take several seconds,
+                which can lead to longer loading times for SSR pages.</p>
+              <p>Ultimately, we chose to use serverless functions rather than containers. Bubble’s preview apps do not
+                need to be highly performant, so cold starts are acceptable. In terms of the architectural complexity,
+                although serverless functions necessitate additional infrastructure, being able to use separate services
+                for SSR and SSG allows us to fully optimize for the hybrid approach that Next.js supports.</p>
+              <p>As we delved further into utilizing serverless functions for our preview apps, we considered three
+                open-source frameworks with which to automate deployment.</p>
             </div>
           </div>
-          
+
           <div class="case-study-subsection">
-            <h2>11. Additional AWS Services</h2>
-            
+            <h3>10.2 Serverless Computing Options</h3>
+
             <div class="case-study-subsection">
-              <h3>11.1 IAM</h3>
-              <p>[IAM mini-flow image]</p>
-              <p>Bubble creates new IAM users for identity and access management. An IAM user for a particular GitHub repository will have limited access to only those resources needed for Bubble’s features. The access key for the user is saved locally on the user's computer and also in GitHub secrets. This allows a separation of access to resources on a user’s AWS account for other use, limiting the damage that a malicious user could do if they were to act on the IAM user’s behalf.</p>
+              <h4>10.2.1 <a
+                  href="https://tsh.io/blog/aws-infrastructure-terraform-serverless/#:~:text=You%20write%20code%20that%20defines,place%20where%20you%20create%20code.">Terraform</a>
+              </h4>
+              <p>[Terraform infrastructure image]</p>
+              <p>The Terraform Next.js module for AWS is the first tool we considered.</p>
+              <p>This open-source module uses Terraform – an “infrastructure as code” framework used to manage the
+                lifecycle of cloud components - to deploy Next.js applications on AWS services. The upsides to this
+                option are that it is actively maintained and supports all versions of Next.js. </p>
+              <p>Compared to other solutions, the Terraform module uses a more complex architecture to deploy apps. The
+                AWS services used include CloudFront to handle incoming traffic, a Lambda@Edge function that acts as a
+                proxy handler to route requests, an S3 bucket for static content storage, Lambda functions for serving
+                the dynamic SSR pages, and an API Gateway that balances traffic between the Lambda functions.</p>
+              <p>The cost of this heavy underlying infrastructure is lengthy deployment times. During our test runs
+                using this module with multiple Next.js applications, we found that deploying a simple app took more
+                than 15 minutes. We also encountered a few deployment failures, which were challenging to debug because
+                of the architectural complexity, and these failures led us to question the reliability of this option.
+              </p>
             </div>
-            
+
             <div class="case-study-subsection">
-              <h3>11.2 DynamoDB</h3>
-              <p>[DynamoDB zoom-in mini-map image like our brainstorm?]</p>
-              <p>In order to keep track of all the preview apps and their resources including CloudFront distributions, S3 buckets, and associated Lambda functions, Bubble persists related metadata. Because Bubble automatically destroys preview apps on pull request triggers through workflow files, the data needs to be accessed remotely from a GitHub runner.</p>
-              <p>One option would have been to save the data locally on the user's computer and spin up a server listening for API calls from GitHub. However, that would necessitate a long-running server provisioned either on the user's local machine or through a cloud provider on their behalf.</p>
-              <p>Instead, Bubble provisions DynamoDB tables during initialization and saves metadata to them whenever a preview app is deployed. Because the IAM user’s access key is saved in GitHub secrets, workflow files can access those keys to configure the AWS command line tool on the GitHub server.</p>
-              <p>Furthermore, in pursuit of our goal of being lightweight and low-cost, DynamoDB tables are provisioned in an on-demand capacity mode. This means the user is only charged for data writes and reads. These tables are torn down automatically if the user ever executes Bubble’s resource destruction command from the Bubble CLI. </p>
+              <h4>10.2.2 FAB</h4>
+              <p>[FAB infrastructure image]</p>
+              <p>Frontend Application Bundle (also called FAB) is another open-source framework that enables users to
+                deploy Next.js applications through a CLI. </p>
+              <p>FAB zips up entire applications and ships static assets and server-side logic separately. Thus, the
+                user has the option to choose separate platforms for serving static and dynamic content. For example,
+                they could deploy static assets to AWS S3 while deploying serverless functions with Cloudflare workers.
+                Although it aims to be platform agnostic, for serverless functions, FAB is currently most streamlined
+                for Cloudflare Workers and AWS Lambdas. </p>
+              <p>When using FAB to deploy a few Next.js applications, it took no more than 5 minutes to deploy each app,
+                which was significantly faster than other tools we considered, especially Terraform. </p>
+              <p>However, unlike the other options, FAB has not been maintained for over a year and a half and
+                consequently doesn’t support Next.js applications beyond version 10. For reference, Next.js is currently
+                on version 12. </p>
+            </div>
+
+            <div class="case-study-subsection">
+              <h4>10.2.3 <a href="https://www.serverless.com/plugins/serverless-nextjs-plugin">Serverless Framework</a>
+              </h4>
+              <p>[Serverless Next.js infrastructure image]</p>
+              <p>The final option we considered was the Serverless Framework: specifically, the Serverless Next.js
+                Component.</p>
+              <p>Serverless Next.js deploys apps using only three AWS services: CloudFront, Lambda@Edge, and S3. This is
+                a simpler architecture in comparison to the Terraform module, which may be a contributing factor to its
+                faster deployment time. While provisioning the CloudFront distribution does take a few minutes, it still
+                took less than half the time to deploy compared to Terraform. </p>
+              <p>One downside of using Serverless Next.js is that unlike the flexibility of FAB, it currently only
+                supports deployment on AWS infrastructure. Moreover, server-side logic can only be deployed to
+                Lambda@Edge functions. However, while FAB is no longer actively maintained, Serverless Next.js continues
+                to be a reliable framework considering how many people use it to deploy Next.js applications. The
+                maintainers are still active and its latest version was released just a few months ago in March 2022.
+              </p>
+              <p>In the end, we selected Serverless Next.js to build and deploy Bubble’s preview apps, due to its
+                reliability, relatively fast deployment time, and simplified architecture, which would best serve
+                Bubble’s goal of automating lightweight and convenient preview apps.</p>
             </div>
           </div>
-          
+        </div>
+
+        <div class="case-study-subsection">
+          <h2>11. Additional AWS Services</h2>
+
           <div class="case-study-subsection">
-            <h2>12. Using Bubble</h2>
-            <p>Now that we’ve explained how Bubble was built, we can take a further look at the two user interfaces that Bubble provides: the CLI and the dashboard.</p>
-            
-            <div class="case-study-subsection">
-              <h3>12.1 Prerequisites &amp; Installing Bubble</h3>
-              <p>Getting started with Bubble for a Next.js project requires the following prerequisites:</p>
-              <ul>
+            <h3>11.1 IAM</h3>
+            <p>[IAM mini-flow image]</p>
+            <p>Bubble creates new IAM users for identity and access management. An IAM user for a particular GitHub
+              repository will have limited access to only those resources needed for Bubble’s features. The access key
+              for the user is saved locally on the user's computer and also in GitHub secrets. This allows a separation
+              of access to resources on a user’s AWS account for other use, limiting the damage that a malicious user
+              could do if they were to act on the IAM user’s behalf.</p>
+          </div>
+
+          <div class="case-study-subsection">
+            <h3>11.2 DynamoDB</h3>
+            <p>[DynamoDB zoom-in mini-map image like our brainstorm?]</p>
+            <p>In order to keep track of all the preview apps and their resources including CloudFront distributions, S3
+              buckets, and associated Lambda functions, Bubble persists related metadata. Because Bubble automatically
+              destroys preview apps on pull request triggers through workflow files, the data needs to be accessed
+              remotely from a GitHub runner.</p>
+            <p>One option would have been to save the data locally on the user's computer and spin up a server listening
+              for API calls from GitHub. However, that would necessitate a long-running server provisioned either on the
+              user's local machine or through a cloud provider on their behalf.</p>
+            <p>Instead, Bubble provisions DynamoDB tables during initialization and saves metadata to them whenever a
+              preview app is deployed. Because the IAM user’s access key is saved in GitHub secrets, workflow files can
+              access those keys to configure the AWS command line tool on the GitHub server.</p>
+            <p>Furthermore, in pursuit of our goal of being lightweight and low-cost, DynamoDB tables are provisioned in
+              an on-demand capacity mode. This means the user is only charged for data writes and reads. These tables
+              are torn down automatically if the user ever executes Bubble’s resource destruction command from the
+              Bubble CLI. </p>
+          </div>
+        </div>
+
+        <div class="case-study-subsection">
+          <h2>12. Using Bubble</h2>
+          <p>Now that we’ve explained how Bubble was built, we can take a further look at the two user interfaces that
+            Bubble provides: the CLI and the dashboard.</p>
+
+          <div class="case-study-subsection">
+            <h3>12.1 Prerequisites &amp; Installing Bubble</h3>
+            <p>Getting started with Bubble for a Next.js project requires the following prerequisites:</p>
+            <ul>
               <li>An AWS Account and AWS CLI configured to the account</li>
               <li>A GitHub Token with repository-level permissions</li>
               <li>Node.js and <code>npm</code></li>
-              </ul>
-              <p>Users can install Bubble by running the following npm command:</p>
-              <p><code>npm i -g jjam-bubble</code></p>
-            </div>
-            
-            <div class="case-study-subsection">
-              <h3>12.2 The Bubble CLI</h3>
-              <p>After installing Bubble, the following commands are available on the command line:</p>
-              <p>[Command table]</p>
-            </div>
-            
-            <div class="case-study-subsection">
-              <h3>12.3 The Bubble Dashboard</h3>
-              <p>[Dashboard demo gif if possible!]</p>
-              <p>Users can access the Bubble dashboard using the command <code>bubble dashboard</code> from a Bubble-enabled local repository.</p>
-              <p>Once the dashboard is open, all preview apps on all branches with open pull requests, for that repository, will be displayed. Users are provided links to each preview app, as well as to the GitHub workflow run for that preview app deployment, where the build logs are available.</p>
-              <p>From this view, the user is also able to hit the ‘Destroy’ button, which will begin the destruction process for all preview apps belonging to that repository.</p>
-              <p>Users may navigate to other Bubble-enabled repositories by using the sidebar or the homepage.</p>
-            </div>
-            
-            <div class="case-study-subsection">
-              <h3>12.4 Adding Bubble to a Project</h3>
-              <p>[Init demo?]</p>
-              <p>If the user has a Next.js project to which they would like to add Bubble, the first step is to run the <code>bubble init</code> command in their repository’s root directory.</p>
-              <p>Bubble will then request a GitHub Personal Access Token (if this isn’t the user’s first time using Bubble, they may continue to use the same token for subsequent Bubble-integrated projects).</p>
-              <p>A <code>.bubble</code> folder will be created in the user’s local machine’s home directory to house their configuration details, data on all active Bubble-integrated repositories, and all code and packages needed to successfully run the dashboard. Another folder, <code>.github/workflows</code>, will be created in the project directory. The contents of this folder are the GitHub Actions workflow files necessary for automating preview app deployment and destruction. </p>
-              <p>Afterward, Bubble provisions a new AWS IAM user and configures the user under a new AWS command line profile. Any AWS commands executed from the repository will run under that profile, so that Bubble only has access to resources related to the current repository’s deployments. The user’s AWS access information and  GitHub token will be encrypted and saved to GitHub secrets.</p>
-              <p>Lastly, to keep track of preview app metadata for the repository, a new DynamoDB table will be spun up with the newly created AWS IAM user credentials. </p>
-            </div>
+            </ul>
+            <p>Users can install Bubble by running the following npm command:</p>
+            <p><code>npm i -g jjam-bubble</code></p>
           </div>
-          
+
           <div class="case-study-subsection">
-            <h2>13. Challenges</h2>
-            <p>Now that we’ve explored how Bubble works and some of the design decisions we made, let’s dive further into two of the challenges we encountered during implementation.</p>
-            
-            <div class="case-study-subsection">
-              <h3>13.1 Lambda Function Deletion</h3>
-              <p>[Lambda deletion issue gif]</p>
-              <p>One challenge occurred when we were deleting preview apps.</p>
-              <p>For building and deploying preview apps, we used GitHub Actions to run workflows, and we decided to use the same mechanism for tearing them down These workflows can be triggered automatically, by the closing of a pull request, or manually, using the <code>bubble destroy</code> command through the CLI.</p>
-              <p>When the workflow to destroy a preview app is executed, all AWS resources provisioned for that preview app should be torn down. These resources include the S3 Bucket storage, CloudFront distribution, and Lambda@Edge functions. AWS associates Lambdas with a CloudFront distribution, so the order in which we delete each resource is important.</p>
-              <p>In our Bubble Destroy implementation, we first request that AWS remove the S3 bucket storage, then the CloudFront distribution, and finally the Lambdas. However, even when the CloudFront distributions are successfully deleted, an error often occurs when we attempt to delete the Lambdas. The error states that additional time is needed before they can be deleted—this amount of time can range anywhere from a few hours to a day. </p>
-              <p>Upon further research, we learned this is an AWS limitation when working with Lambda@Edge functions, so we had to find a solution to work around this issue.</p>
-              
-              <div class="case-study-subsection">
-                <h4>13.1.1 Polling</h4>
-                <p>[Polling gif]</p>
-                <p>One solution we considered was polling: repeatedly trying to delete the lambdas and checking whether or not the attempt was successful. This would have involved setting up a process often referred to as a cron job, which enables developers to automatically and repeatedly execute scripts at specified times.</p>
-                <p>Had we chosen this approach, Bubble would have set up a cron job to execute in the background after the user executed <code>bubble destroy</code>: this cron job would have attempted to delete the Lambdas at a specified time every day until none remained.</p>
-                <p>The downside to this approach is that cron jobs run on the operating system: accordingly,   configurations would have differed across operating systems. Multiple implementations would have had to be developed for different systems, all of them including the cron job itself as well as the manual setup of logging in case of errors, the monitoring of those logs, and the additional logic needed to restart the job if the computer were rebooted. </p>
-                <p>Rather than relying on the user’s local machine, another possibility would be implementing a cron job on AWS; however, this would increase costs for the user and add another resource for the application to manage. </p>
-                <p>As a result, we decided that cron jobs would not be a good fit for this specific task.</p>
-              </div>
-              
-              <div class="case-study-subsection">
-                <h4>13.1.2 Additional CLI Command</h4>
-                <p>[Destroy vs. teardown comparison image]</p>
-                <p>Instead of cron jobs, we decided to add a command named <code>bubble teardown</code> which users can run themselves later after running <code>bubble destroy</code> to remove any remaining Lambda@Edge functions.  </p>
-                <p>To make this change, we had to adjust how we maintained the information necessary to tell AWS to remove these functions. We decided to add another table to the DynamoDB database to store metadata for each Lambda. This meant that we also had to alter the workflow for building and deploying preview apps so that the Lambda metadata would be saved during each deployment. </p>
-                <p>This new table is now used when the user runs <code>bubble teardown</code> so that Bubble can identify which functions to delete when issuing AWS CLI commands. The table is then removed once all functions are successfully deleted.</p>
-                <p>Modifying our build workflow and adding this additional table slightly increased the complexity of our application, but we felt it was simpler than implementing multiple cron jobs and the logic it would take to monitor and eventually remove them from the user's system or AWS.</p>
-              </div>
-            </div>
-            
-            <div class="case-study-subsection">
-              <h3>13.2 Build Logs</h3>
-              <p>[Build logs access issue gif or widget]</p>
-              <p>Another challenge we experienced involved capturing the preview app build logs and integrating them into our dashboard.</p>
-              <p>Inspecting build logs can be very beneficial for technical stakeholders because it allows them to examine how their code is being built and deployed, and to be able to investigate in case of failure. Therefore, we wanted to display them on the dashboard interface. </p>
-              <p>Our initial plan was to capture and parse the logs so that we could include them in full on the dashboard. That way, when a user selected a particular preview app deployment, they would be able to view the logs immediately. This turned out to be surprisingly difficult to implement.</p>
-              
-              <div class="case-study-subsection">
-                <h4>13.2.1 Accessing the Logs</h4>
-                <p>As previously discussed, we used Github Actions to deploy and build preview apps. One downside of GitHub Actions is how opaque the runtime environment is. </p>
-                <p>GitHub Actions run on temporary virtual servers which are spun up when a workflow is executed and spun down as soon as execution is complete; this means that the environment for each build is transitory. Therefore, we had to find a way to begin the process of capturing the logs live rather than after the fact. </p>
-                <p>Our first attempts to capture the logs during the build process were unsuccessful because the Action run logs are only available via an API call after the entire execution has finished. </p>
-                <p>We ended up having to cache the <em>run</em>id_ for each workflow on GitHub and then implement an entirely separate workflow which was triggered immediately after each build action finished. This allowed us to access the build logs in their entirety within the new workflow. </p>
-              </div>
-              
-              <div class="case-study-subsection">
-                <h4>13.2.2 Parsing the Logs</h4>
-                <p>[Parsing logs issue image]</p>
-                <p>The next hurdle after retrieving the logs was cleaning and parsing them.</p>
-                <p>As part of displaying workflow execution logs on their site, GitHub injects a variety of metadata and special character sequences. These sequences are used by GitHub when streaming the logs on the GitHub Actions console on their site, but they lead to numerous string parsing errors when handled within a workflow on a GitHub runner.</p>
-                <p>Trying to parse these logs was a painstaking process of manually going through thousands of lines of logs and attempting to eliminate these inserted characters without removing meaningful log data. The number of edge cases that required special handling kept growing and growing with no end in sight. </p>
-              </div>
-              
-              <div class="case-study-subsection">
-                <h4>13.2.3 Storing the Logs</h4>
-                <p>In addition to the snowballing parsing challenges, we also had to decide how and where we would store the logs. Build logs can easily contain thousands of lines, so they are not trivial to store. </p>
-                <p>Since we were already utilizing AWS microservices for our architecture, we limited our options to their offerings. We began by considering DynamoDB, which we were already using in each Bubble project. However, we realized that a set of logs could easily exceed the single-item storage limit.</p>
-                <p>Another option we thought about was using additional S3 buckets to store the logs as objects. After the initial parsing, there would be no need to ever update the logs; we could simply retrieve them later, in one piece, as they were originally stored. This means that object storage would be a good fit for the logs.</p>
-                <p>Although we’d found a suitable way to store the logs, another major concern that grew increasingly apparent was the potential impact of cost for the user: as the logs stored piled up, additional AWS charges would accrue for our end users.</p>
-                <p>[complicated stack of graphics (before the 'poof!') image]</p>
-                <p>As we progressed further down this route and realized both our development and architectural complexity were increasing notably, we chose to streamline this feature and move in a different direction.</p>
-              </div>
-              
-              <div class="case-study-subsection">
-                <h4>13.2.4 Solution: Link to Logs</h4>
-                <p>[Link to logs still image]</p>
-                <p>Instead of processing the logs ourselves and making them available in full on the Bubble dashboard, we decided to add a link on the dashboard for each preview app’s build log. When followed, this link takes the user directly to the GitHub workflow run where they have the option to download the logs for that specific preview app.</p>
-                <p>Although this option requires a couple more clicks for the user, it significantly reduces the complexity of Bubble itself as well as the storage needs (and costs) of the user’s AWS account. </p>
-              </div>
-            </div>
+            <h3>12.2 The Bubble CLI</h3>
+            <p>After installing Bubble, the following commands are available on the command line:</p>
+            <p>[Command table]</p>
           </div>
-          
+
           <div class="case-study-subsection">
-            <h2>14. Future Work</h2>
-            <p>[Future work image]</p>
-            <p>Now that we’re well-acquainted with Bubble and the design decisions that went into building it, the following are some features we’d like to include in the future.</p>
-            
+            <h3>12.3 The Bubble Dashboard</h3>
+            <p>[Dashboard demo gif if possible!]</p>
+            <p>Users can access the Bubble dashboard using the command <code>bubble dashboard</code> from a
+              Bubble-enabled local repository.</p>
+            <p>Once the dashboard is open, all preview apps on all branches with open pull requests, for that
+              repository, will be displayed. Users are provided links to each preview app, as well as to the GitHub
+              workflow run for that preview app deployment, where the build logs are available.</p>
+            <p>From this view, the user is also able to hit the ‘Destroy’ button, which will begin the destruction
+              process for all preview apps belonging to that repository.</p>
+            <p>Users may navigate to other Bubble-enabled repositories by using the sidebar or the homepage.</p>
+          </div>
+
+          <div class="case-study-subsection">
+            <h3>12.4 Adding Bubble to a Project</h3>
+            <p>[Init demo?]</p>
+            <p>If the user has a Next.js project to which they would like to add Bubble, the first step is to run the
+              <code>bubble init</code> command in their repository’s root directory.
+            </p>
+            <p>Bubble will then request a GitHub Personal Access Token (if this isn’t the user’s first time using
+              Bubble, they may continue to use the same token for subsequent Bubble-integrated projects).</p>
+            <p>A <code>.bubble</code> folder will be created in the user’s local machine’s home directory to house their
+              configuration details, data on all active Bubble-integrated repositories, and all code and packages needed
+              to successfully run the dashboard. Another folder, <code>.github/workflows</code>, will be created in the
+              project directory. The contents of this folder are the GitHub Actions workflow files necessary for
+              automating preview app deployment and destruction. </p>
+            <p>Afterward, Bubble provisions a new AWS IAM user and configures the user under a new AWS command line
+              profile. Any AWS commands executed from the repository will run under that profile, so that Bubble only
+              has access to resources related to the current repository’s deployments. The user’s AWS access information
+              and GitHub token will be encrypted and saved to GitHub secrets.</p>
+            <p>Lastly, to keep track of preview app metadata for the repository, a new DynamoDB table will be spun up
+              with the newly created AWS IAM user credentials. </p>
+          </div>
+        </div>
+
+        <div class="case-study-subsection">
+          <h2>13. Challenges</h2>
+          <p>Now that we’ve explored how Bubble works and some of the design decisions we made, let’s dive further into
+            two of the challenges we encountered during implementation.</p>
+
+          <div class="case-study-subsection">
+            <h3>13.1 Lambda Function Deletion</h3>
+            <p>[Lambda deletion issue gif]</p>
+            <p>One challenge occurred when we were deleting preview apps.</p>
+            <p>For building and deploying preview apps, we used GitHub Actions to run workflows, and we decided to use
+              the same mechanism for tearing them down These workflows can be triggered automatically, by the closing of
+              a pull request, or manually, using the <code>bubble destroy</code> command through the CLI.</p>
+            <p>When the workflow to destroy a preview app is executed, all AWS resources provisioned for that preview
+              app should be torn down. These resources include the S3 Bucket storage, CloudFront distribution, and
+              Lambda@Edge functions. AWS associates Lambdas with a CloudFront distribution, so the order in which we
+              delete each resource is important.</p>
+            <p>In our Bubble Destroy implementation, we first request that AWS remove the S3 bucket storage, then the
+              CloudFront distribution, and finally the Lambdas. However, even when the CloudFront distributions are
+              successfully deleted, an error often occurs when we attempt to delete the Lambdas. The error states that
+              additional time is needed before they can be deleted—this amount of time can range anywhere from a few
+              hours to a day. </p>
+            <p>Upon further research, we learned this is an AWS limitation when working with Lambda@Edge functions, so
+              we had to find a solution to work around this issue.</p>
+
             <div class="case-study-subsection">
-              <h3>14.1 Support Additional Frameworks</h3>
-              <p>Currently, Bubble only supports the Next.js framework. We would eventually like to support building and deploying preview apps for other frontend frameworks such as React, Vue, etc</p>
+              <h4>13.1.1 Polling</h4>
+              <p>[Polling gif]</p>
+              <p>One solution we considered was polling: repeatedly trying to delete the lambdas and checking whether or
+                not the attempt was successful. This would have involved setting up a process often referred to as a
+                cron job, which enables developers to automatically and repeatedly execute scripts at specified times.
+              </p>
+              <p>Had we chosen this approach, Bubble would have set up a cron job to execute in the background after the
+                user executed <code>bubble destroy</code>: this cron job would have attempted to delete the Lambdas at a
+                specified time every day until none remained.</p>
+              <p>The downside to this approach is that cron jobs run on the operating system: accordingly,
+                configurations would have differed across operating systems. Multiple implementations would have had to
+                be developed for different systems, all of them including the cron job itself as well as the manual
+                setup of logging in case of errors, the monitoring of those logs, and the additional logic needed to
+                restart the job if the computer were rebooted. </p>
+              <p>Rather than relying on the user’s local machine, another possibility would be implementing a cron job
+                on AWS; however, this would increase costs for the user and add another resource for the application to
+                manage. </p>
+              <p>As a result, we decided that cron jobs would not be a good fit for this specific task.</p>
             </div>
-            
+
             <div class="case-study-subsection">
-              <h3>14.2 Share the Dashboard</h3>
-              <p>At the moment, the dashboard can only be viewed by the developer who installed Bubble. In the future, we would like the dashboard to be more distributed so that developers from the same team can share one dashboard to manage and view their preview apps in one place.</p>
-            </div>
-            
-            <div class="case-study-subsection">
-              <h3>14.3 Deploy to Other Cloud Providers</h3>
-              <p>Finally, Bubble’s preview apps are currently only deployed on AWS infrastructure, but we’d be interested in exploring how to integrate our solution with alternative cloud providers, such as Cloudflare and Google Cloud. </p>
+              <h4>13.1.2 Additional CLI Command</h4>
+              <p>[Destroy vs. teardown comparison image]</p>
+              <p>Instead of cron jobs, we decided to add a command named <code>bubble teardown</code> which users can
+                run themselves later after running <code>bubble destroy</code> to remove any remaining Lambda@Edge
+                functions. </p>
+              <p>To make this change, we had to adjust how we maintained the information necessary to tell AWS to remove
+                these functions. We decided to add another table to the DynamoDB database to store metadata for each
+                Lambda. This meant that we also had to alter the workflow for building and deploying preview apps so
+                that the Lambda metadata would be saved during each deployment. </p>
+              <p>This new table is now used when the user runs <code>bubble teardown</code> so that Bubble can identify
+                which functions to delete when issuing AWS CLI commands. The table is then removed once all functions
+                are successfully deleted.</p>
+              <p>Modifying our build workflow and adding this additional table slightly increased the complexity of our
+                application, but we felt it was simpler than implementing multiple cron jobs and the logic it would take
+                to monitor and eventually remove them from the user's system or AWS.</p>
             </div>
           </div>
 
-          <!-- Team Section -->
-          <div class="case-study-section team">
-            <h2>11. The Bubble Team</h2>
-            <br />
-            <br />
-            <div class="section team-section">
-              <div class="container">
-                <div
-                  data-duration-in="300"
-                  data-duration-out="100"
-                  class="tabs w-tabs"
-                >
-                  <div
-                    data-w-id="8ce4324a-ed8e-4436-9964-0cfbaf67c64a"
-                    style="
+          <div class="case-study-subsection">
+            <h3>13.2 Build Logs</h3>
+            <p>[Build logs access issue gif or widget]</p>
+            <p>Another challenge we experienced involved capturing the preview app build logs and integrating them into
+              our dashboard.</p>
+            <p>Inspecting build logs can be very beneficial for technical stakeholders because it allows them to examine
+              how their code is being built and deployed, and to be able to investigate in case of failure. Therefore,
+              we wanted to display them on the dashboard interface. </p>
+            <p>Our initial plan was to capture and parse the logs so that we could include them in full on the
+              dashboard. That way, when a user selected a particular preview app deployment, they would be able to view
+              the logs immediately. This turned out to be surprisingly difficult to implement.</p>
+
+            <div class="case-study-subsection">
+              <h4>13.2.1 Accessing the Logs</h4>
+              <p>As previously discussed, we used Github Actions to deploy and build preview apps. One downside of
+                GitHub Actions is how opaque the runtime environment is. </p>
+              <p>GitHub Actions run on temporary virtual servers which are spun up when a workflow is executed and spun
+                down as soon as execution is complete; this means that the environment for each build is transitory.
+                Therefore, we had to find a way to begin the process of capturing the logs live rather than after the
+                fact. </p>
+              <p>Our first attempts to capture the logs during the build process were unsuccessful because the Action
+                run logs are only available via an API call after the entire execution has finished. </p>
+              <p>We ended up having to cache the <em>run</em>id_ for each workflow on GitHub and then implement an
+                entirely separate workflow which was triggered immediately after each build action finished. This
+                allowed us to access the build logs in their entirety within the new workflow. </p>
+            </div>
+
+            <div class="case-study-subsection">
+              <h4>13.2.2 Parsing the Logs</h4>
+              <p>[Parsing logs issue image]</p>
+              <p>The next hurdle after retrieving the logs was cleaning and parsing them.</p>
+              <p>As part of displaying workflow execution logs on their site, GitHub injects a variety of metadata and
+                special character sequences. These sequences are used by GitHub when streaming the logs on the GitHub
+                Actions console on their site, but they lead to numerous string parsing errors when handled within a
+                workflow on a GitHub runner.</p>
+              <p>Trying to parse these logs was a painstaking process of manually going through thousands of lines of
+                logs and attempting to eliminate these inserted characters without removing meaningful log data. The
+                number of edge cases that required special handling kept growing and growing with no end in sight. </p>
+            </div>
+
+            <div class="case-study-subsection">
+              <h4>13.2.3 Storing the Logs</h4>
+              <p>In addition to the snowballing parsing challenges, we also had to decide how and where we would store
+                the logs. Build logs can easily contain thousands of lines, so they are not trivial to store. </p>
+              <p>Since we were already utilizing AWS microservices for our architecture, we limited our options to their
+                offerings. We began by considering DynamoDB, which we were already using in each Bubble project.
+                However, we realized that a set of logs could easily exceed the single-item storage limit.</p>
+              <p>Another option we thought about was using additional S3 buckets to store the logs as objects. After the
+                initial parsing, there would be no need to ever update the logs; we could simply retrieve them later, in
+                one piece, as they were originally stored. This means that object storage would be a good fit for the
+                logs.</p>
+              <p>Although we’d found a suitable way to store the logs, another major concern that grew increasingly
+                apparent was the potential impact of cost for the user: as the logs stored piled up, additional AWS
+                charges would accrue for our end users.</p>
+              <p>[complicated stack of graphics (before the 'poof!') image]</p>
+              <p>As we progressed further down this route and realized both our development and architectural complexity
+                were increasing notably, we chose to streamline this feature and move in a different direction.</p>
+            </div>
+
+            <div class="case-study-subsection">
+              <h4>13.2.4 Solution: Link to Logs</h4>
+              <p>[Link to logs still image]</p>
+              <p>Instead of processing the logs ourselves and making them available in full on the Bubble dashboard, we
+                decided to add a link on the dashboard for each preview app’s build log. When followed, this link takes
+                the user directly to the GitHub workflow run where they have the option to download the logs for that
+                specific preview app.</p>
+              <p>Although this option requires a couple more clicks for the user, it significantly reduces the
+                complexity of Bubble itself as well as the storage needs (and costs) of the user’s AWS account. </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-study-subsection">
+          <h2>14. Future Work</h2>
+          <p>[Future work image]</p>
+          <p>Now that we’re well-acquainted with Bubble and the design decisions that went into building it, the
+            following are some features we’d like to include in the future.</p>
+
+          <div class="case-study-subsection">
+            <h3>14.1 Support Additional Frameworks</h3>
+            <p>Currently, Bubble only supports the Next.js framework. We would eventually like to support building and
+              deploying preview apps for other frontend frameworks such as React, Vue, etc</p>
+          </div>
+
+          <div class="case-study-subsection">
+            <h3>14.2 Share the Dashboard</h3>
+            <p>At the moment, the dashboard can only be viewed by the developer who installed Bubble. In the future, we
+              would like the dashboard to be more distributed so that developers from the same team can share one
+              dashboard to manage and view their preview apps in one place.</p>
+          </div>
+
+          <div class="case-study-subsection">
+            <h3>14.3 Deploy to Other Cloud Providers</h3>
+            <p>Finally, Bubble’s preview apps are currently only deployed on AWS infrastructure, but we’d be interested
+              in exploring how to integrate our solution with alternative cloud providers, such as Cloudflare and Google
+              Cloud. </p>
+          </div>
+        </div>
+
+        <!-- Team Section -->
+        <div class="case-study-section team">
+          <h2>11. The Bubble Team</h2>
+          <br />
+          <br />
+          <div class="section team-section">
+            <div class="container">
+              <div data-duration-in="300" data-duration-out="100" class="tabs w-tabs">
+                <div data-w-id="8ce4324a-ed8e-4436-9964-0cfbaf67c64a" style="
                       transform: translate3d(0px, 55px, 0px) scale3d(1, 1, 1)
                         rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
                       transform-style: preserve-3d;
                       opacity: 0;
-                    "
-                    class="tabs-content w-tab-content"
-                  >
-                    <div>
-                      <div class="team-grid">
-                        <!-- Jess -->
-                        <div class="team-member-wrap">
-                          <img
-                            src="assets/images/team/jess.jpg"
-                            loading="lazy"
-                            alt=""
-                          />
-                          <div class="team-member-info">
-                            <div class="team-member-name">Jessica Chang</div>
-                            <div class="team-member-location">
-                              New York City
-                            </div>
+                    " class="tabs-content w-tab-content">
+                  <div>
+                    <div class="team-grid">
+                      <!-- Jess -->
+                      <div class="team-member-wrap">
+                        <img src="assets/images/team/jess.jpg" loading="lazy" alt="" />
+                        <div class="team-member-info">
+                          <div class="team-member-name">Jessica Chang</div>
+                          <div class="team-member-location">
+                            New York City
                           </div>
-                          <ul class="team-member-icons">
-                            <li>
-                              <a
-                                href="mailto:jesschang77@gmail.com"
-                                target="_blank"
-                              >
-                                <span class="team-member-icon">
-                                  <i class="fas fa-envelope"></i>
-                                </span>
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                href="#jesswebsite"
-                                target="_blank"
-                              >
-                                <span class="team-member-icon">
-                                  <i class="fas fa-globe"></i>
-                                </span>
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                href="#jesslinkedin"
-                                target="_blank"
-                              >
-                                <span class="team-member-icon">
-                                  <i class="fab fa-linkedin"></i>
-                                </span>
-                              </a>
-                            </li>
-                          </ul>
                         </div>
+                        <ul class="team-member-icons">
+                          <li>
+                            <a href="mailto:jesschang77@gmail.com" target="_blank">
+                              <span class="team-member-icon">
+                                <i class="fas fa-envelope"></i>
+                              </span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#jesswebsite" target="_blank">
+                              <span class="team-member-icon">
+                                <i class="fas fa-globe"></i>
+                              </span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#jesslinkedin" target="_blank">
+                              <span class="team-member-icon">
+                                <i class="fab fa-linkedin"></i>
+                              </span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
 
-                        <!-- Julia -->
-                        <div class="team-member-wrap">
-                          <img
-                            src="assets/images/team/julia.jpg"
-                            loading="lazy"
-                            alt=""
-                          />
-                          <div class="team-member-info">
-                            <div class="team-member-name">Julia Shi</div>
-                            <div class="team-member-location">
-                              London
-                            </div>
+                      <!-- Julia -->
+                      <div class="team-member-wrap">
+                        <img src="assets/images/team/julia.jpg" loading="lazy" alt="" />
+                        <div class="team-member-info">
+                          <div class="team-member-name">Julia Shi</div>
+                          <div class="team-member-location">
+                            London
                           </div>
-                          <ul class="team-member-icons">
-                            <li>
-                              <a
-                                href="mailto:julia.shi@nyu.edu"
-                                target="_blank"
-                              >
-                                <span class="team-member-icon">
-                                  <i class="fas fa-envelope"></i>
-                                </span>
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                href="#juliawebsite"
-                                target="_blank"
-                              >
-                                <span class="team-member-icon">
-                                  <i class="fas fa-globe"></i>
-                                </span>
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                href="#julialinkedin"
-                                target="_blank"
-                              >
-                                <span class="team-member-icon">
-                                  <i class="fab fa-linkedin"></i>
-                                </span>
-                              </a>
-                            </li>
-                          </ul>
                         </div>
+                        <ul class="team-member-icons">
+                          <li>
+                            <a href="mailto:julia.shi@nyu.edu" target="_blank">
+                              <span class="team-member-icon">
+                                <i class="fas fa-envelope"></i>
+                              </span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#juliawebsite" target="_blank">
+                              <span class="team-member-icon">
+                                <i class="fas fa-globe"></i>
+                              </span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#julialinkedin" target="_blank">
+                              <span class="team-member-icon">
+                                <i class="fab fa-linkedin"></i>
+                              </span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
 
-                        <!-- Andrew -->
-                        <div class="team-member-wrap">
-                          <img
-                            src="assets/images/team/andrew.jpg"
-                            loading="lazy"
-                            alt=""
-                          />
-                          <div class="team-member-info">
-                            <div class="team-member-name">Andrew Moore</div>
-                            <div class="team-member-location">
-                              New York City
-                            </div>
+                      <!-- Andrew -->
+                      <div class="team-member-wrap">
+                        <img src="assets/images/team/andrew.jpg" loading="lazy" alt="" />
+                        <div class="team-member-info">
+                          <div class="team-member-name">Andrew Moore</div>
+                          <div class="team-member-location">
+                            New York City
                           </div>
-                          <ul class="team-member-icons">
-                            <li>
-                              <a
-                                href="mailto:andrewdmoore84@gmail.com"
-                                target="_blank"
-                              >
-                                <span class="team-member-icon">
-                                  <i class="fas fa-envelope"></i>
-                                </span>
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                href="#andrewwebsite"
-                                target="_blank"
-                              >
-                                <span class="team-member-icon">
-                                  <i class="fas fa-globe"></i>
-                                </span>
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                href="#andrewlinkedin"
-                                target="_blank"
-                              >
-                                <span class="team-member-icon">
-                                  <i class="fab fa-linkedin"></i>
-                                </span>
-                              </a>
-                            </li>
-                          </ul>
                         </div>
+                        <ul class="team-member-icons">
+                          <li>
+                            <a href="mailto:andrewdmoore84@gmail.com" target="_blank">
+                              <span class="team-member-icon">
+                                <i class="fas fa-envelope"></i>
+                              </span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#andrewwebsite" target="_blank">
+                              <span class="team-member-icon">
+                                <i class="fas fa-globe"></i>
+                              </span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#andrewlinkedin" target="_blank">
+                              <span class="team-member-icon">
+                                <i class="fab fa-linkedin"></i>
+                              </span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
 
-                        <!-- Missy -->
-                        <div class="team-member-wrap">
-                          <img
-                            src="assets/images/team/missy.jpg"
-                            loading="lazy"
-                            alt=""
-                          />
-                          <div class="team-member-info">
-                            <div class="team-member-name">Missy Lovegren</div>
-                            <div class="team-member-location">
-                              DFW Metroplex
-                            </div>
+                      <!-- Missy -->
+                      <div class="team-member-wrap">
+                        <img src="assets/images/team/missy.jpg" loading="lazy" alt="" />
+                        <div class="team-member-info">
+                          <div class="team-member-name">Missy Lovegren</div>
+                          <div class="team-member-location">
+                            DFW Metroplex
                           </div>
-                          <ul class="team-member-icons">
-                            <li>
-                              <a
-                                href="mailto:missy.lovegren@gmail.com"
-                                target="_blank"
-                              >
-                                <span class="team-member-icon">
-                                  <i class="fas fa-envelope"></i>
-                                </span>
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                href="#missywebsite"
-                                target="_blank"
-                              >
-                                <span class="team-member-icon">
-                                  <i class="fas fa-globe"></i>
-                                </span>
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                href="#missylinkedin"
-                                target="_blank"
-                              >
-                                <span class="team-member-icon">
-                                  <i class="fab fa-linkedin"></i>
-                                </span>
-                              </a>
-                            </li>
-                          </ul>
                         </div>
+                        <ul class="team-member-icons">
+                          <li>
+                            <a href="mailto:missy.lovegren@gmail.com" target="_blank">
+                              <span class="team-member-icon">
+                                <i class="fas fa-envelope"></i>
+                              </span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#missywebsite" target="_blank">
+                              <span class="team-member-icon">
+                                <i class="fas fa-globe"></i>
+                              </span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#missylinkedin" target="_blank">
+                              <span class="team-member-icon">
+                                <i class="fab fa-linkedin"></i>
+                              </span>
+                            </a>
+                          </li>
+                        </ul>
                       </div>
                     </div>
                   </div>
@@ -950,210 +1198,207 @@
             </div>
           </div>
         </div>
-      </article>
-    </div>
+      </div>
+    </article>
+  </div>
 
-    <script
-      src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=5f71dd169010d641cf65485c"
-      type="text/javascript"
-      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://assets.website-files.com/5f71dd169010d641cf65485c/js/webflow.6af2032ff.js"
-      type="text/javascript"
-    ></script>
-    <script>
-      var prevScrollpos = window.pageYOffset;
-      window.onscroll = function() {
-        var currentScrollPos = window.pageYOffset;
-        if (prevScrollpos > currentScrollPos) {
-          document.getElementById("navbar").style.top = "0";
-          document.getElementById("sidebar").style.top = "100px";
-        } else {
-          document.getElementById("navbar").style.top = "-100px";
-          document.getElementById("sidebar").style.top = "0";
-          document.getElementById("sidebar").style.paddingTop = "0";
-        }
-        prevScrollpos = currentScrollPos;
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=5f71dd169010d641cf65485c"
+    type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous"></script>
+  <script src="https://assets.website-files.com/5f71dd169010d641cf65485c/js/webflow.6af2032ff.js"
+    type="text/javascript"></script>
+  <script>
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+      var currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        document.getElementById("navbar").style.top = "0";
+        document.getElementById("sidebar").style.top = "100px";
+      } else {
+        document.getElementById("navbar").style.top = "-100px";
+        document.getElementById("sidebar").style.top = "0";
+        document.getElementById("sidebar").style.paddingTop = "0";
       }
-    </script>
-    <script>
-      /*!
-       * toc - jQuery Table of Contents Plugin
-       * v0.3.2
-       * http://projects.jga.me/toc/
-       * copyright Greg Allen 2014
-       * MIT License
-       */
-      !(function (a) {
-        (a.fn.smoothScroller = function (b) {
-          b = a.extend({}, a.fn.smoothScroller.defaults, b);
-          var c = a(this);
-          return (
-            a(b.scrollEl).animate(
-              {
-                scrollTop:
-                  c.offset().top - a(b.scrollEl).offset().top - b.offset,
-              },
-              b.speed,
-              b.ease,
-              function () {
-                var a = c.attr("id");
-                a.length &&
-                  (history.pushState
-                    ? history.pushState(null, null, "#" + a)
-                    : (document.location.hash = a)),
-                  c.trigger("smoothScrollerComplete");
+      prevScrollpos = currentScrollPos;
+    }
+  </script>
+  <script>
+    /*!
+     * toc - jQuery Table of Contents Plugin
+     * v0.3.2
+     * http://projects.jga.me/toc/
+     * copyright Greg Allen 2014
+     * MIT License
+     */
+    !(function (a) {
+      (a.fn.smoothScroller = function (b) {
+        b = a.extend({}, a.fn.smoothScroller.defaults, b);
+        var c = a(this);
+        return (
+          a(b.scrollEl).animate(
+            {
+              scrollTop:
+                c.offset().top - a(b.scrollEl).offset().top - b.offset,
+            },
+            b.speed,
+            b.ease,
+            function () {
+              var a = c.attr("id");
+              a.length &&
+                (history.pushState
+                  ? history.pushState(null, null, "#" + a)
+                  : (document.location.hash = a)),
+                c.trigger("smoothScrollerComplete");
+            }
+          ),
+          this
+        );
+      }),
+        (a.fn.smoothScroller.defaults = {
+          speed: 400,
+          ease: "swing",
+          scrollEl: "body,html",
+          offset: 0,
+        }),
+        a("body").on("click", "[data-smoothscroller]", function (b) {
+          b.preventDefault();
+          var c = a(this).attr("href");
+          0 === c.indexOf("#") && a(c).smoothScroller();
+        });
+    })(jQuery),
+      (function (a) {
+        var b = {};
+        (a.fn.toc = function (b) {
+          var c,
+            d = this,
+            e = a.extend({}, jQuery.fn.toc.defaults, b),
+            f = a(e.container),
+            g = a(e.selectors, f),
+            h = [],
+            i = e.activeClass,
+            j = function (b, c) {
+              if (
+                e.smoothScrolling &&
+                "function" == typeof e.smoothScrolling
+              ) {
+                b.preventDefault();
+                var f = a(b.target).attr("href");
+                e.smoothScrolling(f, e, c);
               }
-            ),
-            this
+              a("li", d).removeClass(i), a(b.target).parent().addClass(i);
+            },
+            k = function () {
+              c && clearTimeout(c),
+                (c = setTimeout(function () {
+                  for (
+                    var b,
+                    c = a(window).scrollTop(),
+                    f = Number.MAX_VALUE,
+                    g = 0,
+                    j = 0,
+                    k = h.length;
+                    k > j;
+                    j++
+                  ) {
+                    var l = Math.abs(h[j] - c);
+                    f > l && ((g = j), (f = l));
+                  }
+                  a("li", d).removeClass(i),
+                    (b = a("li:eq(" + g + ")", d).addClass(i)),
+                    e.onHighlight(b);
+                }, 50));
+            };
+          return (
+            e.highlightOnScroll && (a(window).bind("scroll", k), k()),
+            this.each(function () {
+              var b = a(this),
+                c = a(e.listType);
+              g.each(function (d, f) {
+                var g = a(f);
+                h.push(g.offset().top - e.highlightOffset);
+                var i = e.anchorName(d, f, e.prefix);
+                if (f.id !== i) {
+                  a("<span/>").attr("id", i).insertBefore(g);
+                }
+                var l = a("<a/>")
+                  .text(e.headerText(d, f, g))
+                  .attr("href", "#" + i)
+                  .bind("click", function (c) {
+                    a(window).unbind("scroll", k),
+                      j(c, function () {
+                        a(window).bind("scroll", k);
+                      }),
+                      b.trigger("selected", a(this).attr("href"));
+                  }),
+                  m = a("<li/>")
+                    .addClass(e.itemClass(d, f, g, e.prefix))
+                    .append(l);
+                c.append(m);
+              }),
+                b.html(c);
+            })
           );
         }),
-          (a.fn.smoothScroller.defaults = {
-            speed: 400,
-            ease: "swing",
-            scrollEl: "body,html",
-            offset: 0,
-          }),
-          a("body").on("click", "[data-smoothscroller]", function (b) {
-            b.preventDefault();
-            var c = a(this).attr("href");
-            0 === c.indexOf("#") && a(c).smoothScroller();
+          (jQuery.fn.toc.defaults = {
+            container: "body",
+            listType: "<ul/>",
+            selectors: "h1,h2,h3",
+            smoothScrolling: function (b, c, d) {
+              a(b)
+                .smoothScroller({ offset: c.scrollToOffset })
+                .on("smoothScrollerComplete", function () {
+                  d();
+                });
+            },
+            scrollToOffset: 0,
+            prefix: "toc",
+            activeClass: "toc-active",
+            onHighlight: function () { },
+            highlightOnScroll: !0,
+            highlightOffset: 100,
+            anchorName: function (c, d, e) {
+              if (d.id.length) return d.id;
+              var f = a(d)
+                .text()
+                .replace(/[^a-z0-9]/gi, " ")
+                .replace(/\s+/g, "-")
+                .toLowerCase();
+              if (b[f]) {
+                for (var g = 2; b[f + g];) g++;
+                f = f + "-" + g;
+              }
+              return (b[f] = !0), e + "-" + f;
+            },
+            headerText: function (a, b, c) {
+              return c.text();
+            },
+            itemClass: function (a, b, c, d) {
+              return d + "-" + c[0].tagName.toLowerCase();
+            },
           });
-      })(jQuery),
-        (function (a) {
-          var b = {};
-          (a.fn.toc = function (b) {
-            var c,
-              d = this,
-              e = a.extend({}, jQuery.fn.toc.defaults, b),
-              f = a(e.container),
-              g = a(e.selectors, f),
-              h = [],
-              i = e.activeClass,
-              j = function (b, c) {
-                if (
-                  e.smoothScrolling &&
-                  "function" == typeof e.smoothScrolling
-                ) {
-                  b.preventDefault();
-                  var f = a(b.target).attr("href");
-                  e.smoothScrolling(f, e, c);
-                }
-                a("li", d).removeClass(i), a(b.target).parent().addClass(i);
-              },
-              k = function () {
-                c && clearTimeout(c),
-                  (c = setTimeout(function () {
-                    for (
-                      var b,
-                        c = a(window).scrollTop(),
-                        f = Number.MAX_VALUE,
-                        g = 0,
-                        j = 0,
-                        k = h.length;
-                      k > j;
-                      j++
-                    ) {
-                      var l = Math.abs(h[j] - c);
-                      f > l && ((g = j), (f = l));
-                    }
-                    a("li", d).removeClass(i),
-                      (b = a("li:eq(" + g + ")", d).addClass(i)),
-                      e.onHighlight(b);
-                  }, 50));
-              };
-            return (
-              e.highlightOnScroll && (a(window).bind("scroll", k), k()),
-              this.each(function () {
-                var b = a(this),
-                  c = a(e.listType);
-                g.each(function (d, f) {
-                  var g = a(f);
-                  h.push(g.offset().top - e.highlightOffset);
-                  var i = e.anchorName(d, f, e.prefix);
-                  if (f.id !== i) {
-                    a("<span/>").attr("id", i).insertBefore(g);
-                  }
-                  var l = a("<a/>")
-                      .text(e.headerText(d, f, g))
-                      .attr("href", "#" + i)
-                      .bind("click", function (c) {
-                        a(window).unbind("scroll", k),
-                          j(c, function () {
-                            a(window).bind("scroll", k);
-                          }),
-                          b.trigger("selected", a(this).attr("href"));
-                      }),
-                    m = a("<li/>")
-                      .addClass(e.itemClass(d, f, g, e.prefix))
-                      .append(l);
-                  c.append(m);
-                }),
-                  b.html(c);
-              })
-            );
-          }),
-            (jQuery.fn.toc.defaults = {
-              container: "body",
-              listType: "<ul/>",
-              selectors: "h1,h2,h3",
-              smoothScrolling: function (b, c, d) {
-                a(b)
-                  .smoothScroller({ offset: c.scrollToOffset })
-                  .on("smoothScrollerComplete", function () {
-                    d();
-                  });
-              },
-              scrollToOffset: 0,
-              prefix: "toc",
-              activeClass: "toc-active",
-              onHighlight: function () {},
-              highlightOnScroll: !0,
-              highlightOffset: 100,
-              anchorName: function (c, d, e) {
-                if (d.id.length) return d.id;
-                var f = a(d)
-                  .text()
-                  .replace(/[^a-z0-9]/gi, " ")
-                  .replace(/\s+/g, "-")
-                  .toLowerCase();
-                if (b[f]) {
-                  for (var g = 2; b[f + g]; ) g++;
-                  f = f + "-" + g;
-                }
-                return (b[f] = !0), e + "-" + f;
-              },
-              headerText: function (a, b, c) {
-                return c.text();
-              },
-              itemClass: function (a, b, c, d) {
-                return d + "-" + c[0].tagName.toLowerCase();
-              },
-            });
-        })(jQuery);
-    </script>
-    <script>
-      /* initialize */
-      $(".toc").toc({
-        selectors: "h2", //elements to use as headings
-        container: "article", //element to find all selectors in
-        smoothScrolling: true, //enable or disable smooth scrolling on click
-        prefix: "toc", //prefix for anchor tags and class names
-        highlightOnScroll: true, //add class to heading that is currently in focus
-        highlightOffset: 100, //offset to trigger the next headline
-      });
-    </script>
-    <script type="text/javascript" src="assets/scripts/logo-btn.js"></script>
+      })(jQuery);
+  </script>
+  <script>
+    /* initialize */
+    $(".toc").toc({
+      selectors: "h2", //elements to use as headings
+      container: "article", //element to find all selectors in
+      smoothScrolling: true, //enable or disable smooth scrolling on click
+      prefix: "toc", //prefix for anchor tags and class names
+      highlightOnScroll: true, //add class to heading that is currently in focus
+      highlightOffset: 100, //offset to trigger the next headline
+    });
+  </script>
+  <script type="text/javascript" src="assets/scripts/logo-btn.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
-    <script>
-      new Glide('.glide', {
-        type: 'carousel',
-        animationDuration: 0,
-      })
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+  <script>
+    new Glide('.glide', {
+      type: 'carousel',
+      animationDuration: 0,
+    })
       .mount();
-    </script>
-  </body>
+  </script>
+</body>
+
 </html>
