@@ -180,7 +180,7 @@
               <h3>2.3 Comparison of SSR &amp; SSG</h3>
               <p>Now that we have an idea of what each approach entails, we can ask: what types of web applications
                 would be better served by each strategy?</p>
-              <p>[SSR vs. SSG table]</p>
+              <img src="assets/images/case-study/ssr_ssg_table.png">
 
               <div class="case-study-subsection">
                 <h4>2.3.1 Search Engine Optimization (SEO)</h4>
@@ -242,7 +242,7 @@
 
             <div class="case-study-subsection">
               <h3>3.1. Modern Web Development</h3>
-              <p>[Hybrid SSR and SSG image]</p>
+              <img src="assets/images/case-study/hybrid_ssr_ssg.png">
               <p>Historically, applications could be neatly categorized into using either SSR or SSG. However, modern
                 web development frameworks have begun to blur the lines between static and dynamic applications,
                 ushering in greater flexibility by making use of a hybrid approach. </p>
@@ -264,7 +264,7 @@
               <h3>3.2. Giraffe: A Target User</h3>
               <p>Let’s consider a hypothetical company named Giraffe as an example to better illustrate Bubble’s use
                 case.</p>
-              <p>[Giraffe categories page image (slide 10)]</p>
+              <img src="assets/images/case-study/giraffe_site.png">
               <p>Giraffe is an e-commerce application that sells giraffe-related merchandise. They self-host an online
                 storefront implemented with the Next.js framework. </p>
               <p>Their application uses a mix of SSG and SSR to generate content: for example, the product categories
@@ -282,7 +282,7 @@
             <p>Recently, Giraffe’s been doing very well. They’ve hired additional engineers to develop new features and
               bring a new look to their website, but they’re starting to experience bottlenecks during the development
               process.</p>
-            <p>[Giraffe developers bottleneck image]</p>
+            <img src="assets/images/case-study/giraffe_team_bottleneck.png">
             <p>Since multiple developers often work on new features simultaneously and also need to collaborate with
               various other departments, collecting feedback from different teams is starting to take too long and
               involves a lot of back-and-forth—even for very simple UI changes.</p>
@@ -290,7 +290,7 @@
 
             <div class="case-study-subsection">
               <h3>4.1. Getting Feedback In a Manual Way</h3>
-              <p>[Manual feedback image]</p>
+              <img src="assets/images/case-study/manual_feedback.png">
               <p>Before the recent expansions in their organization and additions to their site, sharing progress was
                 easier for developers at Giraffe.</p>
               <p>They used manual approaches like sending screenshots to each other, or screen-sharing for interactive
@@ -304,7 +304,7 @@
 
             <div class="case-study-subsection">
               <h3>4.2. Using a Shared Staging Environment</h3>
-              <p>[Shared staging environment image]</p>
+              <img src="assets/images/case-study/shared_staging_environment.png">
               <p>One tool that Giraffe uses as part of their development workflow is a shared staging environment. This
                 is an environment shared amongst all developers collaborating on a repository. </p>
               <p>A shared staging environment aims to mimic the production environment as closely as possible to ensure
@@ -380,7 +380,7 @@
 
             <div class="case-study-subsection">
               <h3>5.1. What Are Preview Apps?</h3>
-              <p>[Giraffe preview app image (slide 16)]</p>
+              <img src="assets/images/case-study/giraffes_preview_app.png">
               <p>Preview apps are one way to allow non-technical stakeholders to quickly review UI/UX changes. Preview
                 apps are ephemeral, lightweight, and fully functional versions of an application that can be easily
                 built and deployed—and just as easily torn down. They allow multiple versions of a site to be quickly
@@ -410,7 +410,7 @@
 
             <div class="case-study-subsection">
               <h3>5.2. Benefits of Preview Apps</h3>
-              <p>[Preview app benefits icons]</p>
+              <img src="assets/images/case-study/preview_app_benefits.png">
               <p>Preview apps reduce some of the headaches that occur when stakeholders use a shared staging environment
                 to review and discuss UI/UX changes.</p>
               <p>Each new feature can be reviewed in isolation from other application changes still under development,
@@ -446,7 +446,7 @@
               <h3>5.4. What Are Dynamic Frontend Preview Apps?</h3>
               <p>As the landscape of web development has changed and the lines between SSR and SSG have become blurred,
                 the requirements for preview apps have grown. </p>
-              <p>[Dynamic app image (slide 20)]</p>
+              <img src="assets/images/case-study/dynamic_preview_apps.png">
               <p>For applications using only SSG, all that a preview app would need is a CDN to deliver static assets;
                 for only SSR, that preview app would only require a server. However, to support applications utilizing
                 both SSR and SSG, the preview app architecture must include both an application server and a CDN, and
@@ -465,7 +465,7 @@
 
             <div class="case-study-subsection">
               <h3>6.1 DIY</h3>
-              <p>[Overwhelming DIY image]</p>
+              <img src="assets/images/case-study/diy.png">
               <p>One option would be a DIY approach. </p>
               <p>Building their own system would allow Giraffe to customize their solution according to their exact
                 needs while maintaining full control of their code and preview app infrastructure. The downside is that
@@ -482,7 +482,7 @@
 
             <div class="case-study-subsection">
               <h3>6.2. Feature vs. Service</h3>
-              <p>[Feature vs. Service table]</p>
+              <img src="assets/images/case-study/feature_vs_service.png">
               <p>Preview app solutions on the market typically fall into two categories: feature and service. Both can
                 offer a variety of features and provide dynamic frontend preview apps that support any combination of
                 implementations using SSR and SSG.</p>
@@ -567,7 +567,7 @@
 
           <div class="case-study-subsection">
             <h3>8.1 Architecture Overview</h3>
-            <p>[Overall architecture image]</p>
+            <img src="assets/images/case-study/overall_architecture.png">
             <p>Bubble consists of three main pieces of architecture: a local user interface, GitHub, and AWS.</p>
 
             <div class="case-study-subsection">
@@ -584,7 +584,7 @@
 
             <div class="case-study-subsection">
               <h4>8.1.2 GitHub Actions</h4>
-              <p>[GitHub mini-map image]</p>
+              <img src="assets/images/case-study/github_minimap.png">
               <p>Bubble uses GitHub Actions to automate the build, deploy, and destroy process for preview apps. These
                 actions execute workflow files added by Bubble which are triggered through initial pull requests,
                 subsequent commits to those requests, or HTTP requests to GitHub servers sent via the Bubble CLI.</p>
@@ -594,7 +594,7 @@
 
             <div class="case-study-subsection">
               <h4>8.1.3 AWS Services</h4>
-              <p>[AWS infrastructure mini-map image]</p>
+              <img src="assets/images/case-study/aws_minimap.png">
               <p>The final piece of our architecture uses several AWS services to deploy the infrastructure for all
                 preview apps.</p>
               <p>Each preview app consists of three AWS microservices:</p>
@@ -672,7 +672,7 @@
 
           <div class="case-study-subsection">
             <h3>10.1 The Application Server</h3>
-            <p>[Application server highlight image]</p>
+            <img src="assets/images/case-study/app_server_highlight.png">
             <p>Recall that the essential architectural component differentiating a static frontend application from a
               more complex dynamic one is the need for an application server to generate SSR pages at request time. </p>
             <p>Since Bubble aims to let users share new UI/UX features quickly and conveniently, we considered options
@@ -729,7 +729,7 @@
               <h4>10.2.1 <a
                   href="https://tsh.io/blog/aws-infrastructure-terraform-serverless/#:~:text=You%20write%20code%20that%20defines,place%20where%20you%20create%20code.">Terraform</a>
               </h4>
-              <p>[Terraform infrastructure image]</p>
+              <p>[Terraform pros and cons]</p>
               <p>The Terraform Next.js module for AWS is the first tool we considered.</p>
               <p>This open-source module uses Terraform – an “infrastructure as code” framework used to manage the
                 lifecycle of cloud components - to deploy Next.js applications on AWS services. The upsides to this
@@ -747,7 +747,7 @@
 
             <div class="case-study-subsection">
               <h4>10.2.2 FAB</h4>
-              <p>[FAB infrastructure image]</p>
+              <p>[FAB pros and cons]</p>
               <p>Frontend Application Bundle (also called FAB) is another open-source framework that enables users to
                 deploy Next.js applications through a CLI. </p>
               <p>FAB zips up entire applications and ships static assets and server-side logic separately. Thus, the
@@ -838,7 +838,7 @@
           <div class="case-study-subsection">
             <h3>12.2 The Bubble CLI</h3>
             <p>After installing Bubble, the following commands are available on the command line:</p>
-            <p>[Command table]</p>
+            <img src="assets/images/case-study/command_table.png">
           </div>
 
           <div class="case-study-subsection">
@@ -902,7 +902,7 @@
 
             <div class="case-study-subsection">
               <h4>13.1.1 Polling</h4>
-              <p>[Polling gif]</p>
+              <img src="assets/images/case-study/gifs/cronjob.gif">
               <p>One solution we considered was polling: repeatedly trying to delete the lambdas and checking whether or
                 not the attempt was successful. This would have involved setting up a process often referred to as a
                 cron job, which enables developers to automatically and repeatedly execute scripts at specified times.
@@ -923,7 +923,7 @@
 
             <div class="case-study-subsection">
               <h4>13.1.2 Additional CLI Command</h4>
-              <p>[Destroy vs. teardown comparison image]</p>
+              <img src="assets/images/case-study/destroy_and_teardown.png">
               <p>Instead of cron jobs, we decided to add a command named <code>bubble teardown</code> which users can
                 run themselves later after running <code>bubble destroy</code> to remove any remaining Lambda@Edge
                 functions. </p>
@@ -969,7 +969,7 @@
 
             <div class="case-study-subsection">
               <h4>13.2.2 Parsing the Logs</h4>
-              <p>[Parsing logs issue image]</p>
+              <img src="assets/images/case-study/parsing_logs.png">
               <p>The next hurdle after retrieving the logs was cleaning and parsing them.</p>
               <p>As part of displaying workflow execution logs on their site, GitHub injects a variety of metadata and
                 special character sequences. These sequences are used by GitHub when streaming the logs on the GitHub
@@ -1001,7 +1001,7 @@
 
             <div class="case-study-subsection">
               <h4>13.2.4 Solution: Link to Logs</h4>
-              <p>[Link to logs still image]</p>
+              <img src="assets/images/case-study/link_to_logs.png">
               <p>Instead of processing the logs ourselves and making them available in full on the Bubble dashboard, we
                 decided to add a link on the dashboard for each preview app’s build log. When followed, this link takes
                 the user directly to the GitHub workflow run where they have the option to download the logs for that
@@ -1014,7 +1014,7 @@
 
         <div class="case-study-subsection">
           <h2>14. Future Work</h2>
-          <p>[Future work image]</p>
+          <img src="assets/images/case-study/future_work.png">
           <p>Now that we’re well-acquainted with Bubble and the design decisions that went into building it, the
             following are some features we’d like to include in the future.</p>
 
