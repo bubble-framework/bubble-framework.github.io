@@ -5,6 +5,7 @@
   <meta charset="utf-8" />
   <title>Bubble • Case Study</title>
   <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link href="assets/css/glider.min.css" rel="stylesheet" type="text/css" />
   <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.core.min.css" rel="stylesheet"
     type="text/css" />
@@ -117,36 +118,35 @@
                 <sup><a class="footnote-link" href="#footnote-1">1</a></sup>
               </h3>
               <p>
-              <div class="glide">
-                <div class="glide__track" data-glide-el="track">
-                  <ul class="glide__slides">
-                    <li class="glide__slide">
-                      <img src="/assets/images/case-study/widgets/ssr/_ssr1.png" />
-                    </li>
-                    <li class="glide__slide">
-                      <img src="/assets/images/case-study/widgets/ssr/_ssr2.png" />
-                    </li>
-                    <li class="glide__slide">
-                      <img src="/assets/images/case-study/widgets/ssr/_ssr3.png" />
-                    </li>
-                    <li class="glide__slide">
-                      <img src="/assets/images/case-study/widgets/ssr/_ssr4.png" />
-                    </li>
-                    <li class="glide__slide">
-                      <img src="/assets/images/case-study/widgets/ssr/_ssr5.png" />
-                    </li>
-                  </ul>
-                </div>
-
-                <div class="glide__arrows" data-glide-el="controls">
-                  <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+                <div class="glider-contain">
+                  <button class="glider-prev glider-arrow">
                     <img src="assets/images/case-study/widgets/left.png">
                   </button>
-                  <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+
+                  <div class="glider">
+                    <div>
+                      <img src="assets/images/case-study/widgets/ssr/ssr1.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/ssr/ssr2.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/ssr/ssr3.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/ssr/ssr4.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/ssr/ssr5.png" />
+                    </div>
+                  </div>
+
+                  <button class="glider-next glider-arrow">
                     <img src="assets/images/case-study/widgets/right.png">
                   </button>
+
+                  <div id="dots" class="glider-dots"></div>
                 </div>
-              </div>
               </p>
               <p>Traditionally, the most common strategy for building web pages was based on client-server
                 communication: a client – for example, an end user’s browser – would request a page from a website and
@@ -1422,15 +1422,29 @@
       highlightOffset: 100, //offset to trigger the next headline
     });
   </script>
-  <script type="text/javascript" src="assets/scripts/logo-btn.js"></script>
+  <!-- <script type="text/javascript" src="assets/scripts/logo-btn.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
   <script>
-    new Glide('.glide', {
+    var glide = new Glide('.glide', {
       type: 'carousel',
-      animationDuration: 0,
+      // type: 'slider',
+      startAt: 0,
     })
-      .mount();
+
+    glide.mount();
+  </script> -->
+
+  <script src="assets/scripts/glider.min.js"></script>
+  <script>
+    new Glider(document.querySelector('.glider'), {
+      slidesToShow: 1,
+      dots: '#dots',
+      arrows: {
+        prev: '.glider-prev',
+        next: '.glider-next'
+      }
+    });
   </script>
 </body>
 
