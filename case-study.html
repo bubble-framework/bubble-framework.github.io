@@ -113,7 +113,9 @@
               history of how web development approaches have evolved.</p>
 
             <div class="case-study-subsection">
-              <h3>2.1 Server-Side Rendering</h3>
+              <h3>2.1 Server-Side Rendering
+                <sup><a class="footnote-link" href="#footnote-1">1</a></sup>
+              </h3>
               <p>
               <div class="glide">
                 <div class="glide__track" data-glide-el="track">
@@ -156,7 +158,9 @@
             </div>
 
             <div class="case-study-subsection">
-              <h3>2.2 Static Site Generation</h3>
+              <h3>2.2 Static Site Generation
+                <sup><a class="footnote-link" href="#footnote-2">2</a></sup>
+              </h3>
               <img src="assets/images/case-study/gifs/redundant_server.gif">
               <p>As websites grew to serve more and more content, it became clear that some of this content didn’t
                 necessarily need to be completely “dynamic,” meaning there would be little to no change required for a
@@ -245,11 +249,17 @@
               <img src="assets/images/case-study/hybrid_ssr_ssg.png">
               <p>Historically, applications could be neatly categorized into using either SSR or SSG. However, modern
                 web development frameworks have begun to blur the lines between static and dynamic applications,
-                ushering in greater flexibility by making use of a hybrid approach. </p>
+                ushering in greater flexibility by making use of a hybrid approach.
+                <sup><a class="footnote-link" href="#footnote-3">3</a></sup>
+              </p>
+
+
               <p>For example, Next.js is a popular framework that fits into this new wave of modern frameworks that
                 allow developers to better optimize their applications. It began primarily as an SSR framework, but in
                 recent years, it has introduced support for SSG. Today, Next.js allows developers to build apps with
-                both SSR and SSG on a per-page basis. </p>
+                both SSR and SSG on a per-page basis.
+                <sup><a class="footnote-link" href="#footnote-4">4</a></sup>
+              </p>
               <p>For applications that are content-rich but only require frequent dynamic data retrieval for select
                 pages, it makes sense to use SSG to pre-build their simpler static pages. Those pages can then be served
                 up quickly, while SSR can handle the other pages requiring frequently changing, up-to-date content on
@@ -718,7 +728,9 @@
             <h3>10.2 Serverless Computing Options</h3>
 
             <div class="case-study-subsection">
-              <h4>10.2.1 Terraform</h4>
+              <h4>10.2.1 Terraform
+                <sup><a class="footnote-link" href="#footnote-5">5</a></sup>
+              </h4>
               <img src="assets/images/case-study/terraform_pros_cons.png">
               <p>Terraform is the first tool we considered.</p>
               <p>Terraform is an “infrastructure as code” framework used to manage the lifecycle of cloud components.
@@ -737,8 +749,11 @@
             </div>
 
             <div class="case-study-subsection">
-              <h4>10.2.2 FAB</h4>
+              <h4>10.2.2 FAB
+                <sup><a class="footnote-link" href="#footnote-6">6</a></sup>
+              </h4>
               <img src="assets/images/case-study/fab_pros_cons.png">
+
               <p>Frontend Application Bundle (also called FAB) is another open-source framework that enables users to
                 deploy frontend applications through a CLI. </p>
               <p>FAB zips up entire applications and ships static assets and server-side logic separately. Thus, the
@@ -752,7 +767,9 @@
             </div>
 
             <div class="case-study-subsection">
-              <h4>10.2.3 Serverless Framework</h4>
+              <h4>10.2.3 Serverless Framework
+                <sup><a class="footnote-link" href="#footnote-7">7</a></sup>
+              </h4>
               <img src="assets/images/case-study/serverless_pros_cons.png">
               <p>The final option we considered was Serverless Framework.</p>
               <p>Serverless Framework deploys apps using only three AWS services: CloudFront, Lambda@Edge, and S3. This
@@ -1026,10 +1043,39 @@
               Cloud. </p>
           </div>
         </div>
+<!--
+  REFREFREF
+-->
+        <div class="references">
+          <h3>References</h3>
+          <ol>
+            <li id="footnote-1">
+              <a href="https://dev.to/snickdx/a-brief-history-of-the-web-9c3" target="_blank">A Brief History of the Web</a>
+            </li>
+            <li id="footnote-2">
+              <a href="https://www.cloudflare.com/learning/performance/static-site-generator/" target="_blank">What are Static Site Generators?</a>
+            </li>
+            <li id="footnote-3">
+              <a href="https://cloudcannon.com/blog/ssg-history-4-spas-are-awesome/" target="_blank">SSG History: SPAs are awesome</a>
+            </li>
+            <li id="footnote-4">
+              <a href="https://medium.com/@prashantramnyc/server-side-rendering-ssr-vs-client-side-rendering-csr-vs-pre-rendering-using-static-site-89f2d05182ef" target="_blank">SSR vs CSR vs SSG</a>
+            </li>
+            <li id="footnote-5">
+              <a href="https://tsh.io/blog/aws-infrastructure-terraform-serverless" target="_blank">Terraform</a>
+            </li>
+            <li id="footnote-6">
+              <a href="https://fab.dev" target="_blank">FAB</a>
+            </li>
+            <li id="footnote-7">
+              <a href="https://www.serverless.com/plugins/serverless-nextjs-plugin" target="_blank">Serverless Framework</a>
+            </li>
+          </ol>
+        </div>
 
         <!-- Team Section -->
         <div class="case-study-section team">
-          <h2>11. The Bubble Team</h2>
+          <h2>The Bubble Team</h2>
           <br />
           <br />
           <div class="section team-section">
