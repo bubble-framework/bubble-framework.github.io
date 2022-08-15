@@ -2040,3 +2040,9 @@ code {
   width: 6em;
   opacity: 0.5;
 }
+
+.case-study-subsection img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
