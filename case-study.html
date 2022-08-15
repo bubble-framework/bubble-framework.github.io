@@ -940,7 +940,6 @@
 
           <div class="case-study-subsection">
             <h3>13.2 Build Logs</h3>
-            <p>[Build logs access issue gif or widget]</p>
             <p>Another challenge we experienced involved capturing the preview app build logs and integrating them into
               our dashboard.</p>
             <p>Inspecting build logs can be very beneficial for technical stakeholders because it allows them to examine
@@ -958,8 +957,10 @@
                 down as soon as execution is complete; this means that the environment for each build is transitory.
                 Therefore, we had to find a way to begin the process of capturing the logs live rather than after the
                 fact. </p>
+              <img src="assets/images/case-study/build_logs_attempt_1.png">
               <p>Our first attempts to capture the logs during the build process were unsuccessful because the Action
                 run logs are only available via an API call after the entire execution has finished. </p>
+              <img src="assets/images/case-study/build_logs_attempt_2.png">
               <p>We ended up having to cache the <em>run</em>id_ for each workflow on GitHub and then implement an
                 entirely separate workflow which was triggered immediately after each build action finished. This
                 allowed us to access the build logs in their entirety within the new workflow. </p>
