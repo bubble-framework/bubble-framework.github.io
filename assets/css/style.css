@@ -2036,13 +2036,24 @@ code {
 
 /* slider styles */
 
-.glide__arrow {
+/* .glide__arrow {
   width: 6em;
   opacity: 0.5;
-}
+} */
 
 .case-study-subsection img {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
+
+/* .glider div {
+  margin: 1.5em;
+  padding: 0.7em;
+} */
+
+/* .glider div img {
+  display: block;
+  padding-left: 0.5em;
+  padding-right: 1em;
+} */
