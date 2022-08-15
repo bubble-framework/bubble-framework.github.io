@@ -530,16 +530,7 @@
           </div>
 
           <div class="case-study-subsection">
-            <h3>7.2 What Bubble Supports</h3>
-            <p>At the moment, Bubble only supports applications built with the Next.js framework.</p>
-            <p>Bubble is intended as a tool for frontend developers working on UI/UX features, which are typically less
-              data-intensive. Thus, we chose to target frontend applications that are decoupled from a database and only
-              access their data layer through API calls. This microservices approach allows us to keep the preview apps
-              lightweight, inexpensive, and quicker to deploy.</p>
-          </div>
-
-          <div class="case-study-subsection">
-            <h3>7.3 Feature Overview</h3>
+            <h3>7.2 Feature Overview</h3>
             <p>Bubble has a few important features:</p>
             <ul>
               <li>It automatically deploys preview apps when a pull request is opened, as well as when subsequent
@@ -729,14 +720,15 @@
             <div class="case-study-subsection">
               <h4>10.2.1 Terraform</h4>
               <img src="assets/images/case-study/terraform_pros_cons.png">
-              <p>The Terraform Next.js module for AWS is the first tool we considered.</p>
-              <p>This open-source module uses Terraform – an “infrastructure as code” framework used to manage the
-                lifecycle of cloud components - to deploy Next.js applications on AWS services. The upsides to this
-                option are that it is actively maintained and supports all versions of Next.js. </p>
-              <p>Compared to other solutions, the Terraform module uses a more complex architecture to deploy apps. The
-                AWS services used include CloudFront to handle incoming traffic, a Lambda@Edge function that acts as a
-                proxy handler to route requests, an S3 bucket for static content storage, Lambda functions for serving
-                the dynamic SSR pages, and an API Gateway that balances traffic between the Lambda functions.</p>
+              <p>Terraform is the first tool we considered.</p>
+              <p>Terraform is an “infrastructure as code” framework used to manage the lifecycle of cloud components.
+                There are many existing modules of Terraform for deploying frontend applications that are free to
+                utilize and actively maintained.</p>
+              <p>Compared to other solutions, one of the most promising modules we found uses a more complex
+                architecture to deploy apps. The AWS services used include CloudFront to handle incoming traffic, a
+                Lambda@Edge function that acts as a proxy handler to route requests, an S3 bucket for static content
+                storage, Lambda functions for serving the dynamic SSR pages, and an API Gateway that balances traffic
+                between the Lambda functions.</p>
               <p>The cost of this heavy underlying infrastructure is lengthy deployment times. During our test runs
                 using this module with multiple Next.js applications, we found that deploying a simple app took more
                 than 15 minutes. We also encountered a few deployment failures, which were challenging to debug because
@@ -748,36 +740,33 @@
               <h4>10.2.2 FAB</h4>
               <img src="assets/images/case-study/fab_pros_cons.png">
               <p>Frontend Application Bundle (also called FAB) is another open-source framework that enables users to
-                deploy Next.js applications through a CLI. </p>
+                deploy frontend applications through a CLI. </p>
               <p>FAB zips up entire applications and ships static assets and server-side logic separately. Thus, the
                 user has the option to choose separate platforms for serving static and dynamic content. For example,
                 they could deploy static assets to AWS S3 while deploying serverless functions with Cloudflare workers.
                 Although it aims to be platform agnostic, for serverless functions, FAB is currently most streamlined
                 for Cloudflare Workers and AWS Lambdas. </p>
-              <p>When using FAB to deploy a few Next.js applications, it took no more than 5 minutes to deploy each app,
+              <p>When using FAB to deploy a few applications, it took no more than 5 minutes to deploy each app,
                 which was significantly faster than other tools we considered, especially Terraform. </p>
-              <p>However, unlike the other options, FAB has not been maintained for over a year and a half and
-                consequently doesn’t support Next.js applications beyond version 10. For reference, Next.js is currently
-                on version 12. </p>
+              <p>However, unlike the other options, FAB has not been maintained for over a year and a half. </p>
             </div>
 
             <div class="case-study-subsection">
               <h4>10.2.3 Serverless Framework</h4>
               <img src="assets/images/case-study/serverless_pros_cons.png">
-              <p>The final option we considered was the Serverless Framework: specifically, the Serverless Next.js
-                Component.</p>
-              <p>Serverless Next.js deploys apps using only three AWS services: CloudFront, Lambda@Edge, and S3. This is
-                a simpler architecture in comparison to the Terraform module, which may be a contributing factor to its
-                faster deployment time. While provisioning the CloudFront distribution does take a few minutes, it still
-                took less than half the time to deploy compared to Terraform. </p>
-              <p>One downside of using Serverless Next.js is that unlike the flexibility of FAB, it currently only
+              <p>The final option we considered was Serverless Framework.</p>
+              <p>Serverless Framework deploys apps using only three AWS services: CloudFront, Lambda@Edge, and S3. This
+                is a simpler architecture in comparison to the Terraform module, which may be a contributing factor to
+                its faster deployment time. While provisioning the CloudFront distribution does take a few minutes, it
+                still took less than half the time to deploy compared to Terraform.</p>
+              <p>One downside of using Serverless Framework is that unlike the flexibility of FAB, it currently only
                 supports deployment on AWS infrastructure. Moreover, server-side logic can only be deployed to
-                Lambda@Edge functions. However, while FAB is no longer actively maintained, Serverless Next.js continues
-                to be a reliable framework considering how many people use it to deploy Next.js applications. The
-                maintainers are still active and its latest version was released just a few months ago in March 2022.
+                Lambda@Edge functions. However, while FAB is no longer actively maintained, Serverless Framework has
+                continued to be a reliable framework considering how many people use it. The maintainers are still
+                active and its latest version was released just a few months ago in March 2022.
               </p>
-              <p>In the end, we selected Serverless Next.js to build and deploy Bubble’s preview apps, due to its
-                reliability, relatively fast deployment time, and simplified architecture, which would best serve
+              <p>In the end, we decided to go with Serverless Framework to build and deploy Bubble’s preview apps, due
+                to its reliability, relatively fast deployment time, and simplified architecture, which would best serve
                 Bubble’s goal of automating lightweight and convenient preview apps.</p>
             </div>
           </div>
