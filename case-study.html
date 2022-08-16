@@ -121,9 +121,7 @@
               history of how web development approaches have evolved.</p>
 
             <div class="case-study-subsection">
-              <h3>2.1 Server-Side Rendering
-                <sup><a class="footnote-link" href="#footnote-1">1</a></sup>
-              </h3>
+              <h3>2.1 Server-Side Rendering</h3>
               <p>
                 <div class="glider-contain">
                   <button id="ssr-glider-prev" class="glider-prev">
@@ -157,7 +155,7 @@
               </p>
               <p>Traditionally, the most common strategy for building web pages was based on client-server
                 communication: a client – for example, an end user’s browser – would request a page from a website and
-                the server would be responsible for responding with a fully-generated HTML page. With this approach, the
+                the server would be responsible for responding with a fully-generated HTML page.<sup><a class="footnote-link" href="#footnote-1">1</a></sup>  With this approach, the
                 server does most of the heavy lifting at request time. When it receives the request, the server fetches
                 any data from the database along with other resources (i.e. CSS, images, etc.) needed, generates the
                 full HTML, and then sends it back to the client to display to the end user. This process, appropriately
@@ -165,9 +163,7 @@
             </div>
 
             <div class="case-study-subsection">
-              <h3>2.2 Static Site Generation
-                <sup><a class="footnote-link" href="#footnote-2">2</a></sup>
-              </h3>
+              <h3>2.2 Static Site Generation</h3>
               <img src="assets/images/case-study/gifs/redundant_server.gif">
               <p>As websites grew to serve more and more content, it became clear that some of this content didn’t
                 necessarily need to be completely “dynamic,” meaning there would be little to no change required for a
@@ -175,7 +171,7 @@
                 where the content of these pages remains the same for long periods of time regardless of who’s
                 requesting it—it quickly becomes wasteful and inefficient for the server to dynamically regenerate these
                 kinds of pages each time a client makes a request. This led to the rise in popularity of <strong>static site
-                generation (SSG).</strong>
+                generation (SSG).</strong><sup><a class="footnote-link" href="#footnote-2">2</a></sup>
               </p>
               <p>
                 <div class="glider-contain">
@@ -290,19 +286,17 @@
               <figure>
                 <img class="case-study-image enlarge" src="assets/images/case-study/hybrid_ssr_ssg.png">
               </figure>
-              
+
               <p>Historically, applications could be neatly categorized into using either SSR or SSG. However, modern
                 web development frameworks have begun to blur the lines between static and dynamic applications,
-                ushering in greater flexibility by making use of a hybrid approach.
-                <sup><a class="footnote-link" href="#footnote-3">3</a></sup>
+                ushering in greater flexibility by making use of a hybrid approach.<sup><a class="footnote-link" href="#footnote-3">3</a></sup>
               </p>
 
 
               <p>For example, Next.js is a popular framework that fits into this new wave of modern frameworks that
                 allow developers to better optimize their applications. It began primarily as an SSR framework, but in
                 recent years, it has introduced support for SSG. Today, Next.js allows developers to build apps with
-                both SSR and SSG on a per-page basis.
-                <sup><a class="footnote-link" href="#footnote-4">4</a></sup>
+                both SSR and SSG on a per-page basis.<sup><a class="footnote-link" href="#footnote-4">4</a></sup>
               </p>
               <p>For applications that are content-rich but only require frequent dynamic data retrieval for select
                 pages, it makes sense to use SSG to pre-build their simpler static pages. Those pages can then be served
@@ -360,7 +354,7 @@
               <h3>4.2 Using a Shared Staging Environment</h3>
               <img src="assets/images/case-study/shared_staging_environment.png">
               <p>One tool that Giraffe uses as part of their development workflow is a shared staging environment. This
-                is an environment shared amongst all developers collaborating on a repository. </p>
+                is an environment shared amongst all developers collaborating on a repository.<sup><a class="footnote-link" href="#footnote-5">5</a></sup></p>
               <p>A shared staging environment aims to mimic the production environment as closely as possible to ensure
                 all new changes are working as intended before they are released live.</p>
               <p>Different types of testing can occur when code is pushed to this kind of environment: for example, load
@@ -435,11 +429,11 @@
             <div class="case-study-subsection">
               <h3>5.1 What Are Preview Apps?</h3>
               <img src="assets/images/case-study/giraffes_preview_app.png">
-              <p>Preview apps are one way to allow non-technical stakeholders to quickly review UI/UX changes. Preview
+              <p>Preview apps are one way to allow non-technical stakeholders to quickly review UI/UX changes.<sup><a class="footnote-link" href="#footnote-6">6</a></sup> Preview
                 apps are ephemeral, lightweight, and fully functional versions of an application that can be easily
                 built and deployed—and just as easily torn down. They allow multiple versions of a site to be quickly
                 deployed in isolation: this way, non-technical stakeholders can more easily give feedback on UI/UX
-                changes, and developers can more quickly iterate after receiving that feedback.</p>
+                changes, and developers can more quickly iterate after receiving that feedback.<sup><a class="footnote-link" href="#footnote-7">7</a></sup></p>
               <p>Each time they wanted to show a new change, a Giraffe developer could deploy a new preview app and
                 share its URL with all relevant stakeholders for evaluation.</p>
               <p>
@@ -554,7 +548,7 @@
 
               <figure>
                 <img class="case-study-image enlarge" src="assets/images/case-study/dynamic_preview_apps.png">
-              </figure>  
+              </figure>
 
               <p>For applications using only SSG, all that a preview app would need is a CDN to deliver static assets;
                 for only SSR, that preview app would only require a server. However, to support applications utilizing
@@ -750,7 +744,7 @@
             <div class="case-study-subsection">
               <h4>9.1.1 What Is GitHub Actions?</h4>
               <p>GitHub Actions is an automation tool that allows users to execute code written in files–called
-                workflows– using GitHub Runners: temporary virtual servers that GitHub spins up and down.</p>
+                workflows– using GitHub Runners: temporary virtual servers that GitHub spins up and down.<sup><a class="footnote-link" href="#footnote-8">8</a></sup></p></p>
 
               <figure>
                 <img class="case-study-image enlarge" src="assets/images/case-study/gifs/gh_action_gif.gif">
@@ -808,7 +802,7 @@
               <h4>10.1.1 Containers</h4>
               <p>One option would be to deploy the server-side logic and static assets together in a container. </p>
               <p>A container encapsulates the application code along with all the runtime elements necessary to execute
-                it together in one package. </p>
+                it together in one package.<sup><a class="footnote-link" href="#footnote-9">9</a></sup> </p>
               <img src="assets/images/case-study/containers_pros.png">
               <p>With containers, we wouldn’t need to set up and configure multiple nodes of infrastructure or implement
                 routing logic to connect them; instead, we’d be able to deploy only one single entity for each preview
@@ -827,7 +821,7 @@
                 the most compelling option for deploying server-side logic.</p>
               <img src="assets/images/case-study/serverless_pros.png">
               <p>Despite being called serverless, these functions do run on servers, but they abstract away the
-                logistics of provisioning server resources. There are no ongoing expenses: developers are only charged
+                logistics of provisioning server resources.<sup><a class="footnote-link" href="#footnote-10">10</a></sup> There are no ongoing expenses: developers are only charged
                 for the server capacity that their application uses during the time it’s actually being executed.</p>
               <p>Since they don’t need to include system dependencies, serverless functions are also very fast to
                 deploy, typically going live within milliseconds. </p>
@@ -853,15 +847,15 @@
             <div class="case-study-subsection">
 
               <h4>10.2.1 Terraform
-                <sup><a class="footnote-link" href="#footnote-5">5</a></sup>
+
               </h4>
-              
+
               <figure>
                 <img src="assets/images/case-study/terraform_pros_cons.png">
               </figure>
-              
+
               <p>Terraform is the first tool we considered.</p>
-              <p>Terraform is an “infrastructure as code” framework used to manage the lifecycle of cloud components.
+              <p>Terraform is an “infrastructure as code” framework used to manage the lifecycle of cloud components.<sup><a class="footnote-link" href="#footnote-11">11</a></sup>
                 There are many existing modules of Terraform for deploying frontend applications that are free to
                 utilize and actively maintained.</p>
               <p>Compared to other solutions, one of the most promising modules we found uses a more complex
@@ -878,16 +872,14 @@
             </div>
 
             <div class="case-study-subsection">
-              <h4>10.2.2 FAB
-                <sup><a class="footnote-link" href="#footnote-6">6</a></sup>
-              </h4>
-              
+              <h4>10.2.2 FAB</h4>
+
               <figure>
                 <img src="assets/images/case-study/fab_pros_cons.png">
               </figure>
 
               <p>Frontend Application Bundle (also called FAB) is another open-source framework that enables users to
-                deploy frontend applications through a CLI. </p>
+                deploy frontend applications through a CLI.<sup><a class="footnote-link" href="#footnote-12">12</a></sup></p>
               <p>FAB zips up entire applications and ships static assets and server-side logic separately. Thus, the
                 user has the option to choose separate platforms for serving static and dynamic content. For example,
                 they could deploy static assets to AWS S3 while deploying serverless functions with Cloudflare workers.
@@ -899,15 +891,14 @@
             </div>
 
             <div class="case-study-subsection">
-              <h4>10.2.3 Serverless Framework
-                <sup><a class="footnote-link" href="#footnote-7">7</a></sup>
-              </h4>
-              
+              <h4>10.2.3 Serverless Framework</h4>
+
               <figure>
                 <img src="assets/images/case-study/serverless_pros_cons.png">
               </figure>
-              
-              <p>The final option we considered was Serverless Framework.</p>
+
+              <p>The final option we considered was Serverless Framework.<sup><a class="footnote-link" href="#footnote-13">13</a></sup></p>
+
               <p>Serverless Framework deploys apps using only three AWS services: CloudFront, Lambda@Edge, and S3. This
                 is a simpler architecture in comparison to the Terraform module, which may be a contributing factor to
                 its faster deployment time. While provisioning the CloudFront distribution does take a few minutes, it
@@ -1202,12 +1193,31 @@
               <a href="https://medium.com/@prashantramnyc/server-side-rendering-ssr-vs-client-side-rendering-csr-vs-pre-rendering-using-static-site-89f2d05182ef" target="_blank">SSR vs CSR vs SSG</a>
             </li>
             <li id="footnote-5">
-              <a href="https://tsh.io/blog/aws-infrastructure-terraform-serverless" target="_blank">Terraform</a>
+              <a href="https://hackernoon.com/staging-environments-are-overlooked-heres-why-they-matter-5jp2gm0" target="_blank">Staging Environments are Overlooked: Here's Why They Matter</a>
             </li>
             <li id="footnote-6">
-              <a href="https://fab.dev" target="_blank">FAB</a>
+              <a href="https://www.okteto.com/blog/devx-days-preview-environments/" target="_blank">With Preview Environments, Everyone is Invited to the Party</a>
             </li>
             <li id="footnote-7">
+              <a href="https://news.ycombinator.com/item?id=20566785"
+                target="_blank">FeaturePeek — Front-end review for the whole team</a>
+            </li>
+            <li id="footnote-8">
+              <a href="https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions#overview" target="_blank">GitHub Actions Overview</a>
+            </li>
+            <li id="footnote-9">
+              <a href="https://www.ibm.com/cloud/learn/containers" target="_blank">Containers</a>
+            </li>
+            <li id="footnote-10">
+              <a href="https://www.splunk.com/en_us/data-insider/what-are-serverless-functions.html" target="_blank">What are Serverless Functions?</a>
+            </li>
+            <li id="footnote-11">
+              <a href="https://tsh.io/blog/aws-infrastructure-terraform-serverless" target="_blank">Terraform</a>
+            </li>
+            <li id="footnote-12">
+              <a href="https://fab.dev" target="_blank">FAB</a>
+            </li>
+            <li id="footnote-13">
               <a href="https://www.serverless.com/plugins/serverless-nextjs-plugin" target="_blank">Serverless Framework</a>
             </li>
           </ol>
