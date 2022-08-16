@@ -4,20 +4,27 @@
 <head>
   <meta charset="utf-8" />
   <title>Bubble • Case Study</title>
+  <link
+    href="/assets/images/favicon.png"
+    rel="icon"
+    type="image/png"
+  />
   <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link href="assets/css/glider.min.css" rel="stylesheet" type="text/css" />
   <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.core.min.css" rel="stylesheet"
     type="text/css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.theme.min.css" rel="stylesheet"
     type="text/css" />
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:regular,500,600,700" media="all" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans" />
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:regular,500,600,700" media="all" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans" /> -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather" />
   <meta name="image" property="og:image" content="assets/images/synapse-case-study.png" />
-  <script type="text/javascript">
+  <!-- <script type="text/javascript">
     WebFont.load({ google: { families: ["Inter:regular,500,600,700"] } });
-  </script>
+  </script> -->
   <script type="text/javascript">
     !(function (o, c) {
       var n = c.documentElement,
@@ -113,38 +120,39 @@
               history of how web development approaches have evolved.</p>
 
             <div class="case-study-subsection">
-              <h3>2.1 Server-Side Rendering</h3>
+              <h3>2.1 Server-Side Rendering
+                <sup><a class="footnote-link" href="#footnote-1">1</a></sup>
+              </h3>
               <p>
-              <div class="glide">
-                <div class="glide__track" data-glide-el="track">
-                  <ul class="glide__slides">
-                    <li class="glide__slide">
-                      <img src="/assets/images/case-study/widgets/ssr/_ssr1.png" />
-                    </li>
-                    <li class="glide__slide">
-                      <img src="/assets/images/case-study/widgets/ssr/_ssr2.png" />
-                    </li>
-                    <li class="glide__slide">
-                      <img src="/assets/images/case-study/widgets/ssr/_ssr3.png" />
-                    </li>
-                    <li class="glide__slide">
-                      <img src="/assets/images/case-study/widgets/ssr/_ssr4.png" />
-                    </li>
-                    <li class="glide__slide">
-                      <img src="/assets/images/case-study/widgets/ssr/_ssr5.png" />
-                    </li>
-                  </ul>
-                </div>
-
-                <div class="glide__arrows" data-glide-el="controls">
-                  <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+                <div class="glider-contain">
+                  <button id="ssr-glider-prev" class="glider-prev">
                     <img src="assets/images/case-study/widgets/left.png">
                   </button>
-                  <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+
+                  <div id="ssr-glider" class="glider">
+                    <div>
+                      <img src="assets/images/case-study/widgets/ssr/ssr1.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/ssr/ssr2.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/ssr/ssr3.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/ssr/ssr4.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/ssr/ssr5.png" />
+                    </div>
+                  </div>
+
+                  <button id="ssr-glider-next" class="glider-next glider-arrow">
                     <img src="assets/images/case-study/widgets/right.png">
                   </button>
+
+                  <div id="ssr-dots" class="glider-dots"></div>
                 </div>
-              </div>
               </p>
               <p>Traditionally, the most common strategy for building web pages was based on client-server
                 communication: a client – for example, an end user’s browser – would request a page from a website and
@@ -152,20 +160,56 @@
                 server does most of the heavy lifting at request time. When it receives the request, the server fetches
                 any data from the database along with other resources (i.e. CSS, images, etc.) needed, generates the
                 full HTML, and then sends it back to the client to display to the end user. This process, appropriately
-                named <strong>server-side rendering</strong> (SSR), is repeated with every request from the client.</p>
+                named <strong>server-side rendering (SSR)</strong>, is repeated with every request from the client.</p>
             </div>
 
             <div class="case-study-subsection">
-              <h3>2.2 Static Site Generation</h3>
+              <h3>2.2 Static Site Generation
+                <sup><a class="footnote-link" href="#footnote-2">2</a></sup>
+              </h3>
               <img src="assets/images/case-study/gifs/redundant_server.gif">
               <p>As websites grew to serve more and more content, it became clear that some of this content didn’t
                 necessarily need to be completely “dynamic,” meaning there would be little to no change required for a
                 given page’s content on every request. For example, consider a company’s landing page or a blog post,
                 where the content of these pages remains the same for long periods of time regardless of who’s
                 requesting it—it quickly becomes wasteful and inefficient for the server to dynamically regenerate these
-                kinds of pages each time a client makes a request. This led to the rise in popularity of **static site
-                generation **(SSG).</p>
-              <p>[SSG architecture widget-- stills live in /ssg]</p>
+                kinds of pages each time a client makes a request. This led to the rise in popularity of <strong>static site
+                generation (SSG).</strong>
+              </p>
+              <p>
+                <div class="glider-contain">
+                  <button id="ssg-glider-prev" class="glider-prev">
+                    <img src="assets/images/case-study/widgets/left.png">
+                  </button>
+
+                  <div id="ssg-glider" class="glider">
+                    <div>
+                      <img src="assets/images/case-study/widgets/ssg/ssg1.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/ssg/ssg2.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/ssg/ssg3.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/ssg/ssg4.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/ssg/ssg5.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/ssg/ssg6.png" />
+                    </div>
+                  </div>
+
+                  <button id="ssg-glider-next" class="glider-next glider-arrow">
+                    <img src="assets/images/case-study/widgets/right.png">
+                  </button>
+
+                  <div id="ssg-dots" class="glider-dots"></div>
+                </div>
+              </p>
               <p>With statically generated sites, HTML pages are pre-built before a user ever requests them. At build
                 time, a server is responsible for retrieving data and fully generating the HTML. This process is very
                 similar to SSR; the key difference lies in <strong><em>when</em></strong> the server carries out this
@@ -219,7 +263,7 @@
               </div>
 
               <div class="case-study-subsection">
-                <h4>2.3.5 Scaling For Users</h4>
+                <h4>2.3.5 Scaling for Users</h4>
                 <p>Finally, SSG is a better fit for scaling for many users since CDNs by default can handle increased
                   traffic at scale. An SSR architecture by nature does not necessarily have this same benefit.</p>
               </div>
@@ -245,13 +289,20 @@
               <figure>
                 <img class="case-study-image enlarge" src="assets/images/case-study/hybrid_ssr_ssg.png">
               </figure>
+              
               <p>Historically, applications could be neatly categorized into using either SSR or SSG. However, modern
                 web development frameworks have begun to blur the lines between static and dynamic applications,
-                ushering in greater flexibility by making use of a hybrid approach. </p>
+                ushering in greater flexibility by making use of a hybrid approach.
+                <sup><a class="footnote-link" href="#footnote-3">3</a></sup>
+              </p>
+
+
               <p>For example, Next.js is a popular framework that fits into this new wave of modern frameworks that
                 allow developers to better optimize their applications. It began primarily as an SSR framework, but in
                 recent years, it has introduced support for SSG. Today, Next.js allows developers to build apps with
-                both SSR and SSG on a per-page basis. </p>
+                both SSR and SSG on a per-page basis.
+                <sup><a class="footnote-link" href="#footnote-4">4</a></sup>
+              </p>
               <p>For applications that are content-rich but only require frequent dynamic data retrieval for select
                 pages, it makes sense to use SSG to pre-build their simpler static pages. Those pages can then be served
                 up quickly, while SSR can handle the other pages requiring frequently changing, up-to-date content on
@@ -263,7 +314,7 @@
             </div>
 
             <div class="case-study-subsection">
-              <h3>3.2. Giraffe: A Target User</h3>
+              <h3>3.2 Giraffe: A Target User</h3>
               <p>Let’s consider a hypothetical company named Giraffe as an example to better illustrate Bubble’s use
                 case.</p>
               <img src="assets/images/case-study/giraffe_site.png">
@@ -291,7 +342,7 @@
             <p>At this point, Giraffe is asking what they can do to streamline this process.</p>
 
             <div class="case-study-subsection">
-              <h3>4.1. Getting Feedback In a Manual Way</h3>
+              <h3>4.1 Getting Feedback in a Manual Way</h3>
               <img src="assets/images/case-study/manual_feedback.png">
               <p>Before the recent expansions in their organization and additions to their site, sharing progress was
                 easier for developers at Giraffe.</p>
@@ -305,7 +356,7 @@
             </div>
 
             <div class="case-study-subsection">
-              <h3>4.2. Using a Shared Staging Environment</h3>
+              <h3>4.2 Using a Shared Staging Environment</h3>
               <img src="assets/images/case-study/shared_staging_environment.png">
               <p>One tool that Giraffe uses as part of their development workflow is a shared staging environment. This
                 is an environment shared amongst all developers collaborating on a repository. </p>
@@ -321,23 +372,23 @@
             </div>
 
             <div class="case-study-subsection">
-              <h3>4.2. Downsides to a Shared Staging Environment</h3>
+              <h3>4.3 Downsides to a Shared Staging Environment</h3>
 
               <div class="case-study-subsection">
-                <h4>4.2.1 Batching</h4>
+                <h4>4.3.1 Batching</h4>
                 <img src="assets/images/case-study/batching.png">
                 <p>Since there was only one staging environment for Giraffe to use, oftentimes newly-developed features
                   would end up living together, intermingled within a single environment. </p>
 
                 <div class="case-study-subsection">
-                  <h5>4.2.1.1 Bugs</h5>
+                  <h5>4.3.1.1 Bugs</h5>
                   <p>Batching together multiple distinct changes in this way caused bugs to arise that were difficult to
                     troubleshoot, because they could have stemmed from conflicts between any of the code updates pushed
                     to the staging environment by different developers.</p>
                 </div>
 
                 <div class="case-study-subsection">
-                  <h5>4.2.1.2 Bloated Releases</h5>
+                  <h5>4.3.1.2 Bloated Releases</h5>
                   <p>This type of workflow also led to less-frequent and more bloated releases: with only one
                     centralized environment for non-technical stakeholders to use, reviews tended to happen in larger
                     batches. And when something went wrong and a release needed to be rolled back, it was much more
@@ -346,7 +397,7 @@
               </div>
 
               <div class="case-study-subsection">
-                <h4>4.2.2 Queuing</h4>
+                <h4>4.3.2 Queuing</h4>
                 <img src="assets/images/case-study/queuing.png">
                 <p>In an attempt to resolve these issues, Giraffe has switched to queuing instead, allowing only one
                   development team at a time to use the staging environment. This has taken care of the bugs, conflicts,
@@ -354,7 +405,7 @@
                   a different set of challenges to their development workflow.</p>
 
                 <div class="case-study-subsection">
-                  <h5>4.2.2.1 Wait Time &amp; Premature Deployment</h5>
+                  <h5>4.3.2.1 Wait Time &amp; Premature Deployment</h5>
                   <p>With only one team allowed to use the shared environment at a time, developers now have to wait for
                     the environment to be freed up before they can use it. One side effect of queuing is a higher risk
                     of deploying unsafe code: when a developer mistakenly rushes to deploy another colleague’s work in
@@ -362,7 +413,7 @@
                 </div>
 
                 <div class="case-study-subsection">
-                  <h5>4.2.2.2 Long Feedback Loop</h5>
+                  <h5>4.3.2.2 Long Feedback Loop</h5>
                   <p>Another consequence of queuing has been that valuable developer time is wasted: the feedback loops
                     formed by developers and reviewers are now much longer than before since features often need
                     multiple rounds of changes before they can be moved out of the shared staging environment. Only then
@@ -381,7 +432,7 @@
               minimize bugs from conflicting updates.</p>
 
             <div class="case-study-subsection">
-              <h3>5.1. What Are Preview Apps?</h3>
+              <h3>5.1 What Are Preview Apps?</h3>
               <img src="assets/images/case-study/giraffes_preview_app.png">
               <p>Preview apps are one way to allow non-technical stakeholders to quickly review UI/UX changes. Preview
                 apps are ephemeral, lightweight, and fully functional versions of an application that can be easily
@@ -390,7 +441,58 @@
                 changes, and developers can more quickly iterate after receiving that feedback.</p>
               <p>Each time they wanted to show a new change, a Giraffe developer could deploy a new preview app and
                 share its URL with all relevant stakeholders for evaluation.</p>
-              <p>[Preview App workflow widget w/ numbering]</p>
+              <p>
+                <div class="glider-contain">
+                  <button id="preview-glider-prev" class="glider-prev">
+                    <img src="assets/images/case-study/widgets/left.png">
+                  </button>
+
+                  <div id="preview-glider" class="glider">
+                    <div>
+                      <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_1.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_2.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_3.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_4.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_5.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_6.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_7.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_8.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_9.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_10.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_11.png" />
+                    </div>
+                    <div>
+                      <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_12.png" />
+                    </div>
+                  </div>
+
+                  <button id="preview-glider-next" class="glider-next glider-arrow">
+                    <img src="assets/images/case-study/widgets/right.png">
+                  </button>
+
+                  <div id="preview-dots" class="glider-dots"></div>
+                </div>
+              </p>
               <p>The development workflow using preview apps would be carried out as follows: </p>
               <ol>
                 <li>When a developer is ready to share their new feature, they initiate a pull request for their feature
@@ -411,7 +513,7 @@
             </div>
 
             <div class="case-study-subsection">
-              <h3>5.2. Benefits of Preview Apps</h3>
+              <h3>5.2 Benefits of Preview Apps</h3>
               <img src="assets/images/case-study/preview_app_benefits.png">
               <p>Preview apps reduce some of the headaches that occur when stakeholders use a shared staging environment
                 to review and discuss UI/UX changes.</p>
@@ -424,7 +526,7 @@
             </div>
 
             <div class="case-study-subsection">
-              <h3>5.3. Downsides of Preview Apps</h3>
+              <h3>5.3 Downsides of Preview Apps</h3>
               <p>While preview apps help to streamline the process of developing frontend features, they may not be the
                 right choice for everyone. </p>
               <p>Since they’re intended for testing new features in isolation, preview apps are not a good fit for
@@ -445,7 +547,7 @@
             </div>
 
             <div class="case-study-subsection">
-              <h3>5.4. What Are Dynamic Frontend Preview Apps?</h3>
+              <h3>5.4 What Are Dynamic Frontend Preview Apps?</h3>
               <p>As the landscape of web development has changed and the lines between SSR and SSG have become blurred,
                 the requirements for preview apps have grown. </p>
 
@@ -491,7 +593,7 @@
             </div>
 
             <div class="case-study-subsection">
-              <h3>6.2. Feature vs. Service</h3>
+              <h3>6.2 Feature vs. Service</h3>
               <img src="assets/images/case-study/feature_vs_service.png">
               <p>Preview app solutions on the market typically fall into two categories: feature and service. Both can
                 offer a variety of features and provide dynamic frontend preview apps that support any combination of
@@ -540,16 +642,7 @@
           </div>
 
           <div class="case-study-subsection">
-            <h3>7.2 What Bubble Supports</h3>
-            <p>At the moment, Bubble only supports applications built with the Next.js framework.</p>
-            <p>Bubble is intended as a tool for frontend developers working on UI/UX features, which are typically less
-              data-intensive. Thus, we chose to target frontend applications that are decoupled from a database and only
-              access their data layer through API calls. This microservices approach allows us to keep the preview apps
-              lightweight, inexpensive, and quicker to deploy.</p>
-          </div>
-
-          <div class="case-study-subsection">
-            <h3>7.3 Feature Overview</h3>
+            <h3>7.2 Feature Overview</h3>
             <p>Bubble has a few important features:</p>
             <ul>
               <li>It automatically deploys preview apps when a pull request is opened, as well as when subsequent
@@ -654,7 +747,7 @@
             <h3>9.1 GitHub Actions</a></h3>
 
             <div class="case-study-subsection">
-              <h4>9.1.1 What is GitHub Actions?</h4>
+              <h4>9.1.1 What Is GitHub Actions?</h4>
               <p>GitHub Actions is an automation tool that allows users to execute code written in files–called
                 workflows– using GitHub Runners: temporary virtual servers that GitHub spins up and down.</p>
 
@@ -678,7 +771,7 @@
             </div>
 
             <div class="case-study-subsection">
-              <h4>9.1.2 Benefits and Drawbacks of Github Actions</h4>
+              <h4>9.1.2 Benefits &amp; Drawbacks of Github Actions</h4>
               <p>As with most engineering decisions, there are tradeoffs associated with using GitHub Actions. </p>
               <img src="assets/images/case-study/gh_actions_cons.png">
               <p>One challenge with using GitHub runners is that they are entirely managed by GitHub and thus cannot be
@@ -757,20 +850,25 @@
             <h3>10.2 Serverless Computing Options</h3>
 
             <div class="case-study-subsection">
-              <h4>10.2.1 Terraform</h4>
 
+              <h4>10.2.1 Terraform
+                <sup><a class="footnote-link" href="#footnote-5">5</a></sup>
+              </h4>
+              
               <figure>
                 <img src="assets/images/case-study/terraform_pros_cons.png">
               </figure>
+              
+              <p>Terraform is the first tool we considered.</p>
+              <p>Terraform is an “infrastructure as code” framework used to manage the lifecycle of cloud components.
+                There are many existing modules of Terraform for deploying frontend applications that are free to
+                utilize and actively maintained.</p>
+              <p>Compared to other solutions, one of the most promising modules we found uses a more complex
+                architecture to deploy apps. The AWS services used include CloudFront to handle incoming traffic, a
+                Lambda@Edge function that acts as a proxy handler to route requests, an S3 bucket for static content
+                storage, Lambda functions for serving the dynamic SSR pages, and an API Gateway that balances traffic
+                between the Lambda functions.</p>
 
-              <p>The Terraform Next.js module for AWS is the first tool we considered.</p>
-              <p>This open-source module uses Terraform – an “infrastructure as code” framework used to manage the
-                lifecycle of cloud components - to deploy Next.js applications on AWS services. The upsides to this
-                option are that it is actively maintained and supports all versions of Next.js. </p>
-              <p>Compared to other solutions, the Terraform module uses a more complex architecture to deploy apps. The
-                AWS services used include CloudFront to handle incoming traffic, a Lambda@Edge function that acts as a
-                proxy handler to route requests, an S3 bucket for static content storage, Lambda functions for serving
-                the dynamic SSR pages, and an API Gateway that balances traffic between the Lambda functions.</p>
               <p>The cost of this heavy underlying infrastructure is lengthy deployment times. During our test runs
                 using this module with multiple Next.js applications, we found that deploying a simple app took more
                 than 15 minutes. We also encountered a few deployment failures, which were challenging to debug because
@@ -779,46 +877,48 @@
             </div>
 
             <div class="case-study-subsection">
-              <h4>10.2.2 FAB</h4>
-
+              <h4>10.2.2 FAB
+                <sup><a class="footnote-link" href="#footnote-6">6</a></sup>
+              </h4>
+              
               <figure>
                 <img src="assets/images/case-study/fab_pros_cons.png">
               </figure>
 
               <p>Frontend Application Bundle (also called FAB) is another open-source framework that enables users to
-                deploy Next.js applications through a CLI. </p>
+                deploy frontend applications through a CLI. </p>
               <p>FAB zips up entire applications and ships static assets and server-side logic separately. Thus, the
                 user has the option to choose separate platforms for serving static and dynamic content. For example,
                 they could deploy static assets to AWS S3 while deploying serverless functions with Cloudflare workers.
                 Although it aims to be platform agnostic, for serverless functions, FAB is currently most streamlined
                 for Cloudflare Workers and AWS Lambdas. </p>
-              <p>When using FAB to deploy a few Next.js applications, it took no more than 5 minutes to deploy each app,
+              <p>When using FAB to deploy a few applications, it took no more than 5 minutes to deploy each app,
                 which was significantly faster than other tools we considered, especially Terraform. </p>
-              <p>However, unlike the other options, FAB has not been maintained for over a year and a half and
-                consequently doesn’t support Next.js applications beyond version 10. For reference, Next.js is currently
-                on version 12. </p>
+              <p>However, unlike the other options, FAB has not been maintained for over a year and a half. </p>
             </div>
 
             <div class="case-study-subsection">
-              <h4>10.2.3 Serverless Framework</h4>
-
+              <h4>10.2.3 Serverless Framework
+                <sup><a class="footnote-link" href="#footnote-7">7</a></sup>
+              </h4>
+              
               <figure>
                 <img src="assets/images/case-study/serverless_pros_cons.png">
               </figure>
-              <p>The final option we considered was the Serverless Framework: specifically, the Serverless Next.js
-                Component.</p>
-              <p>Serverless Next.js deploys apps using only three AWS services: CloudFront, Lambda@Edge, and S3. This is
-                a simpler architecture in comparison to the Terraform module, which may be a contributing factor to its
-                faster deployment time. While provisioning the CloudFront distribution does take a few minutes, it still
-                took less than half the time to deploy compared to Terraform. </p>
-              <p>One downside of using Serverless Next.js is that unlike the flexibility of FAB, it currently only
+              
+              <p>The final option we considered was Serverless Framework.</p>
+              <p>Serverless Framework deploys apps using only three AWS services: CloudFront, Lambda@Edge, and S3. This
+                is a simpler architecture in comparison to the Terraform module, which may be a contributing factor to
+                its faster deployment time. While provisioning the CloudFront distribution does take a few minutes, it
+                still took less than half the time to deploy compared to Terraform.</p>
+              <p>One downside of using Serverless Framework is that unlike the flexibility of FAB, it currently only
                 supports deployment on AWS infrastructure. Moreover, server-side logic can only be deployed to
-                Lambda@Edge functions. However, while FAB is no longer actively maintained, Serverless Next.js continues
-                to be a reliable framework considering how many people use it to deploy Next.js applications. The
-                maintainers are still active and its latest version was released just a few months ago in March 2022.
+                Lambda@Edge functions. However, while FAB is no longer actively maintained, Serverless Framework has
+                continued to be a reliable framework considering how many people use it. The maintainers are still
+                active and its latest version was released just a few months ago in March 2022.
               </p>
-              <p>In the end, we selected Serverless Next.js to build and deploy Bubble’s preview apps, due to its
-                reliability, relatively fast deployment time, and simplified architecture, which would best serve
+              <p>In the end, we decided to go with Serverless Framework to build and deploy Bubble’s preview apps, due
+                to its reliability, relatively fast deployment time, and simplified architecture, which would best serve
                 Bubble’s goal of automating lightweight and convenient preview apps.</p>
             </div>
           </div>
@@ -829,7 +929,7 @@
 
           <div class="case-study-subsection">
             <h3>11.1 IAM</h3>
-            <p>[IAM mini-flow image]</p>
+            <img src="assets/images/case-study/iam_flow.png">
             <p>Bubble creates new IAM users for identity and access management. An IAM user for a particular GitHub
               repository will have limited access to only those resources needed for Bubble’s features. The access key
               for the user is saved locally on the user's computer and also in GitHub secrets. This allows a separation
@@ -839,7 +939,7 @@
 
           <div class="case-study-subsection">
             <h3>11.2 DynamoDB</h3>
-            <p>[DynamoDB zoom-in mini-map image like our brainstorm?]</p>
+            <img src="assets/images/case-study/dynamo_minimap.png">
             <p>In order to keep track of all the preview apps and their resources including CloudFront distributions, S3
               buckets, and associated Lambda functions, Bubble persists related metadata. Because Bubble automatically
               destroys preview apps on pull request triggers through workflow files, the data needs to be accessed
@@ -1082,10 +1182,39 @@
               Cloud. </p>
           </div>
         </div>
+<!--
+  REFREFREF
+-->
+        <div class="references">
+          <h3>References</h3>
+          <ol>
+            <li id="footnote-1">
+              <a href="https://dev.to/snickdx/a-brief-history-of-the-web-9c3" target="_blank">A Brief History of the Web</a>
+            </li>
+            <li id="footnote-2">
+              <a href="https://www.cloudflare.com/learning/performance/static-site-generator/" target="_blank">What are Static Site Generators?</a>
+            </li>
+            <li id="footnote-3">
+              <a href="https://cloudcannon.com/blog/ssg-history-4-spas-are-awesome/" target="_blank">SSG History: SPAs are awesome</a>
+            </li>
+            <li id="footnote-4">
+              <a href="https://medium.com/@prashantramnyc/server-side-rendering-ssr-vs-client-side-rendering-csr-vs-pre-rendering-using-static-site-89f2d05182ef" target="_blank">SSR vs CSR vs SSG</a>
+            </li>
+            <li id="footnote-5">
+              <a href="https://tsh.io/blog/aws-infrastructure-terraform-serverless" target="_blank">Terraform</a>
+            </li>
+            <li id="footnote-6">
+              <a href="https://fab.dev" target="_blank">FAB</a>
+            </li>
+            <li id="footnote-7">
+              <a href="https://www.serverless.com/plugins/serverless-nextjs-plugin" target="_blank">Serverless Framework</a>
+            </li>
+          </ol>
+        </div>
 
         <!-- Team Section -->
         <div class="case-study-section team">
-          <h2>11. The Bubble Team</h2>
+          <h2>The Bubble Team</h2>
           <br />
           <br />
           <div class="section team-section">
@@ -1432,15 +1561,53 @@
       highlightOffset: 100, //offset to trigger the next headline
     });
   </script>
-  <script type="text/javascript" src="assets/scripts/logo-btn.js"></script>
+  <!-- <script type="text/javascript" src="assets/scripts/logo-btn.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
   <script>
-    new Glide('.glide', {
+    var glide = new Glide('.glide', {
       type: 'carousel',
-      animationDuration: 0,
+      // type: 'slider',
+      startAt: 0,
     })
-      .mount();
+
+    glide.mount();
+  </script> -->
+
+  <script src="assets/scripts/glider.min.js"></script>
+  <script>
+    new Glider(document.querySelector('#ssr-glider'), {
+      slidesToShow: 1,
+      dots: '#ssr-dots',
+      arrows: {
+        prev: '#ssr-glider-prev',
+        next: '#ssr-glider-next'
+      },
+      duration: 0,
+      rewind: true
+    });
+
+    new Glider(document.querySelector('#ssg-glider'), {
+      slidesToShow: 1,
+      dots: '#ssg-dots',
+      arrows: {
+        prev: '#ssg-glider-prev',
+        next: '#ssg-glider-next'
+      },
+      duration: 0,
+      rewind: true
+    });
+
+    new Glider(document.querySelector('#preview-glider'), {
+      slidesToShow: 1,
+      dots: '#preview-dots',
+      arrows: {
+        prev: '#preview-glider-prev',
+        next: '#preview-glider-next'
+      },
+      duration: 0,
+      rewind: true
+    });
   </script>
 </body>
 
