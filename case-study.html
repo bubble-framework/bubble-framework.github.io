@@ -4,11 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <title>Bubble • Case Study</title>
-  <link
-    href="/assets/images/favicon.png"
-    rel="icon"
-    type="image/png"
-  />
+  <link href="/assets/images/favicon.png" rel="icon" type="image/png" />
   <meta content="width=device-width, initial-scale=1" name="viewport" />
   <link href="assets/css/glider.min.css" rel="stylesheet" type="text/css" />
   <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
@@ -123,39 +119,40 @@
             <div class="case-study-subsection">
               <h3>2.1 Server-Side Rendering</h3>
               <p>
-                <div class="glider-contain">
-                  <button id="ssr-glider-prev" class="glider-prev">
-                    <img src="assets/images/case-study/widgets/left.png">
-                  </button>
+              <div class="glider-contain">
+                <button id="ssr-glider-prev" class="glider-prev">
+                  <img src="assets/images/case-study/widgets/left.png">
+                </button>
 
-                  <div id="ssr-glider" class="glider">
-                    <div>
-                      <img src="assets/images/case-study/widgets/ssr/ssr1.png" />
-                    </div>
-                    <div>
-                      <img src="assets/images/case-study/widgets/ssr/ssr2.png" />
-                    </div>
-                    <div>
-                      <img src="assets/images/case-study/widgets/ssr/ssr3.png" />
-                    </div>
-                    <div>
-                      <img src="assets/images/case-study/widgets/ssr/ssr4.png" />
-                    </div>
-                    <div>
-                      <img src="assets/images/case-study/widgets/ssr/ssr5.png" />
-                    </div>
+                <div id="ssr-glider" class="glider">
+                  <div>
+                    <img src="assets/images/case-study/widgets/ssr/ssr1.png" />
                   </div>
-
-                  <button id="ssr-glider-next" class="glider-next glider-arrow">
-                    <img src="assets/images/case-study/widgets/right.png">
-                  </button>
-
-                  <div id="ssr-dots" class="glider-dots"></div>
+                  <div>
+                    <img src="assets/images/case-study/widgets/ssr/ssr2.png" />
+                  </div>
+                  <div>
+                    <img src="assets/images/case-study/widgets/ssr/ssr3.png" />
+                  </div>
+                  <div>
+                    <img src="assets/images/case-study/widgets/ssr/ssr4.png" />
+                  </div>
+                  <div>
+                    <img src="assets/images/case-study/widgets/ssr/ssr5.png" />
+                  </div>
                 </div>
+
+                <button id="ssr-glider-next" class="glider-next glider-arrow">
+                  <img src="assets/images/case-study/widgets/right.png">
+                </button>
+
+                <div id="ssr-dots" class="glider-dots"></div>
+              </div>
               </p>
               <p>Traditionally, the most common strategy for building web pages was based on client-server
                 communication: a client – for example, an end user’s browser – would request a page from a website and
-                the server would be responsible for responding with a fully-generated HTML page.<sup><a class="footnote-link" href="#footnote-1">1</a></sup>  With this approach, the
+                the server would be responsible for responding with a fully-generated HTML page.<sup><a
+                    class="footnote-link" href="#footnote-1">1</a></sup> With this approach, the
                 server does most of the heavy lifting at request time. When it receives the request, the server fetches
                 any data from the database along with other resources (i.e. CSS, images, etc.) needed, generates the
                 full HTML, and then sends it back to the client to display to the end user. This process, appropriately
@@ -170,42 +167,43 @@
                 given page’s content on every request. For example, consider a company’s landing page or a blog post,
                 where the content of these pages remains the same for long periods of time regardless of who’s
                 requesting it—it quickly becomes wasteful and inefficient for the server to dynamically regenerate these
-                kinds of pages each time a client makes a request. This led to the rise in popularity of <strong>static site
-                generation (SSG).</strong><sup><a class="footnote-link" href="#footnote-2">2</a></sup>
+                kinds of pages each time a client makes a request. This led to the rise in popularity of <strong>static
+                  site
+                  generation (SSG).</strong><sup><a class="footnote-link" href="#footnote-2">2</a></sup>
               </p>
               <p>
-                <div class="glider-contain">
-                  <button id="ssg-glider-prev" class="glider-prev">
-                    <img src="assets/images/case-study/widgets/left.png">
-                  </button>
+              <div class="glider-contain">
+                <button id="ssg-glider-prev" class="glider-prev">
+                  <img src="assets/images/case-study/widgets/left.png">
+                </button>
 
-                  <div id="ssg-glider" class="glider">
-                    <div>
-                      <img src="assets/images/case-study/widgets/ssg/ssg1.png" />
-                    </div>
-                    <div>
-                      <img src="assets/images/case-study/widgets/ssg/ssg2.png" />
-                    </div>
-                    <div>
-                      <img src="assets/images/case-study/widgets/ssg/ssg3.png" />
-                    </div>
-                    <div>
-                      <img src="assets/images/case-study/widgets/ssg/ssg4.png" />
-                    </div>
-                    <div>
-                      <img src="assets/images/case-study/widgets/ssg/ssg5.png" />
-                    </div>
-                    <div>
-                      <img src="assets/images/case-study/widgets/ssg/ssg6.png" />
-                    </div>
+                <div id="ssg-glider" class="glider">
+                  <div>
+                    <img src="assets/images/case-study/widgets/ssg/ssg1.png" />
                   </div>
-
-                  <button id="ssg-glider-next" class="glider-next glider-arrow">
-                    <img src="assets/images/case-study/widgets/right.png">
-                  </button>
-
-                  <div id="ssg-dots" class="glider-dots"></div>
+                  <div>
+                    <img src="assets/images/case-study/widgets/ssg/ssg2.png" />
+                  </div>
+                  <div>
+                    <img src="assets/images/case-study/widgets/ssg/ssg3.png" />
+                  </div>
+                  <div>
+                    <img src="assets/images/case-study/widgets/ssg/ssg4.png" />
+                  </div>
+                  <div>
+                    <img src="assets/images/case-study/widgets/ssg/ssg5.png" />
+                  </div>
+                  <div>
+                    <img src="assets/images/case-study/widgets/ssg/ssg6.png" />
+                  </div>
                 </div>
+
+                <button id="ssg-glider-next" class="glider-next glider-arrow">
+                  <img src="assets/images/case-study/widgets/right.png">
+                </button>
+
+                <div id="ssg-dots" class="glider-dots"></div>
+              </div>
               </p>
               <p>With statically generated sites, HTML pages are pre-built before a user ever requests them. At build
                 time, a server is responsible for retrieving data and fully generating the HTML. This process is very
@@ -289,7 +287,8 @@
 
               <p>Historically, applications could be neatly categorized into using either SSR or SSG. However, modern
                 web development frameworks have begun to blur the lines between static and dynamic applications,
-                ushering in greater flexibility by making use of a hybrid approach.<sup><a class="footnote-link" href="#footnote-3">3</a></sup>
+                ushering in greater flexibility by making use of a hybrid approach.<sup><a class="footnote-link"
+                    href="#footnote-3">3</a></sup>
               </p>
 
 
@@ -354,7 +353,8 @@
               <h3>4.2 Using a Shared Staging Environment</h3>
               <img src="assets/images/case-study/shared_staging_environment.png">
               <p>One tool that Giraffe uses as part of their development workflow is a shared staging environment. This
-                is an environment shared amongst all developers collaborating on a repository.<sup><a class="footnote-link" href="#footnote-5">5</a></sup></p>
+                is an environment shared amongst all developers collaborating on a repository.<sup><a
+                    class="footnote-link" href="#footnote-5">5</a></sup></p>
               <p>A shared staging environment aims to mimic the production environment as closely as possible to ensure
                 all new changes are working as intended before they are released live.</p>
               <p>Different types of testing can occur when code is pushed to this kind of environment: for example, load
@@ -429,64 +429,66 @@
             <div class="case-study-subsection">
               <h3>5.1 What Are Preview Apps?</h3>
               <img src="assets/images/case-study/giraffes_preview_app.png">
-              <p>Preview apps are one way to allow non-technical stakeholders to quickly review UI/UX changes.<sup><a class="footnote-link" href="#footnote-6">6</a></sup> Preview
+              <p>Preview apps are one way to allow non-technical stakeholders to quickly review UI/UX changes.<sup><a
+                    class="footnote-link" href="#footnote-6">6</a></sup> Preview
                 apps are ephemeral, lightweight, and fully functional versions of an application that can be easily
                 built and deployed—and just as easily torn down. They allow multiple versions of a site to be quickly
                 deployed in isolation: this way, non-technical stakeholders can more easily give feedback on UI/UX
-                changes, and developers can more quickly iterate after receiving that feedback.<sup><a class="footnote-link" href="#footnote-7">7</a></sup></p>
+                changes, and developers can more quickly iterate after receiving that feedback.<sup><a
+                    class="footnote-link" href="#footnote-7">7</a></sup></p>
               <p>Each time they wanted to show a new change, a Giraffe developer could deploy a new preview app and
                 share its URL with all relevant stakeholders for evaluation.</p>
               <p>
-                <div class="glider-contain">
-                  <button id="preview-glider-prev" class="glider-prev">
-                    <img src="assets/images/case-study/widgets/left.png">
-                  </button>
+              <div class="glider-contain">
+                <button id="preview-glider-prev" class="glider-prev">
+                  <img src="assets/images/case-study/widgets/left.png">
+                </button>
 
-                  <div id="preview-glider" class="glider">
-                    <div>
-                      <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_1.png" />
-                    </div>
-                    <div>
-                      <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_2.png" />
-                    </div>
-                    <div>
-                      <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_3.png" />
-                    </div>
-                    <div>
-                      <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_4.png" />
-                    </div>
-                    <div>
-                      <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_5.png" />
-                    </div>
-                    <div>
-                      <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_6.png" />
-                    </div>
-                    <div>
-                      <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_7.png" />
-                    </div>
-                    <div>
-                      <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_8.png" />
-                    </div>
-                    <div>
-                      <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_9.png" />
-                    </div>
-                    <div>
-                      <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_10.png" />
-                    </div>
-                    <div>
-                      <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_11.png" />
-                    </div>
-                    <div>
-                      <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_12.png" />
-                    </div>
+                <div id="preview-glider" class="glider">
+                  <div>
+                    <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_1.png" />
                   </div>
-
-                  <button id="preview-glider-next" class="glider-next glider-arrow">
-                    <img src="assets/images/case-study/widgets/right.png">
-                  </button>
-
-                  <div id="preview-dots" class="glider-dots"></div>
+                  <div>
+                    <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_2.png" />
+                  </div>
+                  <div>
+                    <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_3.png" />
+                  </div>
+                  <div>
+                    <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_4.png" />
+                  </div>
+                  <div>
+                    <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_5.png" />
+                  </div>
+                  <div>
+                    <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_6.png" />
+                  </div>
+                  <div>
+                    <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_7.png" />
+                  </div>
+                  <div>
+                    <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_8.png" />
+                  </div>
+                  <div>
+                    <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_9.png" />
+                  </div>
+                  <div>
+                    <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_10.png" />
+                  </div>
+                  <div>
+                    <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_11.png" />
+                  </div>
+                  <div>
+                    <img src="assets/images/case-study/widgets/preview_workflow/preview_widget_12.png" />
+                  </div>
                 </div>
+
+                <button id="preview-glider-next" class="glider-next glider-arrow">
+                  <img src="assets/images/case-study/widgets/right.png">
+                </button>
+
+                <div id="preview-dots" class="glider-dots"></div>
+              </div>
               </p>
               <p>The development workflow using preview apps would be carried out as follows: </p>
               <ol>
@@ -744,7 +746,9 @@
             <div class="case-study-subsection">
               <h4>9.1.1 What Is GitHub Actions?</h4>
               <p>GitHub Actions is an automation tool that allows users to execute code written in files–called
-                workflows– using GitHub Runners: temporary virtual servers that GitHub spins up and down.<sup><a class="footnote-link" href="#footnote-8">8</a></sup></p></p>
+                workflows– using GitHub Runners: temporary virtual servers that GitHub spins up and down.<sup><a
+                    class="footnote-link" href="#footnote-8">8</a></sup></p>
+              </p>
 
               <figure>
                 <img class="case-study-image enlarge" src="assets/images/case-study/gifs/gh_action_gif.gif">
@@ -821,7 +825,8 @@
                 the most compelling option for deploying server-side logic.</p>
               <img class="case-study-image shrink" src="assets/images/case-study/serverless_pros.png">
               <p>Despite being called serverless, these functions do run on servers, but they abstract away the
-                logistics of provisioning server resources.<sup><a class="footnote-link" href="#footnote-10">10</a></sup> There are no ongoing expenses: developers are only charged
+                logistics of provisioning server resources.<sup><a class="footnote-link"
+                    href="#footnote-10">10</a></sup> There are no ongoing expenses: developers are only charged
                 for the server capacity that their application uses during the time it’s actually being executed.</p>
               <p>Since they don’t need to include system dependencies, serverless functions are also very fast to
                 deploy, typically going live within milliseconds. </p>
@@ -855,7 +860,8 @@
               </figure>
 
               <p>Terraform is the first tool we considered.</p>
-              <p>Terraform is an “infrastructure as code” framework used to manage the lifecycle of cloud components.<sup><a class="footnote-link" href="#footnote-11">11</a></sup>
+              <p>Terraform is an “infrastructure as code” framework used to manage the lifecycle of cloud
+                components.<sup><a class="footnote-link" href="#footnote-11">11</a></sup>
                 There are many existing modules of Terraform for deploying frontend applications that are free to
                 utilize and actively maintained.</p>
               <p>Compared to other solutions, one of the most promising modules we found uses a more complex
@@ -879,7 +885,8 @@
               </figure>
 
               <p>Frontend Application Bundle (also called FAB) is another open-source framework that enables users to
-                deploy frontend applications through a CLI.<sup><a class="footnote-link" href="#footnote-12">12</a></sup></p>
+                deploy frontend applications through a CLI.<sup><a class="footnote-link"
+                    href="#footnote-12">12</a></sup></p>
               <p>FAB zips up entire applications and ships static assets and server-side logic separately. Thus, the
                 user has the option to choose separate platforms for serving static and dynamic content. For example,
                 they could deploy static assets to AWS S3 while deploying serverless functions with Cloudflare workers.
@@ -897,7 +904,8 @@
                 <img src="assets/images/case-study/serverless_pros_cons.png">
               </figure>
 
-              <p>The final option we considered was Serverless Framework.<sup><a class="footnote-link" href="#footnote-13">13</a></sup></p>
+              <p>The final option we considered was Serverless Framework.<sup><a class="footnote-link"
+                    href="#footnote-13">13</a></sup></p>
 
               <p>Serverless Framework deploys apps using only three AWS services: CloudFront, Lambda@Edge, and S3. This
                 is a simpler architecture in comparison to the Terraform module, which may be a contributing factor to
@@ -974,7 +982,8 @@
 
           <div class="case-study-subsection">
             <h3>12.3 The Bubble Dashboard</h3>
-            <p><img class="case-study-demo" alt="bubble dashboard demo" src="assets/images/case-study/gifs/demo-dashboard.gif" /></p>
+            <p><img class="case-study-demo" alt="bubble dashboard demo"
+                src="assets/images/case-study/gifs/demo-dashboard.gif" /></p>
             <p>Users can access the Bubble dashboard using the command <code>bubble dashboard</code> from a
               Bubble-enabled local repository.</p>
             <p>Once the dashboard is open, all preview apps on all branches with open pull requests, for that
@@ -987,7 +996,8 @@
 
           <div class="case-study-subsection">
             <h3>12.4 Adding Bubble to a Project</h3>
-            <p><img class="case-study-demo" alt="bubble init demo" src="assets/images/case-study/gifs/demo-init.gif" /></p>
+            <p><img class="case-study-demo" alt="bubble init demo" src="assets/images/case-study/gifs/demo-init.gif" />
+            </p>
             <p>If the user has a Next.js project to which they would like to add Bubble, the first step is to run the
               <code>bubble init</code> command in their repository’s root directory.
             </p>
@@ -1174,42 +1184,50 @@
               Cloud. </p>
           </div>
         </div>
-<!--
+        <!--
   REFREFREF
 -->
         <div class="references">
           <h2>15. References</h2>
           <ol>
             <li id="footnote-1">
-              <a href="https://dev.to/snickdx/a-brief-history-of-the-web-9c3" target="_blank">A Brief History of the Web</a>
+              <a href="https://dev.to/snickdx/a-brief-history-of-the-web-9c3" target="_blank">A Brief History of the
+                Web</a>
             </li>
             <li id="footnote-2">
-              <a href="https://www.cloudflare.com/learning/performance/static-site-generator/" target="_blank">What are Static Site Generators?</a>
+              <a href="https://www.cloudflare.com/learning/performance/static-site-generator/" target="_blank">What are
+                Static Site Generators?</a>
             </li>
             <li id="footnote-3">
-              <a href="https://cloudcannon.com/blog/ssg-history-4-spas-are-awesome/" target="_blank">SSG History: SPAs are awesome</a>
+              <a href="https://cloudcannon.com/blog/ssg-history-4-spas-are-awesome/" target="_blank">SSG History: SPAs
+                are awesome</a>
             </li>
             <li id="footnote-4">
-              <a href="https://medium.com/@prashantramnyc/server-side-rendering-ssr-vs-client-side-rendering-csr-vs-pre-rendering-using-static-site-89f2d05182ef" target="_blank">SSR vs CSR vs SSG</a>
+              <a href="https://medium.com/@prashantramnyc/server-side-rendering-ssr-vs-client-side-rendering-csr-vs-pre-rendering-using-static-site-89f2d05182ef"
+                target="_blank">SSR vs CSR vs SSG</a>
             </li>
             <li id="footnote-5">
-              <a href="https://hackernoon.com/staging-environments-are-overlooked-heres-why-they-matter-5jp2gm0" target="_blank">Staging Environments are Overlooked: Here's Why They Matter</a>
+              <a href="https://hackernoon.com/staging-environments-are-overlooked-heres-why-they-matter-5jp2gm0"
+                target="_blank">Staging Environments are Overlooked: Here's Why They Matter</a>
             </li>
             <li id="footnote-6">
-              <a href="https://www.okteto.com/blog/devx-days-preview-environments/" target="_blank">With Preview Environments, Everyone is Invited to the Party</a>
+              <a href="https://www.okteto.com/blog/devx-days-preview-environments/" target="_blank">With Preview
+                Environments, Everyone is Invited to the Party</a>
             </li>
             <li id="footnote-7">
-              <a href="https://news.ycombinator.com/item?id=20566785"
-                target="_blank">FeaturePeek — Front-end review for the whole team</a>
+              <a href="https://news.ycombinator.com/item?id=20566785" target="_blank">FeaturePeek — Front-end review for
+                the whole team</a>
             </li>
             <li id="footnote-8">
-              <a href="https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions#overview" target="_blank">GitHub Actions Overview</a>
+              <a href="https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions#overview"
+                target="_blank">GitHub Actions Overview</a>
             </li>
             <li id="footnote-9">
               <a href="https://www.ibm.com/cloud/learn/containers" target="_blank">Containers</a>
             </li>
             <li id="footnote-10">
-              <a href="https://www.splunk.com/en_us/data-insider/what-are-serverless-functions.html" target="_blank">What are Serverless Functions?</a>
+              <a href="https://www.splunk.com/en_us/data-insider/what-are-serverless-functions.html"
+                target="_blank">What are Serverless Functions?</a>
             </li>
             <li id="footnote-11">
               <a href="https://tsh.io/blog/aws-infrastructure-terraform-serverless" target="_blank">Terraform</a>
@@ -1218,7 +1236,8 @@
               <a href="https://fab.dev" target="_blank">FAB</a>
             </li>
             <li id="footnote-13">
-              <a href="https://www.serverless.com/plugins/serverless-nextjs-plugin" target="_blank">Serverless Framework</a>
+              <a href="https://www.serverless.com/plugins/serverless-nextjs-plugin" target="_blank">Serverless
+                Framework</a>
             </li>
           </ol>
         </div>
@@ -1291,14 +1310,14 @@
                             </a>
                           </li>
                           <li>
-                            <a href="#juliawebsite" target="_blank">
+                            <a href="https://jooliashi.com" target="_blank">
                               <span class="team-member-icon">
                                 <i class="fas fa-globe"></i>
                               </span>
                             </a>
                           </li>
                           <li>
-                            <a href="#julialinkedin" target="_blank">
+                            <a href="https://www.linkedin.com/in/julia-shi-7764ba95/" target="_blank">
                               <span class="team-member-icon">
                                 <i class="fab fa-linkedin"></i>
                               </span>
