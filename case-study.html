@@ -70,7 +70,7 @@
         <div class="navigation-right">
           <div class="login-buttons">
             <a href="https://github.com/jjam-bubble/bubble-framework" target="_blank">
-              <span style="color: #0a0188">
+              <span style="color: #2E80BC">
                 <i class="fab fa-github fa-lg"></i>
               </span>
             </a>
@@ -1058,7 +1058,7 @@
               <p>Our first attempts to capture the logs during the build process were unsuccessful because the Action
                 run logs are only available via an API call after the entire execution has finished. </p>
               <img src="assets/images/case-study/build_logs_attempt_2.png">
-              <p>We ended up having to cache the <em>run</em>id_ for each workflow on GitHub and then implement an
+              <p>We ended up having to cache the <code>run_id</code> for each workflow on GitHub and then implement an
                 entirely separate workflow which was triggered immediately after each build action finished. This
                 allowed us to access the build logs in their entirety within the new workflow. </p>
             </div>
