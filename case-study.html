@@ -285,8 +285,11 @@
             <h2>3. The Changing Landscape</h2>
 
             <div class="case-study-subsection">
-              <h3>3.1 Modern Web Development</h3>
-              <img class="case-study-image enlarge" src="assets/images/case-study/hybrid_ssr_ssg.png">
+              <h3>3.1. Modern Web Development</h3>
+              <figure>
+                <img class="case-study-image enlarge" src="assets/images/case-study/hybrid_ssr_ssg.png">
+              </figure>
+              
               <p>Historically, applications could be neatly categorized into using either SSR or SSG. However, modern
                 web development frameworks have begun to blur the lines between static and dynamic applications,
                 ushering in greater flexibility by making use of a hybrid approach.
@@ -547,7 +550,11 @@
               <h3>5.4 What Are Dynamic Frontend Preview Apps?</h3>
               <p>As the landscape of web development has changed and the lines between SSR and SSG have become blurred,
                 the requirements for preview apps have grown. </p>
-              <img src="assets/images/case-study/dynamic_preview_apps.png">
+
+              <figure>
+                <img class="case-study-image enlarge" src="assets/images/case-study/dynamic_preview_apps.png">
+              </figure>  
+
               <p>For applications using only SSG, all that a preview app would need is a CDN to deliver static assets;
                 for only SSR, that preview app would only require a server. However, to support applications utilizing
                 both SSR and SSG, the preview app architecture must include both an application server and a CDN, and
@@ -566,7 +573,11 @@
 
             <div class="case-study-subsection">
               <h3>6.1 DIY</h3>
-              <img src="assets/images/case-study/diy.png">
+
+              <figure>
+                <img class="case-study-image enlarge" src="assets/images/case-study/diy.png">
+              </figure>
+
               <p>One option would be a DIY approach. </p>
               <p>Building their own system would allow Giraffe to customize their solution according to their exact
                 needs while maintaining full control of their code and preview app infrastructure. The downside is that
@@ -659,12 +670,19 @@
 
           <div class="case-study-subsection">
             <h3>8.1 Architecture Overview</h3>
-            <img src="assets/images/case-study/overall_architecture.png">
+            <figure>
+              <img class="case-study-image enlarge" src="assets/images/case-study/overall_architecture.png">
+            </figure>
+
             <p>Bubble consists of three main pieces of architecture: a local user interface, GitHub, and AWS.</p>
 
             <div class="case-study-subsection">
               <h4>8.1.1 Interfaces</h4>
-              <img src="assets/images/case-study/user_interface_minimap.png">
+
+              <figure>
+                <img class="case-study-image enlarge" src="assets/images/case-study/user_interface_minimap.png">
+              </figure>
+
               <p>The user interface consists of two parts located on the user’s local machine.</p>
               <p>Once Bubble is globally installed as an npm package, the user can then access the CLI to initialize an
                 instance of Bubble in a repository directory. This adds necessary files to the local repo and updates
@@ -676,7 +694,11 @@
 
             <div class="case-study-subsection">
               <h4>8.1.2 GitHub Actions</h4>
-              <img src="assets/images/case-study/github_minimap.png">
+
+              <figure>
+                <img class="case-study-image enlarge" src="assets/images/case-study/github_minimap.png">
+              </figure>
+
               <p>Bubble uses GitHub Actions to automate the build, deploy, and destroy process for preview apps. These
                 actions execute workflow files added by Bubble which are triggered through initial pull requests,
                 subsequent commits to those requests, or HTTP requests to GitHub servers sent via the Bubble CLI.</p>
@@ -686,7 +708,11 @@
 
             <div class="case-study-subsection">
               <h4>8.1.3 AWS Services</h4>
-              <img src="assets/images/case-study/aws_minimap.png">
+
+              <figure>
+                <img class="case-study-image enlarge" src="assets/images/case-study/aws_minimap.png">
+              </figure>
+
               <p>The final piece of our architecture uses several AWS services to deploy the infrastructure for all
                 preview apps.</p>
               <p>Each preview app consists of three AWS microservices:</p>
@@ -724,7 +750,12 @@
               <h4>9.1.1 What Is GitHub Actions?</h4>
               <p>GitHub Actions is an automation tool that allows users to execute code written in files–called
                 workflows– using GitHub Runners: temporary virtual servers that GitHub spins up and down.</p>
-              <img src="assets/images/case-study/gifs/gh_action_gif.gif">
+
+              <figure>
+                <img class="case-study-image enlarge" src="assets/images/case-study/gifs/gh_action_gif.gif">
+              </figure>
+
+              <img src="">
               <p>The process– using a Bubble deployment as an example– works as follows: </p>
               <ol>
                 <li>A Bubble workflow file in the user’s repository is set to listen for pull requests.</li>
@@ -819,10 +850,15 @@
             <h3>10.2 Serverless Computing Options</h3>
 
             <div class="case-study-subsection">
+
               <h4>10.2.1 Terraform
                 <sup><a class="footnote-link" href="#footnote-5">5</a></sup>
               </h4>
-              <img src="assets/images/case-study/terraform_pros_cons.png">
+              
+              <figure>
+                <img src="assets/images/case-study/terraform_pros_cons.png">
+              </figure>
+              
               <p>Terraform is the first tool we considered.</p>
               <p>Terraform is an “infrastructure as code” framework used to manage the lifecycle of cloud components.
                 There are many existing modules of Terraform for deploying frontend applications that are free to
@@ -832,6 +868,7 @@
                 Lambda@Edge function that acts as a proxy handler to route requests, an S3 bucket for static content
                 storage, Lambda functions for serving the dynamic SSR pages, and an API Gateway that balances traffic
                 between the Lambda functions.</p>
+
               <p>The cost of this heavy underlying infrastructure is lengthy deployment times. During our test runs
                 using this module with multiple Next.js applications, we found that deploying a simple app took more
                 than 15 minutes. We also encountered a few deployment failures, which were challenging to debug because
@@ -843,7 +880,10 @@
               <h4>10.2.2 FAB
                 <sup><a class="footnote-link" href="#footnote-6">6</a></sup>
               </h4>
-              <img src="assets/images/case-study/fab_pros_cons.png">
+              
+              <figure>
+                <img src="assets/images/case-study/fab_pros_cons.png">
+              </figure>
 
               <p>Frontend Application Bundle (also called FAB) is another open-source framework that enables users to
                 deploy frontend applications through a CLI. </p>
@@ -861,7 +901,11 @@
               <h4>10.2.3 Serverless Framework
                 <sup><a class="footnote-link" href="#footnote-7">7</a></sup>
               </h4>
-              <img src="assets/images/case-study/serverless_pros_cons.png">
+              
+              <figure>
+                <img src="assets/images/case-study/serverless_pros_cons.png">
+              </figure>
+              
               <p>The final option we considered was Serverless Framework.</p>
               <p>Serverless Framework deploys apps using only three AWS services: CloudFront, Lambda@Edge, and S3. This
                 is a simpler architecture in comparison to the Terraform module, which may be a contributing factor to
@@ -978,7 +1022,11 @@
 
           <div class="case-study-subsection">
             <h3>13.1 Lambda Function Deletion</h3>
-            <img src="assets/images/case-study/gifs/lambda_deletion_gif.gif">
+
+            <figure>
+              <img class="case-study-image enlarge" src="assets/images/case-study/gifs/lambda_deletion_gif.gif">
+            </figure>
+
             <p>One challenge occurred when we were deleting preview apps.</p>
             <p>For building and deploying preview apps, we used GitHub Actions to run workflows, and we decided to use
               the same mechanism for tearing them down These workflows can be triggered automatically, by the closing of
