@@ -358,6 +358,13 @@ label {
   width: 90%;
 }
 
+@media screen and (max-width: 1690px) {
+  .case-study-image.enlarge {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
 @media screen and (max-width: 991px) {
   .w-container {
     max-width: 728px;
