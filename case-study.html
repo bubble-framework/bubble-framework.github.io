@@ -159,7 +159,7 @@
                 server does most of the heavy lifting at request time. When it receives the request, the server fetches
                 any data from the database along with other resources (i.e. CSS, images, etc.) needed, generates the
                 full HTML, and then sends it back to the client to display to the end user. This process, appropriately
-                named <strong>server-side rendering</strong> (SSR), is repeated with every request from the client.</p>
+                named <strong>server-side rendering (SSR)</strong>, is repeated with every request from the client.</p>
             </div>
 
             <div class="case-study-subsection">
@@ -262,7 +262,7 @@
               </div>
 
               <div class="case-study-subsection">
-                <h4>2.3.5 Scaling For Users</h4>
+                <h4>2.3.5 Scaling for Users</h4>
                 <p>Finally, SSG is a better fit for scaling for many users since CDNs by default can handle increased
                   traffic at scale. An SSR architecture by nature does not necessarily have this same benefit.</p>
               </div>
@@ -284,7 +284,7 @@
             <h2>3. The Changing Landscape</h2>
 
             <div class="case-study-subsection">
-              <h3>3.1. Modern Web Development</h3>
+              <h3>3.1 Modern Web Development</h3>
               <img class="case-study-image enlarge" src="assets/images/case-study/hybrid_ssr_ssg.png">
               <p>Historically, applications could be neatly categorized into using either SSR or SSG. However, modern
                 web development frameworks have begun to blur the lines between static and dynamic applications,
@@ -310,7 +310,7 @@
             </div>
 
             <div class="case-study-subsection">
-              <h3>3.2. Giraffe: A Target User</h3>
+              <h3>3.2 Giraffe: A Target User</h3>
               <p>Let’s consider a hypothetical company named Giraffe as an example to better illustrate Bubble’s use
                 case.</p>
               <img src="assets/images/case-study/giraffe_site.png">
@@ -338,7 +338,7 @@
             <p>At this point, Giraffe is asking what they can do to streamline this process.</p>
 
             <div class="case-study-subsection">
-              <h3>4.1. Getting Feedback In a Manual Way</h3>
+              <h3>4.1 Getting Feedback in a Manual Way</h3>
               <img src="assets/images/case-study/manual_feedback.png">
               <p>Before the recent expansions in their organization and additions to their site, sharing progress was
                 easier for developers at Giraffe.</p>
@@ -352,7 +352,7 @@
             </div>
 
             <div class="case-study-subsection">
-              <h3>4.2. Using a Shared Staging Environment</h3>
+              <h3>4.2 Using a Shared Staging Environment</h3>
               <img src="assets/images/case-study/shared_staging_environment.png">
               <p>One tool that Giraffe uses as part of their development workflow is a shared staging environment. This
                 is an environment shared amongst all developers collaborating on a repository. </p>
@@ -368,23 +368,23 @@
             </div>
 
             <div class="case-study-subsection">
-              <h3>4.2. Downsides to a Shared Staging Environment</h3>
+              <h3>4.3 Downsides to a Shared Staging Environment</h3>
 
               <div class="case-study-subsection">
-                <h4>4.2.1 Batching</h4>
+                <h4>4.3.1 Batching</h4>
                 <img src="assets/images/case-study/batching.png">
                 <p>Since there was only one staging environment for Giraffe to use, oftentimes newly-developed features
                   would end up living together, intermingled within a single environment. </p>
 
                 <div class="case-study-subsection">
-                  <h5>4.2.1.1 Bugs</h5>
+                  <h5>4.3.1.1 Bugs</h5>
                   <p>Batching together multiple distinct changes in this way caused bugs to arise that were difficult to
                     troubleshoot, because they could have stemmed from conflicts between any of the code updates pushed
                     to the staging environment by different developers.</p>
                 </div>
 
                 <div class="case-study-subsection">
-                  <h5>4.2.1.2 Bloated Releases</h5>
+                  <h5>4.3.1.2 Bloated Releases</h5>
                   <p>This type of workflow also led to less-frequent and more bloated releases: with only one
                     centralized environment for non-technical stakeholders to use, reviews tended to happen in larger
                     batches. And when something went wrong and a release needed to be rolled back, it was much more
@@ -393,7 +393,7 @@
               </div>
 
               <div class="case-study-subsection">
-                <h4>4.2.2 Queuing</h4>
+                <h4>4.3.2 Queuing</h4>
                 <img src="assets/images/case-study/queuing.png">
                 <p>In an attempt to resolve these issues, Giraffe has switched to queuing instead, allowing only one
                   development team at a time to use the staging environment. This has taken care of the bugs, conflicts,
@@ -401,7 +401,7 @@
                   a different set of challenges to their development workflow.</p>
 
                 <div class="case-study-subsection">
-                  <h5>4.2.2.1 Wait Time &amp; Premature Deployment</h5>
+                  <h5>4.3.2.1 Wait Time &amp; Premature Deployment</h5>
                   <p>With only one team allowed to use the shared environment at a time, developers now have to wait for
                     the environment to be freed up before they can use it. One side effect of queuing is a higher risk
                     of deploying unsafe code: when a developer mistakenly rushes to deploy another colleague’s work in
@@ -409,7 +409,7 @@
                 </div>
 
                 <div class="case-study-subsection">
-                  <h5>4.2.2.2 Long Feedback Loop</h5>
+                  <h5>4.3.2.2 Long Feedback Loop</h5>
                   <p>Another consequence of queuing has been that valuable developer time is wasted: the feedback loops
                     formed by developers and reviewers are now much longer than before since features often need
                     multiple rounds of changes before they can be moved out of the shared staging environment. Only then
@@ -428,7 +428,7 @@
               minimize bugs from conflicting updates.</p>
 
             <div class="case-study-subsection">
-              <h3>5.1. What Are Preview Apps?</h3>
+              <h3>5.1 What Are Preview Apps?</h3>
               <img src="assets/images/case-study/giraffes_preview_app.png">
               <p>Preview apps are one way to allow non-technical stakeholders to quickly review UI/UX changes. Preview
                 apps are ephemeral, lightweight, and fully functional versions of an application that can be easily
@@ -509,7 +509,7 @@
             </div>
 
             <div class="case-study-subsection">
-              <h3>5.2. Benefits of Preview Apps</h3>
+              <h3>5.2 Benefits of Preview Apps</h3>
               <img src="assets/images/case-study/preview_app_benefits.png">
               <p>Preview apps reduce some of the headaches that occur when stakeholders use a shared staging environment
                 to review and discuss UI/UX changes.</p>
@@ -522,7 +522,7 @@
             </div>
 
             <div class="case-study-subsection">
-              <h3>5.3. Downsides of Preview Apps</h3>
+              <h3>5.3 Downsides of Preview Apps</h3>
               <p>While preview apps help to streamline the process of developing frontend features, they may not be the
                 right choice for everyone. </p>
               <p>Since they’re intended for testing new features in isolation, preview apps are not a good fit for
@@ -543,7 +543,7 @@
             </div>
 
             <div class="case-study-subsection">
-              <h3>5.4. What Are Dynamic Frontend Preview Apps?</h3>
+              <h3>5.4 What Are Dynamic Frontend Preview Apps?</h3>
               <p>As the landscape of web development has changed and the lines between SSR and SSG have become blurred,
                 the requirements for preview apps have grown. </p>
               <img src="assets/images/case-study/dynamic_preview_apps.png">
@@ -581,7 +581,7 @@
             </div>
 
             <div class="case-study-subsection">
-              <h3>6.2. Feature vs. Service</h3>
+              <h3>6.2 Feature vs. Service</h3>
               <img src="assets/images/case-study/feature_vs_service.png">
               <p>Preview app solutions on the market typically fall into two categories: feature and service. Both can
                 offer a variety of features and provide dynamic frontend preview apps that support any combination of
@@ -720,7 +720,7 @@
             <h3>9.1 GitHub Actions</a></h3>
 
             <div class="case-study-subsection">
-              <h4>9.1.1 What is GitHub Actions?</h4>
+              <h4>9.1.1 What Is GitHub Actions?</h4>
               <p>GitHub Actions is an automation tool that allows users to execute code written in files–called
                 workflows– using GitHub Runners: temporary virtual servers that GitHub spins up and down.</p>
               <img src="assets/images/case-study/gifs/gh_action_gif.gif">
@@ -739,7 +739,7 @@
             </div>
 
             <div class="case-study-subsection">
-              <h4>9.1.2 Benefits and Drawbacks of Github Actions</h4>
+              <h4>9.1.2 Benefits &amp; Drawbacks of Github Actions</h4>
               <p>As with most engineering decisions, there are tradeoffs associated with using GitHub Actions. </p>
               <img src="assets/images/case-study/gh_actions_cons.png">
               <p>One challenge with using GitHub runners is that they are entirely managed by GitHub and thus cannot be
