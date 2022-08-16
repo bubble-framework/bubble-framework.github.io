@@ -331,12 +331,12 @@ label {
 .case-study-image {
   margin: 40px auto 25px;
   display: block;
-  max-width: 600px;
-  max-height: 400px;
+  /* max-width: 600px;
+  max-height: 400px; */
 }
 
 .case-study-image.enlarge {
-  max-width: 200%;
+  max-width: 160%;
   height: auto;
 }
 
