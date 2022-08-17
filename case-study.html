@@ -503,10 +503,56 @@
         </div>
 
         <div class="case-study-subsection">
-          <h2>8. Bubble Architecture</h2>
+          <h2>8. Using Bubble</h2>
+          <p>Let's take a further look at the two user interfaces that Bubble provides: the CLI and the dashboard.</p>
 
           <div class="case-study-subsection">
-            <h3>8.1 Architecture Overview</h3>
+            <h3>8.1 Prerequisites &amp; Installing Bubble</h3>
+            <p>Getting started with Bubble requires the following prerequisites:</p>
+            <ul>
+              <li>A Next.js project repository</li>
+              <li>An AWS Account and AWS CLI configured for the account</li>
+              <li>A GitHub Token with repository-level permissions</li>
+              <li>Node.js and <code>npm</code></li>
+            </ul>
+            <p>Users can install Bubble by running the following npm command:</p>
+            <p><code>npm i -g jjam-bubble</code></p>
+          </div>
+
+          <div class="case-study-subsection">
+            <h3>8.2 The Bubble CLI</h3>
+            <p>After installing Bubble, the following commands are available on the command line:</p>
+            <img src="assets/images/case-study/command_table.png">
+          </div>
+
+          <div class="case-study-subsection">
+            <h3>8.3 The Bubble Dashboard</h3>
+            <p><img class="case-study-demo" alt="bubble dashboard demo" src="assets/images/case-study/gifs/demo-dashboard.gif" /></p>
+            <p>Users can access the Bubble dashboard using the command <code>bubble dashboard</code> from a Bubble-integrated local repository.</p>
+            <p>Once the dashboard is open, all preview apps on all branches in that repository with open pull requests will be displayed. Users are shown links to each preview app, as well as to the GitHub workflow run for that preview app deployment, where the build logs are available.</p>
+            <p>From this view, the user is also able to click the Destroy button, which will begin the destruction process for all preview apps belonging to that repository.</p>
+            <p>Users may navigate to other Bubble-integrated repositories by using the sidebar or the homepage.</p>
+          </div>
+
+          <div class="case-study-subsection">
+            <h3>8.4 Adding Bubble to a Project</h3>
+            <p><img class="case-study-demo" alt="bubble init demo" src="assets/images/case-study/gifs/demo-init.gif" />
+            </p>
+            <p>If the user has a Next.js project to which they would like to add Bubble, the first step is to run the <code>bubble init</code> command in their repository’s root directory.
+            </p>
+            <p>Bubble will then request a GitHub Personal Access Token (if this isn’t the user’s first time using Bubble, they may continue to use the same token for subsequent Bubble-integrated projects).</p>
+            <p>A <code>.bubble</code> folder will be created in the user’s local machine’s home directory to house their configuration details, data on all active Bubble-integrated repositories, and all code and packages needed to successfully run the dashboard. Another folder, <code>.github/workflows</code>, will be created in the project directory. The contents of this folder are the GitHub Actions workflow files necessary for automating preview app deployment and destruction. </p>
+            <p>Afterward, Bubble provisions a new AWS IAM user and configures the user under a new AWS command line profile. Any AWS commands executed from the repository will run under that profile, so that Bubble only has access to resources related to the current repository’s deployments. The user’s AWS access information and GitHub token will be encrypted and saved to GitHub secrets.</p>
+            <p>Lastly, to keep track of preview app metadata for the repository, a new DynamoDB table will be spun up with the newly created AWS IAM user credentials. </p>
+          </div>
+        </div>
+
+        <div class="case-study-subsection">
+          <h2>9. Bubble Architecture</h2>
+          <p>In the previous section, we saw how Bubble works from a user perspective in regards to the user interface, and got a glimpse a few of the GitHub and AWS pieces involved when integrating Bubble into a repository. Let's now take a closer look at where each of these components fits into Bubble's overall architecture.</p>
+
+          <div class="case-study-subsection">
+            <h3>9.1 Architecture Overview</h3>
             <figure>
               <img class="case-study-image enlarge" src="assets/images/case-study/overall_architecture.png">
             </figure>
@@ -514,19 +560,19 @@
             <p>Bubble consists of three main pieces of architecture: a local user interface, GitHub, and AWS.</p>
 
             <div class="case-study-subsection">
-              <h4>8.1.1 Interfaces</h4>
+              <h4>9.1.1 Interfaces</h4>
 
               <figure>
                 <img class="case-study-image enlarge" src="assets/images/case-study/user_interface_minimap.png">
               </figure>
 
-              <p>The user interface consists of two parts located on the user’s local machine.</p>
+              <p>As we've seen, the user interface consists of two parts located on the user’s local machine.</p>
               <p>Once Bubble is globally installed as an npm package, the user can then access the CLI to initialize an instance of Bubble in a repository directory. This adds necessary files to the local repo and updates files for the dashboard to use.</p>
               <p>The dashboard is a locally-run web application that provides a user-friendly visual interface for viewing, managing, and destroying preview apps. It combines a back-end, which makes API calls to AWS, with a front-end for the user to view in their browser.</p>
             </div>
 
             <div class="case-study-subsection">
-              <h4>8.1.2 GitHub Actions</h4>
+              <h4>9.1.2 GitHub Actions</h4>
 
               <figure>
                 <img class="case-study-image enlarge" src="assets/images/case-study/github_minimap.png">
@@ -537,7 +583,7 @@
             </div>
 
             <div class="case-study-subsection">
-              <h4>8.1.3 AWS Services</h4>
+              <h4>9.1.3 AWS Services</h4>
 
               <figure>
                 <img class="case-study-image enlarge" src="assets/images/case-study/aws_minimap.png">
@@ -561,15 +607,15 @@
         </div>
 
         <div class="case-study-subsection">
-          <h2>9. The Build Process: Where to Build?</h2>
+          <h2>10. The Build Process: Where to Build?</h2>
           <p>The first major design decision we tackled was where the build process should take place. </p>
           <p>Bubble automatically builds preview apps on two triggers. One is the opening of a new pull request and the other is any subsequent commit to a branch with an open pull request. Since these events occur within the context of a GitHub repository, we had to decide where we would be able to execute the build process as an automated response to these events.</p>
 
           <div class="case-study-subsection">
-            <h3>9.1 GitHub Actions</a></h3>
+            <h3>10.1 GitHub Actions</a></h3>
 
             <div class="case-study-subsection">
-              <h4>9.1.1 What Is GitHub Actions?</h4>
+              <h4>10.1.1 What Is GitHub Actions?</h4>
               <p>GitHub Actions is an automation tool that allows users to execute code written in repository files called "workflows" using GitHub Runners, which are temporary virtual servers that GitHub spins up and down.<sup><a class="footnote-link" href="#footnote-8">8</a></sup></p>
               </p>
 
@@ -589,7 +635,7 @@
             </div>
 
             <div class="case-study-subsection">
-              <h4>9.1.2 Benefits &amp; Drawbacks of Github Actions</h4>
+              <h4>10.1.2 Benefits &amp; Drawbacks of Github Actions</h4>
               <p>As with most engineering decisions, there are tradeoffs associated with using GitHub Actions. </p>
               <img class="case-study-image shrink" src="assets/images/case-study/gh_actions_cons.png">
               <p>One challenge with using GitHub Runners is that they are entirely managed by GitHub and thus cannot be accessed directly, making it difficult to extract outputs and other environmental artifacts. In addition, development is much more constrained than it would be if we were configuring our own build server since workflows can only be defined with YAML files.</p>
@@ -602,16 +648,16 @@
         </div>
 
         <div class="case-study-subsection">
-          <h2>10. The Build Process: How to Build?</h2>
+          <h2>11. The Build Process: How to Build?</h2>
 
           <div class="case-study-subsection">
-            <h3>10.1 The Application Server</h3>
+            <h3>11.1 The Application Server</h3>
             <img class="case-study-image shrink" src="assets/images/case-study/app_server_highlight.png">
             <p>Recall that the essential architectural component differentiating a static frontend application from a more complex dynamic one is the need for an application server to generate SSR pages at request time. </p>
             <p>Since Bubble aims to let users share new UI/UX features quickly and conveniently, we considered options that would allow us to build and deploy applications that include application servers in a lightweight and cost-efficient manner.</p>
 
             <div class="case-study-subsection">
-              <h4>10.1.1 Containers</h4>
+              <h4>11.1.1 Containers</h4>
               <p>One option would be to deploy the server-side logic and static assets together in a container. </p>
               <p>A container encapsulates the application code along with all the runtime elements necessary to execute it together in one package.<sup><a class="footnote-link" href="#footnote-9">9</a></sup> </p> <img class="case-study-image shrink" src="assets/images/case-study/containers_pros.png">
               <p>With containers, we wouldn’t need to set up and configure multiple nodes of infrastructure or implement routing logic to connect them; instead, we’d be able to deploy only one single entity for each preview app, as the entire application would be spun up in the container as a whole. Since there’s only one piece to consider, containers can easily be moved around and deployed. </p>
@@ -620,7 +666,7 @@
             </div>
 
             <div class="case-study-subsection">
-              <h4>10.1.2 Serverless Computing</h4>
+              <h4>11.1.2 Serverless Computing</h4>
               <p>An alternative to containers would be deploying the server-side logic and static assets to separate services. Given our use case of providing temporary preview apps, we found serverless functions to be the most compelling option for deploying server-side logic.</p>
               <img class="case-study-image shrink" src="assets/images/case-study/serverless_pros.png">
               <p>Despite being called serverless, these functions do run on servers, but they abstract away the logistics of provisioning server resources.<sup><a class="footnote-link" href="#footnote-10">10</a></sup> They have no ongoing expenses: developers are only charged for the server capacity that their application uses during the time it’s being executed.</p>
@@ -634,11 +680,11 @@
           </div>
 
           <div class="case-study-subsection">
-            <h3>10.2 Serverless Computing Options</h3>
+            <h3>11.2 Serverless Computing Options</h3>
 
             <div class="case-study-subsection">
 
-              <h4>10.2.1 Terraform
+              <h4>11.2.1 Terraform
               </h4>
 
               <figure>
@@ -654,7 +700,7 @@
             </div>
 
             <div class="case-study-subsection">
-              <h4>10.2.2 FAB</h4>
+              <h4>11.2.2 FAB</h4>
 
               <figure>
                 <img src="assets/images/case-study/fab_pros_cons.png">
@@ -667,7 +713,7 @@
             </div>
 
             <div class="case-study-subsection">
-              <h4>10.2.3 Serverless Framework</h4>
+              <h4>11.2.3 Serverless Framework</h4>
 
               <figure>
                 <img src="assets/images/case-study/serverless_pros_cons.png">
@@ -685,66 +731,21 @@
         </div>
 
         <div class="case-study-subsection">
-          <h2>11. Additional AWS Services</h2>
+          <h2>12. Additional AWS Services</h2>
 
           <div class="case-study-subsection">
-            <h3>11.1 IAM</h3>
+            <h3>12.1 IAM</h3>
             <img src="assets/images/case-study/iam_flow.png">
             <p>Bubble creates new IAM users for identity and access management. An IAM user for a particular GitHub repository will have limited access to only those resources needed for Bubble’s features. The access key for the user is saved locally on the user's computer and also in GitHub secrets. This maintains a separation of access to resources on a user’s AWS account for other use, limiting the damage that a malicious user could do if they were to act on the IAM user’s behalf.</p>
           </div>
 
           <div class="case-study-subsection">
-            <h3>11.2 DynamoDB</h3>
+            <h3>12.2 DynamoDB</h3>
             <img src="assets/images/case-study/dynamo_minimap.png">
             <p>Bubble persists metadata in order to keep track of all the preview apps and their resources including CloudFront distributions, S3 buckets, and associated Lambda functions. Because Bubble automatically destroys preview apps on pull request triggers through workflow files, the data needs to be accessed remotely from a GitHub Runner.</p>
             <p>One option would have been to save the data locally on the user's computer and spin up a server listening for API calls from GitHub. However, that would necessitate a long-running server provisioned either on the user's local machine or through a cloud provider on their behalf.</p>
             <p>Instead, Bubble provisions DynamoDB tables during initialization and saves metadata to them whenever a preview app is deployed. Because the IAM user’s access key is saved in GitHub secrets, workflow files can access those keys to configure the AWS command line tool on the GitHub server.</p>
             <p>Furthermore, DynamoDB tables are provisioned in an on-demand capacity mode, which furthers our goal of being lightweight and low-cost. This means the user is only charged for data writes and reads. These tables are torn down automatically if the user ever executes Bubble’s resource destruction command from the Bubble CLI. </p>
-          </div>
-        </div>
-
-        <div class="case-study-subsection">
-          <h2>12. Using Bubble</h2>
-          <p>Now that we’ve explained how Bubble was built, we can take a further look at the two user interfaces that Bubble provides: the CLI and the dashboard.</p>
-
-          <div class="case-study-subsection">
-            <h3>12.1 Prerequisites &amp; Installing Bubble</h3>
-            <p>Getting started with Bubble requires the following prerequisites:</p>
-            <ul>
-              <li>A Next.js project repository</li>
-              <li>An AWS Account and AWS CLI configured for the account</li>
-              <li>A GitHub Token with repository-level permissions</li>
-              <li>Node.js and <code>npm</code></li>
-            </ul>
-            <p>Users can install Bubble by running the following npm command:</p>
-            <p><code>npm i -g jjam-bubble</code></p>
-          </div>
-
-          <div class="case-study-subsection">
-            <h3>12.2 The Bubble CLI</h3>
-            <p>After installing Bubble, the following commands are available on the command line:</p>
-            <img src="assets/images/case-study/command_table.png">
-          </div>
-
-          <div class="case-study-subsection">
-            <h3>12.3 The Bubble Dashboard</h3>
-            <p><img class="case-study-demo" alt="bubble dashboard demo" src="assets/images/case-study/gifs/demo-dashboard.gif" /></p>
-            <p>Users can access the Bubble dashboard using the command <code>bubble dashboard</code> from a Bubble-integrated local repository.</p>
-            <p>Once the dashboard is open, all preview apps on all branches in that repository with open pull requests will be displayed. Users are shown links to each preview app, as well as to the GitHub workflow run for that preview app deployment, where the build logs are available.</p>
-            <p>From this view, the user is also able to click the Destroy button, which will begin the destruction process for all preview apps belonging to that repository.</p>
-            <p>Users may navigate to other Bubble-integrated repositories by using the sidebar or the homepage.</p>
-          </div>
-
-          <div class="case-study-subsection">
-            <h3>12.4 Adding Bubble to a Project</h3>
-            <p><img class="case-study-demo" alt="bubble init demo" src="assets/images/case-study/gifs/demo-init.gif" />
-            </p>
-            <p>If the user has a Next.js project to which they would like to add Bubble, the first step is to run the <code>bubble init</code> command in their repository’s root directory.
-            </p>
-            <p>Bubble will then request a GitHub Personal Access Token (if this isn’t the user’s first time using Bubble, they may continue to use the same token for subsequent Bubble-integrated projects).</p>
-            <p>A <code>.bubble</code> folder will be created in the user’s local machine’s home directory to house their configuration details, data on all active Bubble-integrated repositories, and all code and packages needed to successfully run the dashboard. Another folder, <code>.github/workflows</code>, will be created in the project directory. The contents of this folder are the GitHub Actions workflow files necessary for automating preview app deployment and destruction. </p>
-            <p>Afterward, Bubble provisions a new AWS IAM user and configures the user under a new AWS command line profile. Any AWS commands executed from the repository will run under that profile, so that Bubble only has access to resources related to the current repository’s deployments. The user’s AWS access information and GitHub token will be encrypted and saved to GitHub secrets.</p>
-            <p>Lastly, to keep track of preview app metadata for the repository, a new DynamoDB table will be spun up with the newly created AWS IAM user credentials. </p>
           </div>
         </div>
 
